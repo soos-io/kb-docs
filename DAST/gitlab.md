@@ -11,12 +11,12 @@ gistURL: https://gist.github.com/soostech/7b74eb66cc1bde6cc4506eb67538fc14
 This document will take you step-by-step through the tasks required to set up a GitLab repo, for scan it with the SOOS DAST Product.
 ## Prerequisites
 
-- You need to have a SOOS Account.
+- You need to have a SOOS account.
 - You need to have a GitLab repo.
 
 ## Steps
 
-<summary class='section-title'>Create or Update your <code>.gitlab-ci.yml</code> file</summary>
+<summary class='section-title'>Create or update your <code>.gitlab-ci.yml</code> file</summary>
 
 Once the `SOOS_CLIENT_ID` and `SOOS_API_KEY` have been configured, the next step is create or update the `.gitlab-ci.yml` file.
 
