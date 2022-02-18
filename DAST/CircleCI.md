@@ -17,7 +17,7 @@ In this article we will make the necessary modifications to a simple CircleCI pr
 
 ## Steps
 
-### Repo Setup
+### **Repo Setup**
 - Create a directory called .circleci in the root directory of your local GitHub or Bitbucket code repository.
 - Create a config.yml file inside the .circleci directory with the following lines (if you are using CircleCI server v2.x, use version: 2.0 configuration):
 
@@ -45,7 +45,7 @@ In this article we will make the necessary modifications to a simple CircleCI pr
 - Go to the Projects page in the CircleCI app, click the Add Projects button, then click the Set Up Project button next to your project. If you don’t see your project, make sure you have selected the associated Org. See the Org Switching section below for tips.
 - Click the Start Building button to trigger your first build. (Previous this step, you must to setup the environment variables)
 
-### Build Setup
+### **Build Setup**
 - In the CircleCI application, go to your project’s settings by clicking the gear icon on the Pipelines page, or the three dots on other pages in the application.
 <img src="../assets/img/circleci-settings.png">
 - Click on Environment Variables.
