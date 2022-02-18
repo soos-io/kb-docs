@@ -6,9 +6,9 @@ gistURL: https://gist.github.com/soostech/983b3756ea3f6e3631d89c97604bd969
 # How to Integrate SOOS DAST with your Azure CI
 
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
-<img src="../assets/img/azure.png" alt="GitLab" width="128" height="128">
+<img src="../assets/img/azure.png" alt="Azure" width="128" height="128">
 
-This document will take you step-by-step through the tasks required to set up a GitLab repo, for scan it with the SOOS DAST Product.
+This document will take you step-by-step through the tasks required to set up an Azure project, for scan it with the SOOS DAST Product.
 
 ## Important
 The SOOS Azure DevOps Task is currently invite only. Please email support@soos.io or use the Contact Us option under the Help menu to request access.
