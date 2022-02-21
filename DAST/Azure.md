@@ -1,8 +1,3 @@
----
-title: Integrating SOOS DAST with Azure CI
-gistURL: https://gist.github.com/soostech/983b3756ea3f6e3631d89c97604bd969
----
-
 # How to Integrate SOOS DAST with your Azure CI
 
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
@@ -45,7 +40,17 @@ Make sure to also set the Display Name, Project Name (which groups scans togethe
 
 Once we have defined these variables globally you can set up the task to be used inside your pipeline.yml following this example script.
 
-<script src="https://gist.github.com/soostech/983b3756ea3f6e3631d89c97604bd969.js"></script>
+```
+- task: SOOS-Security-Analysis@0
+  displayName: 'Start analysis'
+  continueOnError: true
+  inputs:
+    apiKey: {SOOS_API_KEY}
+    path: $(Build.SourcesDirectory)
+    clientId: {SOOS_CLIENT_ID}
+    project: {YOUR_PROJECT_NAME_HERE}
+    baseUri: 'https://api.soos.io/api/'
+```
 
 ### **Run It**
 

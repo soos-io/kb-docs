@@ -1,8 +1,3 @@
----
-title: Integrating SOOS DAST with Codeship CI
-gistURL: https://gist.github.com/soostech/7841407211fa5c02cf68c364ed1f4ec3
----
-
 # How to Integrate SOOS DAST with your Codeship CI
 
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
@@ -71,6 +66,4 @@ Based on your preferences you can add the content for the file `codeship-steps.y
 ### Run It
 To run the SOOS DAST  against your repository’s code, just execute a build or commit a change.
 
-
-<script src="https://gist.github.com/soostech/7841407211fa5c02cf68c364ed1f4ec3.js"></script>
 

@@ -1,8 +1,3 @@
----
-title: Integrating SOOS DAST with CircleCI 
-gistURL: https://gist.github.com/soostech/46c705c2c9f9914337f7365ea90b52b9f2ef555f
----
-
 # How to Integrate SOOS DAST with your CircleCI CI
 
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
@@ -50,9 +45,4 @@ In this article we will make the necessary modifications to a simple CircleCI pr
 <img src="../assets/img/circleci-settings.png">
 - Click on Environment Variables.
 - Add the SOOS_CLIENT_ID and SOOS_API_KEY variables by clicking the Add Variable button and enter the name and the value provided by the SOOS App. (See screenshot from Integration Steps section) 
-
-
-
-
-<script src="https://gist.github.com/soostech/652c66b03cd8c7a856c74467bffc4086.js"></script>
 
