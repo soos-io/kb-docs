@@ -18,7 +18,7 @@ In this article we will make the necessary modifications to a simple AWS CodeBui
 * Place the requirements.txt and soos.py files in the `<repo_root>/soos/workspace` folder.
 * Commit these 2 new files and the new folder path.
 
-### **Configure Codebuild env variables**
+### **Configure Codebuild enviroment variables**
 
 * Within Codebuild navigate to your Project and select **"Environment"** from the **"Edit"** menu.
 Open **"Additional Configuration"** to reveal the **"Environment Variables"** section. In the **"Environment Variables"** section, create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables. These will serve as environment variables to be used by the Package Aware CLI. Use the API Key and Client ID from the [AWS Codebuild integration page on the SOOS AP](https://app.soos.io/integrate/sca?id=aws-codebuild).
