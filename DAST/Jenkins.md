@@ -35,7 +35,7 @@ pipeline {
         stage('SOOS DAST Baseline Analysis') {
             steps {
                 bat '''
-                    SET PARAMS=--clientId=%SOOS_CLIENT_ID% --apiKey=%SOOS_API_KEY% --projectName=%SOOS_PROJECT_NAME% --scanMode=%SOOS_SCAN_MODE% --apiURL=%SOOS_API_BASE_URL%
+                    SET PARAMS=--clientId=%SOOS_CLIENT_ID% --apiKey=%SOOS_API_KEY% --projectName="%SOOS_PROJECT_NAME%" --scanMode=%SOOS_SCAN_MODE% --apiURL=%SOOS_API_BASE_URL%
                     
                     if "%SOOS_DEBUG%" == "true" ( 
                         SET PARAMS=%PARAMS% --debug
