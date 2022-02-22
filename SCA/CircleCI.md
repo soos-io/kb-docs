@@ -1,4 +1,4 @@
-# How to Integrate SOOS SCA with your Bamboo CI
+# How to Integrate SOOS SCA with your CircleCI
 
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/circleci.png" alt="circleci" width="128" height="128">
@@ -6,7 +6,7 @@
 ## Prerequisites
 
 - You need to have a SOOS account.
-- You need to have a Bamboo project.
+- You need to have a CircleCI project.
 - Have downloaded the latest version of the `orb.yml` from [here](https://github.com/soos-io/soos-ci-analysis-circleci-orb)
 
 ## Steps
