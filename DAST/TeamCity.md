@@ -38,7 +38,7 @@ Create a Build Step with the following settings:
 * Command name: run
 * Working directory: (leave blank)
 * Additional required arguments for the command: 
-`--rm soosio/dast:alpha-2 %system.targetURL% --clientId=%system.clientId% --apiKey=%system.apiKey% --projectName=%system.projectName% --scanMode=%system.scanMode% --apiURL=%system.apiURL%`
+`--rm soosio/dast %system.targetURL% --clientId=%system.clientId% --apiKey=%system.apiKey% --projectName="""%system.projectName%""" --scanMode=%system.scanMode% --apiURL=%system.apiURL%`
 
 Click Save when complete
 
