@@ -1,8 +1,10 @@
 
 # How to Integrate SOOS DAST with your Jenkins CI
 
+<div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/jenkins.png" alt="Jenkins" width="128" height="128">
+</div>
 
 Currently, you can integrate the SOOS DAST Analysis with Jenkins using the SOOS DAST Analysis Docker Image in your Jenkinsfile
 ## Prerequisites
@@ -10,113 +12,10 @@ Currently, you can integrate the SOOS DAST Analysis with Jenkins using the SOOS 
 - You need to have a SOOS account.
 - Have docker installed in Jenkins Host machine.
 ## Steps
-
+### **Getting the script**
+* Navigate to the [Jenkins DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=jenkins) and copy the `Jenkinsfile` script content according to the OS you're running Jenkins on.
 ### **Setup your Repo**
-
-Chose the configuration according to your OS and create a `Jenkinsfile` in the root of your repository.
-<details open>
-<summary> Windows </summary>
-
-```
-pipeline {
-    agent any
-
-    environment {
-        SOOS_PROJECT_NAME = "DAST Jenkins Example"
-        SOOS_SCAN_MODE = "baseline"
-        SOOS_API_BASE_URL= "https://api.soos.io/api/"
-        SOOS_TARGET_URL= "https://example.com/"
-        SOOS_DEBUG= "false"
-        SOOS_AJAX_SPIDER= "false"
-       
-    }
-
-    stages {
-        stage('SOOS DAST Baseline Analysis') {
-            steps {
-                bat '''
-                    SET PARAMS=--clientId=%SOOS_CLIENT_ID% --apiKey=%SOOS_API_KEY% --projectName="%SOOS_PROJECT_NAME%" --scanMode=%SOOS_SCAN_MODE% --apiURL=%SOOS_API_BASE_URL%
-                    
-                    if "%SOOS_DEBUG%" == "true" ( 
-                        SET PARAMS=%PARAMS% --debug
-                    )
-                    if "%SOOS_AJAX_SPIDER%" == "true" (
-                        SET PARAMS=%PARAMS% --ajaxSpider
-                    )
-                    if defined %SOOS_RULES% SET PARAMS=%PARAMS% --rules=\"%SOOS_RULES%\"
-
-                    if defined %SOOS_CONTEXT_FILE% SET PARAMS=%PARAMS% --contextFile=%SOOS_CONTEXT_FILE%
-
-                    if defined %SOOS_CONTEXT_USER% SET PARAMS=%PARAMS% --contextUser=%SOOS_CONTEXT_USER%
-
-                    if defined %SOOS_FULL_SCAN_MINUTES% SET PARAMS=%PARAMS% --fullScanMinutes=%SOOS_FULL_SCAN_MINUTES%
-
-                    if defined %SOOS_API_SCAN_FORMAT% SET PARAMS=%PARAMS% --apiScanFormat=%SOOS_API_SCAN_FORMAT%
-
-                    if defined %SOOS_LEVEL% SET PARAMS=%PARAMS% --level=%SOOS_LEVEL%
-                                        
-                    docker run --rm soosio/dast %SOOS_TARGET_URL% %PARAMS%
-                '''
-            }
-        }
-    }
-}
-```
-</details>
-
-<details open>
-<summary>Linux/MacOS</summary>
-
-```
-pipeline {
-    agent any
-
-    environment {
-        SOOS_PROJECT_NAME = "Jenkins SOOS DAST Analysis"
-        SOOS_SCAN_MODE = "baseline"
-        SOOS_API_BASE_URL= "https://api.soos.io/api/"
-        SOOS_TARGET_URL= "https://example.com/"
-    }
-
-    stages {
-        stage('SOOS DAST Analysis') {
-            steps {
-                sh '''
-                    PARAMS="--clientId=${SOOS_CLIENT_ID} --apiKey=${SOOS_API_KEY} --scanMode=${SOOS_SCAN_MODE} --apiURL=${SOOS_API_BASE_URL}"
-                    
-                    if ( ${SOOS_DEBUG} == "true" ) then
-                        PARAMS="${PARAMS} --debug=true"
-                    fi
-                    if ( ${SOOS_AJAX_SPIDER} == "true" ) then
-                        PARAMS="${PARAMS} --ajaxSpider=true"
-                    fi
-                    if [ ! -z ${SOOS_RULES} ]; then
-                        PARAMS="${PARAMS} --rules=\"$SOOS_RULES\""
-                    fi
-                    if [ ! -z ${SOOS_CONTEXT_FILE} ]; then
-                        PARAMS="${PARAMS} --contextFile=${SOOS_CONTEXT_FILE}"
-                    fi
-                    if [ ! -z ${SOOS_CONTEXT_USER} ]; then
-                        PARAMS="${PARAMS} --contextUser=${SOOS_CONTEXT_USER}"
-                    fi
-                    if [ ! -z ${SOOS_FULL_SCAN_MINUTES} ]; then
-                        PARAMS="${PARAMS} --fullScanMinutes=${SOOS_FULL_SCAN_MINUTES}"
-                    fi
-                    if [ ! -z ${SOOS_API_SCAN_FORMAT} ]; then
-                        PARAMS="${PARAMS} --apiScanFormat=${SOOS_API_SCAN_FORMAT}"
-                    fi
-                    if [ ! -z ${SOOS_LEVEL} ]; then
-                        PARAMS="${PARAMS} --level=${SOOS_LEVEL}"
-                    fi
-   
-                    docker run --rm soosio/dast ${SOOS_TARGET_URL} $PARAMS --projectName="${SOOS_PROJECT_NAME}"
-                '''
-            }
-        }
-    }
-}
-```
-</details>
+Create a file called `Jenkinsfile` in the root of your repository and paste the content from the above step.
 
 ### **Enviroment Setup**
 
