@@ -1,13 +1,16 @@
 # How to Integrate SOOS DAST with your Bamboo CI
 
+<div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/bamboo.png" alt="bamboo" width="128" height="128">
+</div>
 
 Currently, you can integrate the SOOS DAST Analysis with Bamboo using the SOOS DAST Analysis Docker Image in your bamboo.yml spec file.
 
 ## Prerequisites
 - You need to have a SOOS account.
-- You need to have a Bamboo project created
+- You need to have a Bamboo project created.
+- Docker needs to be installed on the agent machine.
 
 ## Steps
 
@@ -17,11 +20,13 @@ Currently, you can integrate the SOOS DAST Analysis with Bamboo using the SOOS D
 
 ### **Setting enviroment variables**
 Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables, under the Global Variables section (this can be encountered in the settings wheel in Bamboo). These will serve as environment variables to be used by the SOOS CLI. Use the API Key and Client ID values you collected from [Bamboo DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=bamboo).
+<img src="../assets/img/bamboo-global-variables.png">
 
 ### **Running on Windows**
 
 * Create a new script task in your bamboo project
 * Use the `dast-script.bat` downloaded before, or just copy the code and paste it inside the inline script.
+<img src="../assets/img/bamboo-dast-script.png">
 
 ### **Running on Linux or Mac OS**
 
