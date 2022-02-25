@@ -41,7 +41,7 @@ Enter a name for the item and select Pipeline
 On the next screen:
 1. Type in a description for your item.
 2. Select the Pipeline Tab.
-3. Choose 'Pipeline script from SCM' in the Definition field.
+3. Choose 'Pipeline script from SCM' in the Definition field. (If you don't want to use a `Jenkinsfile` you can just paste the pipeline content in here)
 4. In the SCM field select 'Git'.
 5. Enter the link to your GitHub repo in the Repository URL field and enter the corresponding credentials when prompted.
 6. Write the Jenkinsfile path in the Script Path field and select Apply and Save.
