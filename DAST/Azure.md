@@ -42,14 +42,13 @@ Once we have defined these variables globally you can set up the task to be used
 
 ```
 - task: SOOS-Security-Analysis@0
-  displayName: 'Start analysis'
-  continueOnError: true
   inputs:
     apiKey: {SOOS_API_KEY}
-    path: $(Build.SourcesDirectory)
     clientId: {SOOS_CLIENT_ID}
+    scanType: 'DAST'
     project: {YOUR_PROJECT_NAME_HERE}
-    baseUri: 'https://api.soos.io/api/'
+    targetUri: 'https://example.com'
+    scanMode: 'baseline'
 ```
 
 ### **Run It**
