@@ -1,8 +1,8 @@
 # How to Integrate SOOS DAST with your Azure CI
-
+<div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="Azure" width="128" height="128">
-
+</div>
 This document will take you step-by-step through the tasks required to set up an Azure project, for scan it with the SOOS DAST Product.
 
 ## Important

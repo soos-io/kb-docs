@@ -1,8 +1,8 @@
 # How to Integrate SOOS DAST with your Teamcity CI
-
+<div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/teamcity.png" alt="TeamCity" width="128" height="128">
-
+</div>
 Currently, you can integrate the SOOS DAST Analysis with TeamCity using the Docker build runner and setting the command and arguments.
 
 

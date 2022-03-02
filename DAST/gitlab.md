@@ -1,8 +1,8 @@
 # How to Integrate SOOS DAST with your GitLab CI
-
+<div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/gitlab.png" alt="GitLab" width="128" height="128">
-
+</div>
 This document will take you step-by-step through the tasks required to set up a GitLab repo, for scan it with the SOOS DAST Product.
 ## Prerequisites
 
