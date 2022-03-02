@@ -14,17 +14,17 @@ SOOS provides a Python-based script for you to customize as-needed.
 ## Steps
 
 ### **Repo Setup**
-* Download the corresponded Script for your enviroment from the [SCA Script integration page on SOOS](https://app.soos.io/integrate/sca?id=script).
+* Download the corresponded Script for your environment from the [SCA Script integration page on SOOS](https://app.soos.io/integrate/sca?id=script).
 * Create a new file in your repo root directory called `run-sca-analysis.sh` or `run-sca-analysis.bat` and paste the content of the script in the new file.
 * Open the terminal or command prompt and go to your project directory. Run the command that corresponds to the selected operating system:
     * run-sca-analysis.sh (Linux or MacOs)
     * run-sca-analysis.bat (Windows)
 Click the GitHub link to visit the [soos-ci-analysis-python](https://github.com/soos-io/soos-ci-analysis-python) repository for additional documentation.
 
-### **Configure your enviroment**
+### **Configure your environment**
 Our CLI is highly configurable, as it is designed to run in a number of scenarios. The only required parameters are the Environment Variables (API Key and Client ID) and the project name.
 
-**Enviroment variables**
+**Environment variables**
 
 * Create the SOOS_API_KEY an SOOS_CLIENT_ID environment variables.
 * Copy & paste the API key and Client ID values from the [Script Integration page of the SOOS app](https://app.soos.io/integrate/sca?id=script).  These will serve as environment variables to be used by the SOOS CLI.

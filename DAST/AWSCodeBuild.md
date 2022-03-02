@@ -18,7 +18,7 @@ Navigate to your project and select “Environment” from the “Edit” menu.
 
 <img src="../assets/img/codebuild-edit.png">
 
-### **Setup enviroment variables**
+### **Setup environment variables**
 In the main section complete the following inputs:
 - Environment Image: Custom Image
 - Environment Type: Linux

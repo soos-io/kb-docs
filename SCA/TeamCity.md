@@ -18,7 +18,7 @@ In this article we will make the necessary modifications to a simple TeamCity pr
 * Place the requirements.txt and soos.py files in the `<repo_root>/soos/workspace` folder.
 * Commit these 2 new files and the new folder path.
 
-### **Configure TeamCity Enviroment variables**
+### **Configure TeamCity Environment variables**
 * Within TeamCity, navigate to **Build Configurations**.
 * Select the **Create build configuration** button and enter a name for the new build.
 In the left-hand menu, select **Parameters**.

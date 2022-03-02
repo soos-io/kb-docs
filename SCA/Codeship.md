@@ -17,7 +17,7 @@ This document will take you step-by-step through the tasks required to set up a 
 * Place the requirements.txt and soos.py files in the `<repo_root>/soos/workspace` folder.
 * Commit these 2 new files and the new folder path.
 
-### **Setup enviroment variables in Codeship**
+### **Setup environment variables in Codeship**
 
 * Within CodeShip, navigate to **Project Settings**.
 * Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables in the **Environment variables** text field under **Global Properties**.

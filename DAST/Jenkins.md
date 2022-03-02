@@ -17,7 +17,7 @@ Currently, you can integrate the SOOS DAST Analysis with Jenkins using the SOOS 
 ### **Setup your Repo**
 Create a file called `Jenkinsfile` in the root of your repository and paste the content from the above step.
 
-### **Enviroment Setup**
+### **Environment Setup**
 
 Navigate to Jenkins -> Manage Jenkins -> Configure System
 
