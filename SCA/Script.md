@@ -7,7 +7,7 @@ SOOS provides direct CI/CD integration to the 10 most common platforms.  So what
 SOOS provides a Python-based script for you to customize as-needed.
 
 ## Prerequisites
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - Python 3.7 or higher - https://www.python.org/downloads/  
 - Pip - https://pip.pypa.io/en/stable/installation/ 
 

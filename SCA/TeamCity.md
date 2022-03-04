@@ -7,7 +7,7 @@ In this article we will make the necessary modifications to a simple TeamCity pr
 
 ## Prerequisites
 
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a TeamCity project.
 - Have downloaded the latest release of the `soos.py` and `requirements.txt` from [here](https://github.com/soos-io/soos-ci-analysis-python/releases/)
 

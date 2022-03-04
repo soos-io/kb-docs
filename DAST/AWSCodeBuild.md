@@ -6,7 +6,7 @@
 In this article we will make the necessary modifications to a simple AWS CodeBuild project to scan a WebApp or API with SOOS DAST.
 
 ## Prerequisites
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a AWS Codebuild project created
 
 ## Steps

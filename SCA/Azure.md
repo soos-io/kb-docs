@@ -6,7 +6,7 @@
 In this article we will make the necessary modifications to a simple Azure project to scan a GitHub or Bitbucket repository with the SOOS SCA PRODUCT.
 ## Prerequisites
 
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a Azure Project.
 - Have downloaded the latest release of the [**SOOS Core SCA**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/soos1643899774087.soos_msft?tab=Overview) from the Azure Marketplace
 

@@ -6,7 +6,7 @@
 In this article we will make the necessary modifications to a GitHub Workflow using the SOOS CI Analysis GitHub Action to scan a GitHub repository with SOOS.
 ## Prerequisites
 
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a GitHub Repo.
 
 ## Steps

@@ -5,7 +5,7 @@
 
 ## Prerequisites
 
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a CircleCI project.
 - Have downloaded the latest version of the `orb.yml` from [here](https://github.com/soos-io/soos-ci-analysis-circleci-orb)
 

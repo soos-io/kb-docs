@@ -6,7 +6,7 @@
 This document will take you step-by-step through the tasks required to set up a Jenkins project, for scan it with the SOOS SCA Product.
 ## Prerequisites
 
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a Jenkins project.
 
 ## Steps

@@ -12,7 +12,7 @@ Please include your Azure DevOps organization name so we know where to send the 
 
 ## Prerequisites
 
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a Azure Project configured.
 
 ## Steps

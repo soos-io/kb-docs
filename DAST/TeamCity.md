@@ -7,7 +7,7 @@ Currently, you can integrate the SOOS DAST Analysis with TeamCity using the Dock
 
 
 ## Prerequisites
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a TeamCity project created
 
 ### Steps
@@ -16,7 +16,7 @@ Currently, you can integrate the SOOS DAST Analysis with TeamCity using the Dock
 * Navigate to the [TeamCity DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=teamcity) and copy the integration script content.
 
 ### **Installing Docker and configure TeamCity**
-The script uses docker so it's fundamental for it to work that the agent running the script have docker installed.
+The script uses docker so it's fundamental for it to work that the agent running the script have [docker installed.](https://docs.docker.com/get-docker/).
 
 * Visit https://www.docker.com/ and download & install Docker.
 * The Docker build runner needs parameters, called “System Properties (system.)” in TeamCity, which have to be declared inside the project or the build settings, and they are required for the Docker container to run.

@@ -8,7 +8,7 @@
 Currently, you can integrate the SOOS DAST Analysis with Bamboo using the SOOS DAST Analysis Docker Image in your bamboo.yml spec file.
 
 ## Prerequisites
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a Bamboo project created.
 - Docker needs to be installed on the agent machine.
 

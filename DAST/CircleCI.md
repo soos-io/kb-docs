@@ -7,7 +7,7 @@ In this article we will make the necessary modifications to a simple CircleCI pr
 
 ## Prerequisites
 
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a CircleCI project.
 
 ## Steps

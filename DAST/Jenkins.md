@@ -9,8 +9,8 @@
 Currently, you can integrate the SOOS DAST Analysis with Jenkins using the SOOS DAST Analysis Docker Image in your Jenkinsfile
 ## Prerequisites
 
-- You need to have a SOOS account.
-- Have docker installed in Jenkins Host machine.
+- You need to have a [SOOS account.](https://app.soos.io/register)
+- Have [docker installed.](https://docs.docker.com/get-docker/) in Jenkins Host machine.
 ## Steps
 ### **Getting the script**
 * Navigate to the [Jenkins DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=jenkins) and copy the `Jenkinsfile` script content according to the OS you're running Jenkins on.

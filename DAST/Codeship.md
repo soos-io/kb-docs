@@ -6,7 +6,7 @@
 This document will take you step-by-step through the tasks required to set up a Codeship repo, for scan it with the SOOS DAST Product.
 ## Prerequisites
 
-- You need to have a SOOS account.
+- You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a Codeship Pro account.
 
 ## Steps

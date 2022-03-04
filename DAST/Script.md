@@ -11,8 +11,8 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 
 ## Prerequisites
 
-- You need to have a SOOS account.
-- Have docker installed in the Host machine.
+- You need to have a [SOOS account.](https://app.soos.io/register)
+- Have [docker installed.](https://docs.docker.com/get-docker/) in the Host machine.
 
 ## Steps
 ### **Getting the script**
