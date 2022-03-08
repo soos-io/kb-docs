@@ -1,8 +1,8 @@
 # How to Integrate SOOS SCA with your Travis CI
-
+<div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="azure" width="128" height="128">
-
+</div>
 In this article we will make the necessary modifications to a simple Azure project to scan a GitHub or Bitbucket repository with the SOOS SCA PRODUCT.
 ## Prerequisites
 

@@ -1,8 +1,8 @@
 # How to Integrate SOOS SCA with your CircleCI
-
+<div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/circleci.png" alt="circleci" width="128" height="128">
-
+</div>
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
