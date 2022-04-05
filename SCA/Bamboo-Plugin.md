@@ -1,7 +1,7 @@
 # How to Integrate SOOS SCA Plugin with your Bamboo CI
 <div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
-<img src="../assets/img/Bamboo.png" alt="bamboo" width="128" height="128">
+<img src="../assets/img/bamboo.png" alt="bamboo" width="128" height="128">
 </div>
 This document will take you step-by-step through the tasks required to set up a Bamboo project, for scan it with the SOOS SCA Product using our Plugin for Bamboo.
 
