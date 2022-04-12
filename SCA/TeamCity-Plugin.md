@@ -22,6 +22,7 @@ In this article we will make the necessary modifications to a simple TeamCity pr
 ### Setup Environment Variables
 * In the left-hand menu, select `Parameters` to review your environment variables.
 * The SOOS SCA Plugin needs `System Properties (system.)` in TeamCity, which are passed as parameters by the plugin. Create `SOOS_CLIENT_ID` and `SOOS_API_KEY` as system properties and fill in the values with those collected from the [SOOS App Integrations Page](https://app.soos.io/integrate/sca?id=teamcity).
+**Notice that if you have these environments values set up in your agent machine these will be overriden.**
 
 
 ## Run It
