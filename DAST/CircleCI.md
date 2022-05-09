@@ -44,6 +44,7 @@ In this article we will make the necessary modifications to a simple CircleCI pr
 ### **Build Setup**
 - In the CircleCI application, go to your project’s settings by clicking the gear icon on the Pipelines page, or the three dots on other pages in the application.
 <img src="../assets/img/circleci-settings.png">
+
 - Click on Environment Variables.
 - Add the SOOS_CLIENT_ID and SOOS_API_KEY variables by clicking the Add Variable button and enter the name and the value provided by the SOOS App. (See screenshot from Integration Steps section) 
 
