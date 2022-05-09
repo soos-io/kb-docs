@@ -19,7 +19,7 @@ In this article we will make the necessary modifications to a simple CircleCI pr
 ```
     version: 2.1
     orbs:
-        soos: soos-io/sca@1.0.0
+        soos: soos-io/dast@1.0.0
 
     workflows:
         main:
@@ -27,10 +27,11 @@ In this article we will make the necessary modifications to a simple CircleCI pr
 
                 # NOTE: YOUR OTHER JOBS GO HERE
 
-                - soos/analysis_run_and_wait:
+                - soos/run-dast-analysis:
                     client_id: "<<SOOS Client Id>>"
                     api_key: "<<SOOS API Key>>"
                     project_name: "<<Project Name>>"
+                    target_url: "<<Your Target URL To Scan>>"
 
                 # NOTE: YOUR OTHER JOBS GO HERE
 ```
@@ -45,4 +46,8 @@ In this article we will make the necessary modifications to a simple CircleCI pr
 <img src="../assets/img/circleci-settings.png">
 - Click on Environment Variables.
 - Add the SOOS_CLIENT_ID and SOOS_API_KEY variables by clicking the Add Variable button and enter the name and the value provided by the SOOS App. (See screenshot from Integration Steps section) 
+
+### **Additional Info**
+- For more technical information about the our DAST Orb you can refer to
+https://github.com/soos-io/soos-dast-circleci-orb
 
