@@ -27,7 +27,7 @@ In this article we will make the necessary modifications to a simple CircleCI pr
 
                 # NOTE: YOUR OTHER JOBS GO HERE
 
-                - soos/run-dast-analysis:
+                - soos/dast-analysis:
                     client_id: "<<SOOS Client Id env var name IF YOURS IS SOOS_CLIENT_ID there's no need to pass anything>>"
                     api_key: "<<SOOS API Key en var name IF YOURS IS SOOS_API_KEY there's no need to pass anything>>"
                     project_name: "<<Project Name>>"
