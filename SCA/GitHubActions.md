@@ -19,8 +19,15 @@ For more information, see "Creating new files" in GitHub Docs.
 * Paste the script given in the [GitHub Action SCA Integration page on SOOS](https://app.soos.io/integrate/sca?id=github-actions).
 
 
-### **Setup Environment Variables in GitHub repo**
-Navigate to your **Project’s Settings > Secrets** menu and in the “Repository secrets” section, create the SOOS_API_KEY and SOOS_CLIENT_ID secrets. These will serve as environment variables to be used by the SOOS CLI.(The values for the Client ID & API Key can be found on the [GitHub Action SCA Integration page on SOOS](https://app.soos.io/integrate/sca?id=github-actions).)
+### **Build Setup**
+
+Setup Environment Variables
+
+Under your Repository's Settings tab, select "Secrets" > "Actions" and add two new secrets which contain the SOOS Client Id and API Key which you can find in the SOOS App under [Integrate](https://app.soos.io/integrate)
+
+The secret names should be "SOOS_CLIENT_ID" and "SOOS_API_KEY"
+
+<img src="../assets/img/github-action-envs.png">
 
 ### **Build Config**
 Modify the `.github/workflows/main.yml` file, replacing the provided project_name variable value with one that is relevant to your project.
@@ -29,3 +36,36 @@ Modify the `.github/workflows/main.yml` file, replacing the provided project_nam
 To run the SOOS CLI against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
 
  
+## **Configure GitHub Code Scan Output**
+
+If you are using GitHub Enterprise or your repository is public, you can configure the SOOS Action to display any issues in GitHub Code Scanning Alerts. There are a few additional steps to get this configured.
+
+### **Setup**
+
+   - Create a new GitHub Personal Access Token which has a "repo" > "security_events" scope
+   - Copy the PAT value and add it to a new Action Secret for your repository with a name of "SOOS_GPAT"
+   - Adjust your Action code to pass the "sarif" and "gpat" parameters
+
+```
+name: Example workflow using SOOS
+# Events required to engage workflow (add/edit this list as needed)
+on: push
+jobs:
+  synchronous-analysis-with-blocking-result:
+    name: SOOS SCA Scan
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@master
+
+    - name: Run SOOS - Scan for vulnerabilities
+      uses: soos-io/soos-sca-github-action@v1.0.0
+      with:
+        project_name: "My Project Name"
+        sarif: true
+        gpat: ${{ secrets.SOOS_GPAT }}
+      env:
+        # Visit https://soos.io to get the required tokens to leverage SOOS scanning/analysis services
+        SOOS_CLIENT_ID: ${{ secrets.SOOS_CLIENT_ID }}
+        SOOS_API_KEY: ${{ secrets.SOOS_API_KEY }}
+```
