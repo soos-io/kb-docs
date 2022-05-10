@@ -19,7 +19,7 @@ In this article we will make the necessary modifications to a simple CircleCI pr
 ```
     version: 2.1
     orbs:
-        soos: soos-io/dast@1.0.0
+        soos: soos-io/dast@x.y.z # Check latest version on https://circleci.com/developer/orbs/orb/soos-io/dast
 
     workflows:
         main:
