@@ -11,13 +11,6 @@ In this article we will make the necessary modifications to a GitHub Workflow us
 
 ## Steps
 
-### **Setup Secrets**
-
-Under your Repositories Settings tab, select "Secrets" > "Actions" and add two new secrets which contain the SOOS Client Id and API Key which you can find in the SOOS App under [Integrate](https://app.soos.io/integrate)
-
-The secret names should be "SOOS_CLIENT_ID" and "SOOS_API_KEY"
-
-
 ### **Repo Setup**
 
 Create a `.github/workflows` directory in your repository on GitHub if this directory does not already exist.
@@ -44,6 +37,8 @@ jobs:
           apiscan_format: 'openapi' # Mandatory if you select apiscan mode 
           target_url: <Target URL>
 ```
+
+Note: The `target_url` **MUST** begin with `http://` or `https://`
 
 ### **Scan Modes**
 **Baseline Analysis**
@@ -78,7 +73,9 @@ It also includes 2 scripts that:
 
 Setup Environment Variables
 
-Navigate to your Project’s Settings > Secrets menu and in the “Repository secrets” section, create the SOOS_API_KEY and SOOS_CLIENT_ID secrets. These will serve as environment variables to be used by the SOOS CLI.
+Under your Repository's Settings tab, select "Secrets" > "Actions" and add two new secrets which contain the SOOS Client Id and API Key which you can find in the SOOS App under [Integrate](https://app.soos.io/integrate)
+
+The secret names should be "SOOS_CLIENT_ID" and "SOOS_API_KEY"
 
 <img src="../assets/img/github-action-envs.png">
 
