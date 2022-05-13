@@ -1,4 +1,4 @@
-# How to Integrate SOOS SCA with your Azure Dev Ops CI
+# How to Integrate SOOS SCA with your Azure CI
 <div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="azure" width="128" height="128">
