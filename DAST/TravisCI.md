@@ -4,6 +4,7 @@
 <img src="../assets/img/travis-ci.png" alt="Travis" width="128" height="128">
 </div>
 In this article we will make the necessary modifications to a simple TravisCI project to scan a GitHub or Bitbucket repository with the SOOS DAST Docker Image.
+
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
