@@ -59,13 +59,11 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Run SOOS - Scan for vulnerabilities
-      uses: soos-io/soos-sca-github-action@v1.0.0
+      uses: soos-io/soos-sca-github-action@vX.Y.Z # Get Latest Version from https://github.com/marketplace/actions/soos-core-sca
       with:
         project_name: "My Project Name"
         sarif: true
         gpat: ${{ secrets.SOOS_GPAT }}
-      env:
-        # Visit https://soos.io to get the required tokens to leverage SOOS scanning/analysis services
         SOOS_CLIENT_ID: ${{ secrets.SOOS_CLIENT_ID }}
         SOOS_API_KEY: ${{ secrets.SOOS_API_KEY }}
 ```
