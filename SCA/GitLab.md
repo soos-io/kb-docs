@@ -15,9 +15,9 @@ This document will take you step-by-step through the tasks required to set up a 
 
 ### **Repo Setup**
 
-* Create a new folder in your GitHub repository: `<repo_root>/soos/workspace/`
+* Create a new folder in your repository: `<repo_root>/soos/workspace/`
 * Place the requirements.txt and soos.py files in the `<repo_root>/soos/workspace` folder.
-* Commit these 2 new files and the new folder path to GitHub.
+* Commit these changes.
 
 ### **Configure GitLab**
 * Navigate to Settings > CI/CD under Projects.
