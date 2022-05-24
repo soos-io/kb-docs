@@ -20,7 +20,7 @@ This document will take you step-by-step through the tasks required to set up a 
 * Commit these changes.
 
 ### **Configure GitLab**
-* Navigate to Settings > CI/CD under Projects.
+* Under Projects, navigate to Settings > CI/CD.
 
 * Select the Expand button within the Variables section.
 
