@@ -20,8 +20,8 @@ soos-dast-analysis:
   environment:
     - SOOS_PROJECT_NAME=<Project Name>
     - SOOS_TARGET_URL=<Url to be Scanned>
-    - SOOS_CLIENT_ID: <SOOS Client Id from SOOS App>
-    - SOOS_API_KEY: <SOOS API Key from SOOS App>
+    - SOOS_CLIENT_ID= <SOOS Client Id from SOOS App>
+    - SOOS_API_KEY= <SOOS API Key from SOOS App>
   cached: true
 ```
 
