@@ -3,33 +3,22 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/gitlab.png" alt="GitLab" width="128" height="128">
 </div>
-This document will take you step-by-step through the tasks required to set up a GitLab repo, for scan it with the SOOS SCA Product.
+
+This document will walk you through, step-by-step, how to set up a GitLab repository and scan it with the SOOS SCA Product.
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a GitLab repo.
-- Have downloaded the latest release of the `soos.py` and `requirements.txt` from [here](https://github.com/soos-io/soos-ci-analysis-python/releases/)
+- You need to have a [SOOS account](https://app.soos.io/register).
+- You need to have a GitLab repository with a [supported](https://kb.soos.io/help/soos-languages-supported) manifest file.
 
 ## Steps
 
-### **Repo Setup**
+### Configure
+* When viewing your project, navigate to `Settings`, then to `CI/CD`, and expand the `Variables` section.
 
-* Create a new folder in your repository: `<repo_root>/soos/workspace/`
-* Place the requirements.txt and soos.py files in the `<repo_root>/soos/workspace` folder.
-* Commit these changes.
+* Using the `Client Id` and `API Key` values found on the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=gitlab), create environment variables named `SOOS_CLIENT_ID` and `SOOS_API_KEY` for those values, respectively. These values will be used by the SOOS CLI.
 
-### **Configure GitLab**
-* Under Projects, navigate to Settings > CI/CD.
+* Copy the contents of the `gitlab_sca.yml` file, as seen on the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=gitlab), to your `.gitlab-ci.yml` file.
 
-* Select the Expand button within the Variables section.
-
-* Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables.
-
-* Copy & paste the API key and Client ID values from the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=gitlab). These will serve as environment variables to be used by the SOOS CLI.
-
-* Add the SOOS script from the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=gitlab) to your .gitlab-ci.yml file.
-
-##  Run It
-To run the SOOS CLI against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
-
+## Run It
+To run the SOOS CLI against your repository, just execute a build or commit a change.
