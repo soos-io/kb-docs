@@ -8,7 +8,7 @@ This document will take you step-by-step through the tasks required to set up a 
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a Codeship repo.
+- You need to have a Codeship Basic project.
 - Have downloaded the latest release of the `soos.py` and `requirements.txt` from [here](https://github.com/soos-io/soos-ci-analysis-python/releases/)
 
 ## Steps
