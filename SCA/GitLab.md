@@ -18,11 +18,7 @@ This document will walk you through, step-by-step, how to set up a GitLab reposi
 
 * Using the `Client Id` and `API Key` values found on the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=gitlab), create environment variables named `SOOS_CLIENT_ID` and `SOOS_API_KEY` for those values, respectively. These variables will be used by the SOOS CLI.
 
-* Copy the contents of the `gitlab_sca.yml` file, as seen on the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=gitlab), to your `.gitlab-ci.yml` file.
-
-<div>
-<script src="https://gist.github.com/soostech/18ee324e95c234e3a0b2416eb1538feb.js"></script>
-</div>
+* Copy the contents of the [`gitlab_sca.yml`](https://gist.github.com/soostech/18ee324e95c234e3a0b2416eb1538feb) file, as seen on the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=gitlab), to your `.gitlab-ci.yml` file.
 
 ## Run It
 To run the SOOS CLI against your repository, just execute a build or commit a change.
