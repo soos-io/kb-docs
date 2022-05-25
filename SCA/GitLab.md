@@ -20,7 +20,9 @@ This document will walk you through, step-by-step, how to set up a GitLab reposi
 
 * Copy the contents of the `gitlab_sca.yml` file, as seen on the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=gitlab), to your `.gitlab-ci.yml` file.
 
+<div>
 <script src="https://gist.github.com/soostech/18ee324e95c234e3a0b2416eb1538feb.js"></script>
+</div>
 
 ## Run It
 To run the SOOS CLI against your repository, just execute a build or commit a change.
