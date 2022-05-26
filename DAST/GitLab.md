@@ -7,12 +7,10 @@
 This document will walk you through, step-by-step, how to set up a GitLab repository and scan it with the SOOS DAST Product.
 
 ## Prerequisites
-
 - You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a GitLab repo.
+- You need to have a GitLab repository.
 
 ## Steps
-
 * When viewing your project, navigate to `Settings`, then to `CI/CD`, and expand the `Variables` section.
 * Using the `Client Id` and `API Key` values found on the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=gitlab), create environment variables named `SOOS_CLIENT_ID` and `SOOS_API_KEY` for those values, respectively. These variables will be used by the SOOS CLI.
 * Copy the contents of the [`gitlab_dast_baseline.yml`](https://gist.github.com/soostech/7b74eb66cc1bde6cc4506eb67538fc14) file, as seen on the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/dast?id=gitlab), to your `.gitlab-ci.yml` file.
@@ -21,7 +19,6 @@ This document will walk you through, step-by-step, how to set up a GitLab reposi
 To run the SOOS CLI against your repository, just execute a build or commit a change.
 
 ## Scan Modes
-
 ### **Baseline Scan**
 * It performs a passive scan of HTTP messages (requests and responses) sent to the web application being tested. 
     * Passive scanning does not change the requests nor the responses in any way and is therefore safe to use.
