@@ -1,4 +1,4 @@
-# How to Integrate SOOS SCA with your Azure CI
+# How to integrate SOOS SCA with Azure DevOps
 <div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="azure" width="128" height="128">
@@ -29,5 +29,8 @@ Enable the following parameters as desired:
 - Whenever you run a scan the task will output a link to view the scan results to the console.
   - Note: If a scan has not completed before you view the results, then the information in the app will not be up-to-date.
 
-### Run It
+## Run It
 To run the SOOS Azure DevOps task against your repository’s code, just execute a build or commit a change.
+
+## Scan Ouput
+In order to see a detailed report of a scan's result, you need to enable `waitForScan` and set `outputFormat` to `'SARIF'`.
