@@ -3,7 +3,9 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/gitlab.png" alt="GitLab" width="128" height="128">
 </div>
-This document will take you step-by-step through the tasks required to set up a GitLab repo, for scan it with the SOOS DAST Product.
+
+This document will walk you through, step-by-step, how to set up a GitLab repository and scan it with the SOOS DAST Product.
+
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
@@ -11,13 +13,14 @@ This document will take you step-by-step through the tasks required to set up a 
 
 ## Steps
 
-<summary class='section-title'>Create or update your <code>.gitlab-ci.yml</code> file</summary>
+* When viewing your project, navigate to `Settings`, then to `CI/CD`, and expand the `Variables` section.
+* Using the `Client Id` and `API Key` values found on the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=gitlab), create environment variables named `SOOS_CLIENT_ID` and `SOOS_API_KEY` for those values, respectively. These variables will be used by the SOOS CLI.
+* Copy the contents of the [`gitlab_dast_baseline.yml`](https://gist.github.com/soostech/7b74eb66cc1bde6cc4506eb67538fc14) file, as seen on the [GitLab Integration page of the SOOS App](https://app.soos.io/integrate/dast?id=gitlab), to your `.gitlab-ci.yml` file.
 
-Once the `SOOS_CLIENT_ID` and `SOOS_API_KEY` have been configured, the next step is create or update the `.gitlab-ci.yml` file.
+## Run It
+To run the SOOS CLI against your repository, just execute a build or commit a change.
 
-**Note:** You need to create a `.gitlab-ci.yml` file in your repository root directory if you don't have it.
-
-1. Copy the content below in your `.gitlab-ci.yml` file to run the `SOOS DAST Analysis` according to what type of DAST Analysis you want to do.
+## Scan Modes
 
 ### **Baseline Scan**
 * It performs a passive scan of HTTP messages (requests and responses) sent to the web application being tested. 
@@ -95,8 +98,3 @@ export PARAMS="--clientId=${SOOS_CLIENT_ID} --apiKey=${SOOS_API_KEY} --projectNa
 cd /zap/
 python3 main.py ${SOOS_PARAMS} ${SOOS_TARGET_URL}
 ```
-
-
-##  Run It
-To run the SOOS DAST against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
-
