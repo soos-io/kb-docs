@@ -3,40 +3,31 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="azure" width="128" height="128">
 </div>
+
 In this article we will make the necessary modifications to a simple Azure project to scan a GitHub or Bitbucket repository with the SOOS SCA PRODUCT.
 
 ## Prerequisites
+- You need to have a [SOOS account](https://app.soos.io/register).
+- You need to have a Azure DevOps Project with a Pipeline.
+- You need to have a repository, connected to that pipeline, with a [supported](https://kb.soos.io/help/soos-languages-supported) manifest file.
+- You need to add the [**SOOS Security Analysis**](https://marketplace.visualstudio.com/items?itemName=SOOS.SOOS-Security-Analysis) task to your organization in Azure DevOps
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a Azure Project.
-- Have downloaded the latest release of the [**SOOS Core SCA**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/soos1643899774087.soos_msft?tab=Overview) from the Azure Marketplace
+## Steps
+- After the task is successfully installed, copy the contents of the [`azuredevops_sca.yml`](https://gist.github.com/soostech/983b3756ea3f6e3631d89c97604bd969) file, as see on the [Azure DevOps Integrations page in the SOOS app](https://app.soos.io/integrate/sca?id=azure-devops), to your `azure-pipelines.yml` file.
+- Using the `Client Id` and `API Key` values found on the [Azure DevOps Integrations page in the SOOS app](https://app.soos.io/integrate/sca?id=azure-devops), set the corresponding task parameters or use environment variables.
 
-### Steps
+## Optional Setup
+Enable the following parameters as desired:
+- `continueOnError` - prevents a failed build during maintenance window (Azure Task Parameter)
+- `waitForScan` - waits for the analysis scan to complete (SOOS task parameter)
 
-### **Setup the SOOS SCA in your `pipeline.yml`**
-After the task is successfully installed, download the Script Integration content from the [Azure DevOps Integrations page in the SOOS app](https://app.soos.io/integrate/sca?id=azure-devops) and paste to your existing pipeline yaml file or search for SOOS under Tasks.
-
-### **Setup Variables**
-Configure the SOOS variable, either directly in the yaml section or in the Task variables section.   Use the API Key and Client ID values you collected from the SOOS App.
-
-Make sure to also set the Project Name (which groups scans together) and the Build and Branch parameters if available.
-
-Providing the branch/build parameters allows us to tie together scans and issues, and provide more meaningful insights and actionability to you.
-
-### **Additional Azure Pipeline Setup Notes**
-Enable the following parameters in your pipeline as desired:
-
-* continueOnError - prevents a failed build during maintenance window (SOOS Task option)
-* waitForScan - waits for the analysis scan to complete (SOOS script parameter)
-
-These options will allow SOOS to return scan status information to Azure.  The task will either Succeed or Fail with one of the following messages:
-
-* Scan completed with # vulnerabilities and # violations.
-Scan failed.
-* Will appear if there was an error on the SOOS side while performing the scan.
-* Scan failed with # vulnerabilities and # violations.
-    * Will show if the Scan/Build configurations are turned on, and the corresponding settings in Azure are set to fail the build in the presence of failures due to vulnerabilities/violations. **Note, Scan/Build settings can be set at both the global & project level; make sure to check both!. (You can configure these options in [here](https://app.soos.io/settings/global)**
-    * The specifics of the vulnerabilities/violations will need to be viewed in SOOS, this information will not be returned to Azure.  A link to access the scan results will be provided in the message displayed in Azure.
+## Task Results
+- In your pipeline, the task will either Succeed, Succeed with Issues, or Fail.
+- Unless your task definition has set `continueOnError` to true, the task will fail during a maintenance window
+- When the `waitForScan` parameter is enabled and you have configured your Scan/Build settings, in the [SOOS app](https://app.soos.io/settings/global), to fail the build if either a vulnerability or policy violation is identified, the task will wait for the scan to complete and set the result accordingly.
+  - **Note: Scan/Build settings can be set at either the global level or overridden at the project level. (You can configure these options [here](https://app.soos.io/settings/global))**
+- Whenever you run a scan the task will output a link to view the scan results to the console.
+  - Note: If a scan has not completed before you view the results, then the information in the app will not be up-to-date.
 
 ### Run It
-To run the SOOS Azure DevOps task against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
+To run the SOOS Azure DevOps task against your repository’s code, just execute a build or commit a change.
