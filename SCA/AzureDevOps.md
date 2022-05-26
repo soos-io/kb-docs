@@ -33,4 +33,4 @@ Enable the following parameters as desired:
 To run the SOOS Azure DevOps task against your repository’s code, just execute a build or commit a change.
 
 ## Scan Ouput
-In order to see a detailed report of a scan's result, you need to enable `waitForScan` and set `outputFormat` to `'SARIF'`.
+In order to see a detailed report of a scan's results, you need to enable `waitForScan` and set `outputFormat` to `'SARIF'`.
