@@ -45,7 +45,7 @@ phases:
   build:
     commands:
       - cd /zap/
-      - python3 main.py --clientId=$SOOS_CLIENT_ID --apiKey=$SOOS_API_KEY --projectName=SOOS-DAST-AWS-CodeBuild-Test --scanMode=baseline --apiURL=https://api.soos.io/api/ <YOUR_TARGET_URL>
+      - python3 main.py --clientId=$SOOS_CLIENT_ID --apiKey=$SOOS_API_KEY --projectName=<YOUR_PROJECT_NAME> --scanMode=baseline --apiURL=https://api.soos.io/api/ <YOUR_TARGET_URL>
 ```
 
 </details>
