@@ -15,7 +15,7 @@ This document will take you step-by-step through the tasks required to set up a 
 
 ### **Repo Setup**
 * Create a new folder in your repository: `<repo_root>/soos/workspace/`
-* Place the requirements.txt and soos.py files in the `<repo_root>/soos/workspace` folder.
+* Place the requirements.txt and soos.py files in the `<repo_root>/soos/` folder.
 * Commit these 2 new files and the new folder path.
 
 ### **Setup environment variables in Codeship**
