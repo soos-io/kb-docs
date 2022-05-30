@@ -16,7 +16,7 @@ In this article we will make the necessary modifications to a simple AWS CodeBui
 
 ### **Repo Setup**
 * Create a new folder in your repository: `<repo_root>/soos/workspace/`
-* Place the requirements.txt and soos.py files in the `<repo_root>/soos/workspace` folder.
+* Place the requirements.txt and soos.py files in the `<repo_root>/soos/` folder.
 * Commit these 2 new files and the new folder path.
 
 ### **Configure Codebuild environment variables**
