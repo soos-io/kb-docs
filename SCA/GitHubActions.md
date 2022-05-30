@@ -64,6 +64,6 @@ jobs:
         project_name: "My Project Name"
         sarif: true
         gpat: ${{ secrets.SOOS_GPAT }}
-        SOOS_CLIENT_ID: ${{ secrets.SOOS_CLIENT_ID }}
-        SOOS_API_KEY: ${{ secrets.SOOS_API_KEY }}
+        client_id: ${{ secrets.SOOS_CLIENT_ID }}
+        api_key: ${{ secrets.SOOS_API_KEY }}
 ```
