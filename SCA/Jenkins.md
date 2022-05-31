@@ -1,4 +1,4 @@
-# How to Integrate SOOS SCA with your Jenkins CI
+# How to Integrate SOOS SCA with your Jenkins CI using the Jenkinsfile
 <div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/jenkins.png" alt="Jenkins" width="128" height="128">
