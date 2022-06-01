@@ -25,7 +25,7 @@ The script uses docker so it's fundamental for it to work that the agent running
     * system.clientId: SOOS client id
     * system.apiURL: SOOS API URL. By Default: https://api.soos.io/api/
     * system.projectName: SOOS project name
-    * system.scanMode: SOOS DAST scan mode. Values: baseline (Default), fullscan, apiscan, or activescan
+    * system.scanMode: SOOS DAST scan mode. Values: baseline (Default), fullscan, or apiscan
     * system.targetURL: target URL including the protocol, eg https://www.example.com
 
 ### **Build Step**
