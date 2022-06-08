@@ -8,20 +8,21 @@ This document will take you step-by-step through the tasks required to set up a 
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a Bamboo project.
+- Have downloaded the latest release of the `soos.py` and `requirements.txt` from [here](https://github.com/soos-io/soos-ci-analysis-python/releases/)
 
 ## Steps
 
 ### **Repo Setup**
-* Create a new folder in your repository: <repo_root>/bamboo-specs
-* Create a bamboo.yml file with the contents given on [Bamboo Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=bamboo) under the bamboo-specs option.
-* Place the bamboo.yml under  <repo_root>/bamboo-specs/ folder that you created.
-* Commit the new file and the new folder.
-
+* Create a new folder in your repository: `<repo_root>/soos/workspace/`
+* Place the requirements.txt and soos.py files in the `<repo_root>/soos/workspace` folder.
+* Commit these 2 new files and the new folder path.
 
 ### **Build Setup in bamboo**
-* Navigate to Administration -> Linked Repositories
-* Select the repository you have set up your bamboo specs. Enable the option Scan for Bamboo Specs.
-* In the specs status tab you can scan for the bamboo.yml file to be added to the steps of the build.
+* Navigate to your project’s job-task header and press the **Add task** button. Make sure this task has a predecessor task to checkout your repo’s source code.
+* Type Command into the search box and choose the Command task option.
+* Enter a task description, such as 'Run SOOS Scan'.
+* Now, add the SOOS script from the [Bamboo Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=bamboo) under the Python tab.
+* Make sure to set the Project Name (which groups scans together) and the Build and Branch parameters. Providing the branch/build parameters allows us to tie together  scans and issues, and provide more meaningful insights and actionability to you. 
 
 ### **Setup Environment Variables**
 * Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables, either under the Global Variables or the Plan Variables sections.
