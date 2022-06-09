@@ -29,7 +29,7 @@ In the left-hand menu, select **Parameters**.
 * Within your **Build Configuration** select **Build Step** in the left-hand menu.
 * Click the **Add build step** button.
 * When prompted, select Command Line from the **Runner type** menu.
-* Give the build step a name that is relevant (such as SOOS Analysis) and enter the SOOS script from the [TeamCity Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=teamcity) to the **Command** field.
+* Give the build step a name that is relevant (such as SOOS Analysis) and enter the SOOS script from the [TeamCity Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=teamcity) to the **Custom script** field.
 * Make sure to set the Project Name (which groups scans together) and the Build/Branch parameters.
     * Providing the build/branch parameters allows us to tie together scans and issues, and provide more meaningful insights and actionability to you.
 * Save your new step.
