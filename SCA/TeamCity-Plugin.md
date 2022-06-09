@@ -9,6 +9,7 @@ In this article we will make the necessary modifications to a simple TeamCity pr
 - You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a TeamCity project.
 - Have installed the latest version of the [SOOS SCA Plugin](https://plugins.jetbrains.com/plugin/18222-soos-sca)
+- Have JDK 11 configured on your Teamcity agent.
 
 ## Steps
 
