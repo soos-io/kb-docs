@@ -111,6 +111,9 @@ jobs:
           scan_mode: <Scan Mode> # "baseline", fullscan, or apiscan
           apiscan_format: 'openapi' # Mandatory if you select apiscan mode 
           target_url: <Target URL>
-          sarif: true
-          gpat: ${{ secrets.SOOS_GPAT }}
+          output_format: "sarif"
+      - name: Upload SOOS DAST Report # 3rd party action to upload sarif results to your github repo
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: results.sarif
 ```
