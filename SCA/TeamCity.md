@@ -9,13 +9,13 @@ In this article we will make the necessary modifications to a simple TeamCity pr
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a TeamCity project.
-- Have downloaded the latest release of the `soos.py` and `requirements.txt` from [here](https://github.com/soos-io/soos-ci-analysis-python/releases/)
+- Have downloaded the latest release of the `requirements.txt`,`soos.py` and `VERSION.txt` from [here](https://github.com/soos-io/soos-ci-analysis-python/releases/)
 
 ## Steps
 
 ### **Repo Setup**
 * Create a new folder in your repository: `<repo_root>/soos/workspace/`
-* Place the requirements.txt and soos.py files in the `<repo_root>/soos/workspace` folder.
+* Place the `requirements.txt`,`soos.py` and `VERSION.txt` files in the `<repo_root>/soos/workspace` folder.
 * Commit these 2 new files and the new folder path.
 
 ### **Configure TeamCity Environment variables**
