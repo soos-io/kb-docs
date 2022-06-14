@@ -19,7 +19,7 @@ This document will take you step-by-step through the tasks required to set up a 
 
 ### **Build Setup in bamboo**
 * Navigate to your project’s job-task header and press the **Add task** button. Make sure this task has a predecessor task to checkout your repo’s source code.
-* Type Command into the search box and choose the Command task option.
+* Type Script into the search box and choose the Script task option.
 * Enter a task description, such as 'Run SOOS Scan'.
 * Now, add the SOOS script from the [Bamboo Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=bamboo) under the Python tab.
 * Make sure to set the Project Name (which groups scans together) and the Build and Branch parameters. Providing the branch/build parameters allows us to tie together  scans and issues, and provide more meaningful insights and actionability to you. 
