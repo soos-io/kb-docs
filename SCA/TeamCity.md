@@ -37,7 +37,7 @@ In the left-hand menu, select **Parameters**.
 ### **Configure Script Parameters**
 Within your **Build Configuration**, select **Parameters** from the left-hand menu. Use the values shown below to populate the available parameters.  Customize as needed.
 
-<img src="../assets/img/teamcity-sca-params.png" alt="teamcity">
+<img src="../assets/img/teamcity-sca-parameters.png" alt="teamcity">
 
 ## Run It
 To run the SOOS CLI against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
