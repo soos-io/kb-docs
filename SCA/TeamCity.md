@@ -19,7 +19,7 @@ In this article we will make the necessary modifications to a simple TeamCity pr
 * Commit these 2 new files and the new folder path.
 
 ### **Configure TeamCity Environment variables**
-* Within TeamCity, navigate to **Build Configurations**.
+* Within the TeamCity project, navigate to **Build Configurations**.
 * Select the **Create build configuration** button and enter a name for the new build.
 In the left-hand menu, select **Parameters**.
 * Create the env.SOOS_API_KEY and env.SOOS_CLIENT_ID environment variables in the **Environment Variables** section.
