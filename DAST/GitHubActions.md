@@ -88,11 +88,7 @@ To run the SOOS DAST Analysis against your repository’s code, just execute a b
 
 If you are using GitHub Enterprise or your repository is public, you can configure the SOOS Action to display any issues in GitHub Code Scanning Alerts. There are a few additional steps to get this configured.
 
-### **Setup**
-
-   - Create a new GitHub Personal Access Token which has a "repo" > "security_events" scope
-   - Copy the PAT value and add it to a new Action Secret for your repository with a name of "SOOS_GPAT"
-   - Adjust your Action code to pass the "sarif" and "gpat" parameters
+### **Example worfklow setup for SARIF Upload**
 
 ```
 on: [push]
@@ -117,3 +113,5 @@ jobs:
         with:
           sarif_file: results.sarif
 ```
+
+**NOTE:** If you don't have a checkout step you migth encounter an error on the logs for the Upload-Sarif action but thats a non-issue, if you want to keep the log clean just add a checkout step before the scan is performed.
