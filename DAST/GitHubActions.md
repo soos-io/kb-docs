@@ -114,4 +114,4 @@ jobs:
           sarif_file: results.sarif
 ```
 
-**NOTE:** If you don't have a checkout step you migth encounter an error on the logs for the Upload-Sarif action but thats a non-issue, if you want to keep the log clean just add a checkout step before the scan is performed.
+**NOTE:** If you don't have a checkout step you might encounter an error in the logs for the Upload-Sarif action. This can be ignored (it's a non-issue) but if you want to keep your log clean, just add a checkout step in your workflow before the scan step.
