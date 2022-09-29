@@ -90,7 +90,7 @@ If you are using GitHub Enterprise or your repository is public, you can configu
 
 ### **Example worfklow setup for SARIF Upload**
 
-```
+``` yaml
 on: [push]
  
 jobs:
@@ -115,3 +115,94 @@ jobs:
 ```
 
 **NOTE:** If you don't have a checkout step you might encounter an error in the logs for the Upload-Sarif action. This can be ignored (it's a non-issue) but if you want to keep your log clean, just add a checkout step in your workflow before the scan step.
+
+
+## Authenticated scans
+
+### Using bearer token
+
+If you need to run a scan against url that needs authorization and the only thing needed is to set an authorization header in the form of `authorization: Bearer token-value` then this is the most straight forward workflow (note that for this method you should have the bearer token value beforehand).
+
+example workflow:
+
+``` yaml
+on: [push]
+jobs:
+  synchronous-analysis-with-blocking-result:
+    name: SOOS DAST Scan
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Run SOOS DAST Baseline Analysis performing bearer token authentication
+      uses: soos-io/soos-dast-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-dast
+      with:
+        client_id: ${{ secrets.SOOS_CLIENT_ID }}
+        api_key: ${{ secrets.SOOS_API_KEY }}
+        project_name: "DAST-bearer-token"
+        scan_mode: "baseline"
+        bearer_token: "token-value"
+        api_url: "https://api.soos.io/api/"
+        target_url: "https://www.example.com/"
+```
+
+### Authenticate throughout a login form and get the auth token.
+
+Using this option there will be an automated login form authentication performed before running the DAST scan to get the bearer token that will be then added to every request as the authorization header.
+
+This is how a example workflow will look like:
+
+``` yaml
+
+on: [push]
+
+jobs:
+  synchronous-analysis-with-blocking-result:
+    name: SOOS DAST Scan
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Run SOOS DAST Baseline Analysis performing form authentication
+      uses: soos-io/soos-dast-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-dast
+      with:
+        client_id: ${{ secrets.SOOS_CLIENT_ID }}
+        api_key: ${{ secrets.SOOS_API_KEY }}
+        project_name: "DAST-login-form"
+        scan_mode: "baseline"
+        api_url: "https://api.soos.io/api/"
+        target_url: "https://example.com/"
+        auth_login_url: "https://example.com/login"
+        auth_username: "username-to-fill-field"
+        auth_password: "password-to-fill-field"
+        auth_username_field: "username-html-input-id"
+        auth_password_field: "password-html-input-id"
+        auth_submit_field: "submit-html-input-id"
+
+```
+
+### Authenticate against an OAuth token url.
+
+In case you need to perform a DAST analysis against an OAuth application this is the workflow that you should follow. In this scenario the DAST tool will perform a request to get the `access_token` before doing any analysis.
+
+Workflow example:
+
+``` yaml
+on: [push]
+
+jobs:
+  synchronous-analysis-with-blocking-result:
+    name: SOOS DAST Scan
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Run SOOS DAST Baseline Analysis performing OAuth
+      uses: soos-io/soos-dast-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-dast
+      with:
+        client_id: ${{ secrets.SOOS_CLIENT_ID }}
+        api_key: ${{ secrets.SOOS_API_KEY }}
+        project_name: "DAST-OAuth"
+        scan_mode: "baseline"
+        api_url: "https://api.soos.io/api/"
+        target_url: "https://example.com/"
+        oauth_token_url: "https://example.com/token"
+        oauth_parameters: "client_secret:value ,client_id:value , grant_type:value"
+```
