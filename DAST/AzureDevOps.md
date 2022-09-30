@@ -5,11 +5,6 @@
 </div>
 This document will take you step-by-step through the tasks required to set up an Azure project, for scan it with the SOOS DAST Product.
 
-## Important
-The SOOS Azure DevOps Task is currently invite only. Please email support@soos.io or use the Contact Us option under the Help menu to request access.
-Please include your Azure DevOps organization name so we know where to send the invite!
-
-
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
@@ -19,7 +14,7 @@ Please include your Azure DevOps organization name so we know where to send the 
 
 ### **Installing the task**
 
-After receiving the SOOS invitation, the SOOS task will be found under the shared extension listing in your organization settings.  Click the option to install the task. The installation has been completed successfully when it is visible under the Installed listing.
+The SOOS task will be found under the shared extension listing in your organization settings. Click the option to install the task. The installation has been completed successfully when it is visible under the Installed listing.
 
 <img src="../assets/img/azure-install.png">
 
