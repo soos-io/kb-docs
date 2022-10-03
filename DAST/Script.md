@@ -132,6 +132,12 @@ It also includes 2 scripts that:
 - Raise alerts for any HTTP Server Error response codes
 - Raise alerts for any URLs that return content types that are not usually associated with APIs
 
+Example snippet of API scan feeding spec file locally:
+
+``` bash
+docker run -v <path_to_folder_containing_file>:/zap/wrk/:rw -it soosio/dast <name_of_file>  --scanMode="apiscan" --apiScanFormat="openapi"  --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --apiURL="https://api.soos.io/api/"
+```
+
 ### Running the script
 
 To run the script just execute the file created with the sample script obtained from [getting the script](#getting-the-script), just make sure that you have replaced the project name and set up the environment variables properly.

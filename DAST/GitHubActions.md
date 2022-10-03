@@ -61,7 +61,7 @@ By default, it reports all alerts as WARNings but you can specify a config file 
 
 **API Analysis**
 
-It is tuned for performing scans against APIs defined by OpenAPI, SOAP, or GraphQL via either a local file or a URL.
+It is tuned for performing scans against APIs defined by OpenAPI, SOAP, or GraphQL via a URL.
 
 It imports the definition that you specify and then runs an Active Scan against the URLs found. The Active Scan is tuned to APIs, so it doesn't bother looking for things like XSSs.
 
