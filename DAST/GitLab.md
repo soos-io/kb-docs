@@ -81,7 +81,7 @@ soos-dast-analysis:
 ```
 
 ### **API Scan**
-* This scan mode performs an analysis of an API.
+* This scan mode performs an analysis of an API, the TARGET_URL should be the spec file URL where its publicly available.
 * In addition to `clientId`, `apiKey`, and `projectName`, the `apiscanFormat` parameter is also required.
 
 ```

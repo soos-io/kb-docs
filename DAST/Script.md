@@ -30,23 +30,55 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 
 ### **Script Parameters**
 
-| Name                                       | Required                                   | Description                                                                                          |
-|--------------------------------------------|--------------------------------------------|------------------------------------------------------------------------------------------------------|
-| `configFile`                               |                                            | SOOS YAML file with all the configurations for the DAST Analysis. See [config file definition](#config-file-definition)          |
-| `-v <path_with_config_files>:/zap/config/` | Yes - if `configFile` param is defined     |                                                                                                      |
-| `clientId`                                 | Yes - if `configFile` param is not defined | SOOS client id                                                                                       |
-| `apiKey`                                   | Yes - if `configFile` param is not defined | SOOS API key                                                                                         |
-| `projectName`                              | Yes - if `configFile` param is not defined | SOOS project name                                                                                    |
-| `scanMode`                                 | Yes - if `configFile` param is not defined | SOOS DAST scan mode. Values: `baseline` (Default), `fullscan`, or `apiscan`                          |
-| `apiURL`                                   | Yes - if `configFile` param is not defined | SOOS API URL. By Default: `https://app.soos.io/api/`                                                 |
-| `debug`                                    |                                            | show debug messages                                                                                  |
-| `ajaxSpider`                               |                                            | use the Ajax spider in addition to the traditional one                                               |
-| `rules`                                    |                                            | rules file to use for `INFO`, `IGNORE` or `FAIL` warnings                                             |
-| `contextFile`                              |                                            | context file which will be loaded prior to scanning the target. Required for authenticated URLs      |
-| `contextUser`                              |                                            | username to use for authenticated scans - must be defined in the given context file                  |
-| `fullScanMinutes`                          | Yes - if `scanMode` is `fullscan`          | the number of minutes for spider to run                                                                  |
-| `apiScanFormat`                            | Yes - if `scanMode` is `apiscan`           | target API format: `openapi`, `soap`, or `graphql`                                                   |
-| `level`                                    |                                            | minimum level to show: `PASS`, `IGNORE`, `INFO`, `WARN` or `FAIL`                                    |
+| Argument | Default | Description |
+| --- | --- | --- |
+| -h, --help | ==SUPPRESS== | show this help message and exit |
+| -hf, --helpFormatted | False | Print the --help command in markdown table format |
+| --configFile | None | SOOS yaml file with all the configuration for the DAST Analysis (See https://github.com/soos-io/soos-dast#config-file-definition) |
+| --clientId | None | SOOS Client ID get yours from https://app.soos.io/integrate/sca |
+| --apiKey | None | SOOS API Key get yours from https://app.soos.io/integrate/sca |
+| --projectName | None | Project name (this will be the one used inside of the SOOS App) |
+| --scanMode | baseline | SOOS DAST scan mode. Values available: baseline, fullscan, and apiscan (for more information about scan modes visit https://github.com/soos-io/soos-dast#scan-modes) |
+| --apiURL | https://api.soos.io/api/ | SOOS API URL, internal use only, do not modify. |
+| --debug | False | Show debug messages |
+| --ajaxSpider | None | Use the Ajax spider in addition to the traditional one (About AjaxSpider https://www.zaproxy.org/docs/desktop/addons/ajax-spider/) |
+| --rules | None | Rules file to use to INFO, IGNORE or FAIL warnings |
+| --contextFile | None | Context file which will be loaded prior to scanning the target |
+| --contextUser | None | Username to use for authenticated scans - must be defined in the given context file |
+| --fullScanMinutes | None | The number of minutes for spider to run |
+| --apiScanFormat | None | Target API format: OpenAPI, SOAP, or GraphQL |
+| --level | None | minimum level to show: PASS, IGNORE, INFO, WARN or FAIL |
+| --integrationName | None | Integration Name. Intended for internal use only. |
+| --integrationType | None | Integration Type. Intended for internal use only. |
+| --scriptVersion | None | Script Version. Intended for internal use only. |
+| --appVersion | None | App Version. Intended for internal use only. |
+| --authDisplay | None | Minimum level to show: PASS, IGNORE, INFO, WARN or FAIL |
+| --authUsername | None | Username to use in auth apps |
+| --authPassword | None | Password to use in auth apps |
+| --authLoginURL | None | Login url to use in auth apps |
+| --authUsernameField | None | Username input id to use in auth apps |
+| --authPasswordField | None | Password input id to use in auth apps |
+| --authSubmitField | None | Submit button id to use in auth apps |
+| --authFirstSubmitField | None | First submit button id to use in auth apps |
+| --authSubmitAction | None | Submit action to perform on form filled, click or submit |
+| --zapOptions | None | ZAP Additional Options |
+| --requestCookies | None | Set Cookie values for the requests to the target URL |
+| --requestHeaders | None | Set extra Header requests |
+| --commitHash | None | The commit hash value from the SCM System |
+| --branchName | None | The name of the branch from the SCM System |
+| --branchURI | None | The URI to the branch from the SCM System |
+| --buildVersion | None | Version of application build artifacts |
+| --buildURI | None | URI to CI build info |
+| --operatingEnvironment | None | Set Operating environment for information porpuses only |
+| --reportRequestHeaders | False | Include request/response headers data in report |
+| --outputFormat | None | Output format for vulnerabilities: only the value sarif is available at the moment |
+| --gpat | None | GitHub Personal Authorization Token |
+| --bearerToken | None | Bearer token to authenticate |
+| --checkoutDir | None | Checkout Dir to locate sarif report |
+| --sarifDestination | None | Sarif destination to upload report in the form of <repoowner>/<reponame> |
+| --sarif | None | DEPRECATED sarif parameter is currently deprecated, for same functionality as before please use --outPutFormat='sarif' |
+| --oauthTokenUrl | None | The fully qualified authentication URL that grants the access_token. |
+| --oauthParameters | None | Parameters to be added to the oauth token request. (eg --oauthParameters="client_id:clientID, client_secret:clientSecret, grant_type:client_credentials") |
 
 
 #### **Config File Definition**
@@ -100,7 +132,45 @@ It also includes 2 scripts that:
 - Raise alerts for any HTTP Server Error response codes
 - Raise alerts for any URLs that return content types that are not usually associated with APIs
 
+Example snippet of API scan feeding spec file locally:
+
+``` bash
+docker run -v <path_to_folder_containing_file>:/zap/wrk/:rw -it soosio/dast <name_of_file>  --scanMode="apiscan" --apiScanFormat="openapi"  --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --apiURL="https://api.soos.io/api/"
+```
+
 ### Running the script
 
 To run the script just execute the file created with the sample script obtained from [getting the script](#getting-the-script), just make sure that you have replaced the project name and set up the environment variables properly.
- 
+
+## Authenticated scans
+
+### Using bearer token
+
+If you need to run a scan against url that needs authorization and the only thing needed is to set an authorization header in the form of `authorization: Bearer token-value` then this is the most straight forward workflow (note that for this method you should have the bearer token value beforehand).
+
+Example snippet:
+
+``` bash
+docker run -it soosio/dast:latest "https://example.com/protectedendnpoint" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --bearerToken="token-value" --apiURL="https://api.soos.io/api/"
+```
+
+
+### Authenticate throughout a login form and get the auth token.
+
+Using this option there will be an automated login form authentication performed before running the DAST scan to get the bearer token that will be then added to every request as the authorization header.
+
+This is how a example snippet will look like:
+
+``` bash
+docker run -it soosio/dast:latest "https://example.com" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --authLoginURL="https://example.com/login" --authUsername="username" --authPassword="password" --authUsernameField="userName" --authPasswordField="password" --authSubmitField="login" --apiURL="https://api.soos.io/api/"
+```
+
+
+### Authenticate against an OAuth token url.
+
+In case you need to perform a DAST analysis against an OAuth application this is the snippet that you should follow. In this scenario the DAST tool will perform a request to get the `access_token` before doing any analysis.
+
+Snippet example:
+``` bash
+docker run -it soosio/dast:latest "https://example.com" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --oauthTokenUrl="https://example.com/token" --oauthParameters="client_id:value, client_secret:value, grant_type:value" --apiURL="https://api.soos.io/api/"
+```

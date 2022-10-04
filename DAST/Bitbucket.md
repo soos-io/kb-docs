@@ -86,7 +86,7 @@ pipelines:
 * API Scan 
     * The api scan performs an analysis of APIs.
     * The apiScanFormat must be defined as one of: openapi, soap, or graphql
-    * The `TARGET_URL` parameter requires a website to test (starting with http(s)://). This value can be set when the pipeline is run.
+    * The `TARGET_URL` parameter in this scenario requires a publicly available URL where the spec file is hosted.
     * We recommend defining apiKey and clientId as Environment Variables (see Build Setup section) to protect your credentials.
 
 ```
