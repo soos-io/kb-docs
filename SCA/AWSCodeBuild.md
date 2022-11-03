@@ -13,6 +13,10 @@ In this article we will make the necessary modifications to a simple AWS CodeBui
 
 ## Steps
 
+### **Configure Codebuild base image**
+
+When setting up the project make sure to use the **aws/codebuild/standard:5.0** image in order for it to work
+
 ### **Configure Codebuild environment variables**
 
 * Within Codebuild navigate to your Project and select **"Environment"** from the **"Edit"** menu.
