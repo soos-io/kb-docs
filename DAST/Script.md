@@ -13,7 +13,7 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
 - Have [docker installed.](https://docs.docker.com/get-docker/) in the Host machine.
-
+- Not using an M1/M2 Mac as host machine. (SOOS Dast docker image is incompatible with this platform)
 ## Steps
 ### **Getting the script**
 * Navigate to the [Script DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=script) and copy the script content according to the OS you're running.
