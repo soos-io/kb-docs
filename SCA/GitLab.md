@@ -9,6 +9,7 @@ This document will walk you through, step-by-step, how to set up a GitLab reposi
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register).
 - You need to have a GitLab repository with a [supported](https://kb.soos.io/help/soos-languages-supported) manifest file.
+- A GitLab runner compatible with Docker if you are running GitLab on premises
 
 ## Steps
 * When viewing your project, navigate to `Settings`, then to `CI/CD`, and expand the `Variables` section.
