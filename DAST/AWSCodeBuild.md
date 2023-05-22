@@ -22,8 +22,9 @@ Navigate to your project and select “Environment” from the “Edit” menu.
 In the main section complete the following inputs:
 - Environment Image: Custom Image
 - Environment Type: Linux
-- Image registry: Other registry
-- External registry URL: soos/dast
+- Image registry: Amazon ECR
+- Amazon ECR repository URI: public.ecr.aws/y6h0x1r3/soos-dast
+- Amazon ECR image tag: latest
 - Role Name: Use existing or create new role name
 
 <img src="../assets/img/codebuild-envs.png">
