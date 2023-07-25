@@ -48,3 +48,6 @@ On the next screen:
 
 ### **Run It**
 To run SOOS DAST against your webapp, just execute a build. The build will use the environment variables that you created for the API Key and Client ID.
+
+## Reference
+* To see the full list of available parameters go to [DAST repository parameters description](https://github.com/soos-io/soos-dast#parameters)

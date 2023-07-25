@@ -108,3 +108,6 @@ soos-dast-analysis:
       --buildURI="${CI_JOB_URL}"
       ${TARGET_URL}
 ```
+
+## Reference
+* To see the full list of available parameters go to [DAST repository parameters description](https://github.com/soos-io/soos-dast#parameters)

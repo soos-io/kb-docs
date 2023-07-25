@@ -127,3 +127,6 @@ Copy & paste the API key and Client ID values from the [Bitbucket Integration pa
 **Run It**
 
 To run the SOOS DAST Analysis against your webapp or API, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
+
+## Reference
+* To see the full list of available parameters go to [DAST repository parameters description](https://github.com/soos-io/soos-dast#parameters)

@@ -30,3 +30,7 @@ This document will take you step-by-step through the tasks required to set up a 
 
 ## Run It
 To run the SOOS CLI against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
+
+
+## Reference
+* To see the full list of available parameters go to [Python repository parameters description](https://github.com/soos-io/soos-ci-analysis-python#script-arguments)

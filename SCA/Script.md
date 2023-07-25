@@ -52,3 +52,6 @@ The Python script will respond to SOOS API maintenance in two ways depending on 
 
 * If set to fail the build (-of="fail_the_build"), the script will exit with a non-successful exit code and fail the build during maintenance mode.
     * Otherwise a warning will be displayed and the scan will be skipped and appear to be successful in your CI/CD system.
+
+## Reference
+* To see the full list of available parameters go to [Python repository parameters description](https://github.com/soos-io/soos-ci-analysis-python#script-arguments)
