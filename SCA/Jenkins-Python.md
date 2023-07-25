@@ -47,3 +47,6 @@ If errors such as the following are received:
 Open Jenkins > Manage Jenkins > Configure System > Environment.
 Add a "path" variable with values pointing to the Python install and Python scripts directory. 
 E.g.: [C:\Users\USER\AppData\Local\Programs\Python\Python39\;C:\Users\USER\AppData\Local\Programs\Python\
+
+## Reference
+* To see the full list of available parameters go to [Python repository parameters description](https://github.com/soos-io/soos-ci-analysis-python#script-arguments)

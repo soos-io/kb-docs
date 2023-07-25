@@ -44,3 +44,6 @@ Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables, under the Glob
 
 ### Run It
 To run SOOS DAST against your webapp, just run the plan you created in the specs file. The build will use the environment variables that you created for the API Key and Client ID.
+
+## Reference
+* To see the full list of available parameters go to [DAST repository parameters description](https://github.com/soos-io/soos-dast#parameters)
