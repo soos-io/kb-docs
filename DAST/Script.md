@@ -25,7 +25,7 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 
 | Argument | Required | Description |
 | --- | --- | --- |
-| `targetURL` | Yes | Target URL - URL of the site or api to scan. The URL should include the protocol. Ex: https://www.example.com |
+| `targetURL` | Yes | Target URL - URL of the site or api to scan. It can be the path of an API specification file when doing apiscan. The URL should include the protocol. Ex: https://www.example.com |
 
 ### Script Parameters
 
