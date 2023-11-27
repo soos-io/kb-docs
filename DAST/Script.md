@@ -45,7 +45,7 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 | `--authUsername` | None | Username to use when authentication is required |
 | `--authUsernameField` | None | Username input id to use when authentication is required |
 | `--authVerificationURL` | None | URL used to verify authentication success, should be an URL that is expected to throw 200/302 during any authFormType authentication. If authentication fails when this URL is provided, the scan will be terminated. |
-| `--bearerToken` | None | Bearer token to authenticate |
+| `--bearerToken` | None | Bearer token to use in a request header for auth |
 | `--branchName` | None | The name of the branch from the SCM System |
 | `--branchURI` | None | The URI to the branch from the SCM System |
 | `--buildURI` | None | URI to CI build info |
@@ -68,8 +68,8 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 | `--otherOptions` | None | Additional command line arguments for items not supported by the set of parameters above |
 | `--outputFormat` | None | Output format for vulnerabilities: only the value SARIF is available at the moment |
 | `--projectName` | None | Project Name - this is what will be displayed in the SOOS app |
-| `--requestCookies` | None | Set Cookie values for the requests to the target URL |
-| `--requestHeaders` | None | Set extra Header requests |
+| `--requestCookies` | None | Set Cookie value(s) for each request |
+| `--requestHeaders` | None | Set extra request headers set on each request |
 | `--scanMode` | baseline | Scan Mode - Available modes: baseline, fullscan, and apiscan (for more information about scan modes visit https://github.com/soos-io/soos-dast#scan-modes) |
 | `--scriptVersion` | None | Script Version - Intended for internal use only. |
 
