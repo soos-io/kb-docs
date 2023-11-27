@@ -34,7 +34,7 @@ Open “Additional Configuration” to reveal the “Environment Variables” se
 <img src="../assets/img/codebuild-additionalconfig.png">
 
 ### **Set Build Commands**
-Return to the 'Edit' menu and select BuildSpec > Insert build commands.  Add the script provided in the AWS integration page in the SOOS App. Edit the individual arguments (e.g. the scan mode and the target URL) as needed, and then click the "Update BuildSpec" button.
+Return to the "Edit" menu and select "BuildSpec" > "Insert build commands".  Add the script provided in the AWS integration page in the SOOS App. Edit the individual arguments (e.g. the scan mode and the target URL) as needed, and then click the "Update BuildSpec" button.
 
 <details open>
 <summary> Example Script </summary>
