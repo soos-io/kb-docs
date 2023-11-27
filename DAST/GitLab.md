@@ -33,14 +33,12 @@ soos-dast-analysis:
   variables:
     TARGET_URL: "https://example.com"
     SCAN_MODE: "baseline"
-    USE_AJAX_SPIDER: "true" # Helpful for websites that make heavy use of AJAX. Defaults to "false".
   script:
     - cd /zap/
-    - python3 main.py
+    - node index.js
       --clientId="${SOOS_CLIENT_ID}"
       --apiKey="${SOOS_API_KEY}"
       --scanMode="${SCAN_MODE}"
-      --ajaxSpider="${USE_AJAX_SPIDER}"
       --integrationName="GitLab"
       --projectName="${CI_PROJECT_TITLE}"
       --branchName="${CI_COMMIT_BRANCH}"
@@ -64,14 +62,12 @@ soos-dast-analysis:
   variables:
     TARGET_URL: "https://example.com"
     SCAN_MODE: "fullscan"
-    USE_AJAX_SPIDER: "true" # Helpful for websites that make heavy use of AJAX. Defaults to "false".
   script:
     - cd /zap/
-    - python3 main.py
+    - node index.js
       --clientId="${SOOS_CLIENT_ID}"
       --apiKey="${SOOS_API_KEY}"
       --scanMode="${SCAN_MODE}"
-      --ajaxSpider="${USE_AJAX_SPIDER}"
       --integrationName="GitLab"
       --projectName="${CI_PROJECT_TITLE}"
       --branchName="${CI_COMMIT_BRANCH}"
@@ -96,7 +92,7 @@ soos-dast-analysis:
     API_FORMAT: "openapi" # "soap" or "graphql"
   script:
     - cd /zap/
-    - python3 main.py
+    - node dist/index.js
       --clientId="${SOOS_CLIENT_ID}"
       --apiKey="${SOOS_API_KEY}"
       --scanMode="${SCAN_MODE}"

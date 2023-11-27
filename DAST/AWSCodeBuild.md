@@ -34,7 +34,7 @@ Open “Additional Configuration” to reveal the “Environment Variables” se
 <img src="../assets/img/codebuild-additionalconfig.png">
 
 ### **Set Build Commands**
-Return to the 'Edit' menu and select Buildspec > Insert build commands.  Add the script provided in the AWS integration page in the SOOS App. Edit the individual arguments (e.g. the scan mode and the target URL) as needed, and then click the “Update Buildspec” button.
+Return to the 'Edit' menu and select BuildSpec > Insert build commands.  Add the script provided in the AWS integration page in the SOOS App. Edit the individual arguments (e.g. the scan mode and the target URL) as needed, and then click the “Update BuildSpec button.
 
 <details open>
 <summary> Example Script </summary>
@@ -46,7 +46,7 @@ phases:
   build:
     commands:
       - cd /zap/
-      - python3 main.py --clientId=$SOOS_CLIENT_ID --apiKey=$SOOS_API_KEY --projectName=<YOUR_PROJECT_NAME> --scanMode=baseline --apiURL=https://api.soos.io/api/ <YOUR_TARGET_URL>
+      - node dist/index.js --clientId=$SOOS_CLIENT_ID --apiKey=$SOOS_API_KEY --projectName=<YOUR_PROJECT_NAME> --scanMode=baseline --apiURL=https://api.soos.io/api/ <YOUR_TARGET_URL>
 ```
 
 </details>

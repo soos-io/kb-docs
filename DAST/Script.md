@@ -21,85 +21,57 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 * In all of our example scripts we are using environment variables, we strongly recommend that you also set up your SOOS_CLIENT_ID and SOOS_API_KEY as environment variables too.
 
 
-### **Script Arguments**
+### Script Arguments
 
-| Name        | Required | Description                                                   |
-|-------------|----------|---------------------------------------------------------------|
-| `targetURL` | Yes      | target URL including the protocol, eg https://www.example.com |
+| Argument | Required | Description |
+| --- | --- | --- |
+| `targetURL` | Yes | Target URL - URL of the site or api to scan. The URL should include the protocol. Ex: https://www.example.com |
 
-### **Script Parameters**
+### Script Parameters
 
 | Argument | Default | Description |
 | --- | --- | --- |
-| -h, --help | ==SUPPRESS== | show this help message and exit |
-| -hf, --helpFormatted | False | Print the --help command in markdown table format |
-| --configFile | None | SOOS yaml file with all the configuration for the DAST Analysis (See https://github.com/soos-io/soos-dast#config-file-definition) |
-| --clientId | None | SOOS Client ID get yours from https://app.soos.io/integrate/sca |
-| --apiKey | None | SOOS API Key get yours from https://app.soos.io/integrate/sca |
-| --projectName | None | Project name (this will be the one used inside of the SOOS App) |
-| --scanMode | baseline | SOOS DAST scan mode. Values available: baseline, fullscan, and apiscan (for more information about scan modes visit https://github.com/soos-io/soos-dast#scan-modes) |
-| --apiURL | https://api.soos.io/api/ | SOOS API URL, internal use only, do not modify. |
-| --debug | False | Show debug messages |
-| --ajaxSpider | None | Use the Ajax spider in addition to the traditional one (About AjaxSpider https://www.zaproxy.org/docs/desktop/addons/ajax-spider/) |
-| --rules | None | Rules file to use to INFO, IGNORE or FAIL warnings |
-| --contextFile | None | Context file which will be loaded prior to scanning the target |
-| --contextUser | None | Username to use for authenticated scans - must be defined in the given context file |
-| --fullScanMinutes | None | The number of minutes for spider to run |
-| --apiScanFormat | None | Target API format: OpenAPI, SOAP, or GraphQL |
-| --level | None | minimum level to show: PASS, IGNORE, INFO, WARN or FAIL |
-| --integrationName | None | Integration Name. Intended for internal use only. |
-| --integrationType | None | Integration Type. Intended for internal use only. |
-| --scriptVersion | None | Script Version. Intended for internal use only. |
-| --appVersion | None | App Version. Intended for internal use only. |
-| --authDisplay | None | Minimum level to show: PASS, IGNORE, INFO, WARN or FAIL |
-| --authUsername | None | Username to use in auth apps |
-| --authPassword | None | Password to use in auth apps |
-| --authLoginURL | None | Login url to use in auth apps |
-| --authUsernameField | None | Username input id to use in auth apps |
-| --authPasswordField | None | Password input id to use in auth apps |
-| --authSubmitField | None | Submit button id to use in auth apps |
-| --authFirstSubmitField | None | First submit button id to use in auth apps |
-| --authSubmitAction | None | Submit action to perform on form filled, click or submit |
-| --zapOptions | None | ZAP Additional Options |
-| --requestCookies | None | Set Cookie values for the requests to the target URL |
-| --requestHeaders | None | Set extra Header requests |
-| --commitHash | None | The commit hash value from the SCM System |
-| --branchName | None | The name of the branch from the SCM System |
-| --branchURI | None | The URI to the branch from the SCM System |
-| --buildVersion | None | Version of application build artifacts |
-| --buildURI | None | URI to CI build info |
-| --operatingEnvironment | None | Set Operating environment for information porpuses only |
-| --reportRequestHeaders | False | Include request/response headers data in report |
-| --outputFormat | None | Output format for vulnerabilities: only the value sarif is available at the moment |
-| --gpat | None | GitHub Personal Authorization Token |
-| --bearerToken | None | Bearer token to authenticate |
-| --checkoutDir | None | Checkout Dir to locate sarif report |
-| --sarifDestination | None | Sarif destination to upload report in the form of <repoowner>/<reponame> |
-| --sarif | None | DEPRECATED sarif parameter is currently deprecated, for same functionality as before please use --outPutFormat='sarif' |
-| --oauthTokenUrl | None | The fully qualified authentication URL that grants the access_token. |
-| --oauthParameters | None | Parameters to be added to the oauth token request. (eg --oauthParameters="client_id:clientID, client_secret:clientSecret, grant_type:client_credentials") |
-
-
-#### **Config File Definition**
-``` yaml
-config:
-  clientId: 'SOOS_CLIENT_ID' # Required - SOOS Client Id provided by the Application
-  apiKey: 'SOOS_API_KEY' # Required - SOOS API Key provided by the Application
-  projectName: 'Project Name' # Required
-  scanMode: 'baseline' # Required - DAST Scan mode. Values available: baseline, fullscan, and apiscan
-  apiURL: 'https://app.soos.io/api/' # Required - The SOOS API URL
-  debug: true # Optional - Enable console log debugging. Default: false 
-  ajaxSpider: false # Optional - Enable Ajax Spider scanning - Useful for Modern Web Apps
-  rules: '' # Optional - 
-  context:
-    file: '' # Optional
-    user: '' # Optional
-  fullScan:
-    minutes: ''
-  apiScan:
-    format: 'openapi'
-  level: 'PASS'
-```
+| `--ajaxSpider` | None | Ajax Spider - Use the ajax spider in addition to the traditional one. Additional information: https://www.zaproxy.org/docs/desktop/addons/ajax-spider/ |
+| `--apiKey` | None | SOOS API Key - get yours from https://app.soos.io/integrate/dast |
+| `--appVersion` | None | App Version - Intended for internal use only. |
+| `--authDelayTime` | 5 | Delay time in seconds to wait for the page to load after performing actions in the form. (Used only on authFormType: wait_for_password and multi_page) |
+| `--authFormType` | simple | simple (all fields are displayed at once), wait_for_password (Password field is displayed only after username is filled), or multi_page (Password field is displayed only after username is filled and submit is clicked) |
+| `--authLoginURL` | None | Login url to use when authentication is required |
+| `--authPassword` | None | Password to use when authentication is required |
+| `--authPasswordField` | None | Password input id to use when authentication is required |
+| `--authSecondSubmitField` | None | Second submit button id to use when authentication is required (for multi-page forms) |
+| `--authSubmitAction` | None | Submit action to perform on form filled. Options: click or submit |
+| `--authSubmitField` | None | Submit button id to use when authentication is required |
+| `--authUsername` | None | Username to use when authentication is required |
+| `--authUsernameField` | None | Username input id to use when authentication is required |
+| `--authVerificationURL` | None | URL used to verify authentication success, should be an URL that is expected to throw 200/302 during any authFormType authentication. If authentication fails when this URL is provided, the scan will be terminated. |
+| `--bearerToken` | None | Bearer token to authenticate |
+| `--branchName` | None | The name of the branch from the SCM System |
+| `--branchURI` | None | The URI to the branch from the SCM System |
+| `--buildURI` | None | URI to CI build info |
+| `--buildVersion` | None | Version of application build artifacts |
+| `--checkoutDir` | None | Checkout directory to locate SARIF report |
+| `--clientId` | None | SOOS Client ID - get yours from https://app.soos.io/integrate/dast |
+| `--commitHash` | None | The commit hash value from the SCM System |
+| `--contextFile` | None | Context file which will be loaded prior to scanning the target |
+| `--debug` | False | Enable debug logging for ZAP. |
+| `--disableRules` | None | Comma separated list of ZAP rules IDs to disable. List for reference https://www.zaproxy.org/docs/alerts/ |
+| `--fullScanMinutes` | None | Number of minutes for the spider to run |
+| `--help`, `-h` | ==SUPPRESS== | show this help message and exit |
+| `--integrationName` | None | Integration Name - Intended for internal use only. |
+| `--integrationType` | None | Integration Type - Intended for internal use only. |
+| `--logLevel` | None | Minimum level to show logs: PASS, IGNORE, INFO, WARN, FAIL, DEBUG, ERROR. |
+| `--oauthParameters` | None | Parameters to be added to the oauth token request. (eg --oauthParameters="client_id:clientID, client_secret:clientSecret, grant_type:client_credentials") |
+| `--oauthTokenUrl` | None | The authentication URL that grants the access_token. |
+| `--onFailure` | continue_on_failure | Action to perform when the scan fails. Options: fail_the_build, continue_on_failure |
+| `--operatingEnvironment` | None | Set Operating environment for information purposes only |
+| `--otherOptions` | None | Additional command line arguments for items not supported by the set of parameters above |
+| `--outputFormat` | None | Output format for vulnerabilities: only the value SARIF is available at the moment |
+| `--projectName` | None | Project Name - this is what will be displayed in the SOOS app |
+| `--requestCookies` | None | Set Cookie values for the requests to the target URL |
+| `--requestHeaders` | None | Set extra Header requests |
+| `--scanMode` | baseline | Scan Mode - Available modes: baseline, fullscan, and apiscan (for more information about scan modes visit https://github.com/soos-io/soos-dast#scan-modes) |
+| `--scriptVersion` | None | Script Version - Intended for internal use only. |
 
 ### **Scan Modes**
 
@@ -108,8 +80,6 @@ config:
 It runs the [ZAP](https://www.zaproxy.org/) spider against the specified target for (by default) 1 minute and then waits for the passive scanning to complete before reporting the results.
 
 This means that the script doesn't perform any actual ‘attacks’ and will run for a relatively short period of time (a few minutes at most).
-
-By default, it reports all alerts as WARNings but you can specify a config file which can change any rules to `FAIL` or `IGNORE`.
 
 This mode is intended to be ideal to run in a `CI/CD` environment, even against production sites.
 
