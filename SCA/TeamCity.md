@@ -21,8 +21,9 @@ In the left-hand menu, select **Parameters**.
 ### **Add The Build Configuration**
 * Within your **Build Configuration** select **Build Step** in the left-hand menu.
 * Click the **Add build step** button.
-* When prompted, select Command Line from the **Runner type** menu.
-* Give the build step a name that is relevant (such as SOOS Analysis) and enter the SOOS script from the [TeamCity Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=teamcity) to the **Custom script** field.
+* When prompted, select Node.js from the **Runner type** menu.
+* Give the build step a name that is relevant (such as SOOS Analysis) and enter the SOOS script from the [TeamCity Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=teamcity) to the **Shell script** field.
+* To make sure we have an stable environment to run the scan use the **Run step within Docker container** option and set it to **node:18-slim**
 * Make sure to set the Project Name (which groups scans together) and the Build/Branch parameters.
     * Providing the build/branch parameters allows us to tie together scans and issues, and provide more meaningful insights and actionability to you.
 * Save your new step.
