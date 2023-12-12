@@ -19,7 +19,7 @@ In this article we will make the necessary modifications to a Bitbucket reposito
 
 #### Starter Script ####
 ```
-image: python:3.8
+image: node:18-slim
 
 pipelines:
   custom:
@@ -31,121 +31,36 @@ pipelines:
         - "continue_on_failure"
         - "fail_the_build"
       - name: SOOS_DIRS_TO_EXCLUDE
-        default: "soos"
+        default: ""
       - name: SOOS_FILES_TO_EXCLUDE
         default: ""
-      - name: SOOS_ANALYSIS_RESULT_MAX_WAIT
-        default: "300"
-      - name: SOOS_ANALYSIS_RESULT_POLLING_INTERVAL
-        default: "10"
-      - name: SOOS_LOGGING_VERBOSITY
+      - name: SOOS_LOG_LEVEL
         default: "INFO"
         allowed-values:
+        - "PASS"
+        - "IGNORE"
         - "INFO"
-        - "DEBUG"
-      - name: SOOS_SCAN_MODE
-        default: "run_and_wait"
-        allowed-values:
-        - "run_and_wait"
-        - "async_init"
-        - "async_result"
+        - "WARN"
+        - "FAIL"
     - parallel:
       - step:
           name: 'SOOS SCA'
           script:
-            - WORKING_DIR=$BITBUCKET_CLONE_DIR/soos/workspace/
-            - mkdir -v -p "$WORKING_DIR"
-            - python -m venv ./
-            - source bin/activate
-            - python -m pip install soos-sca --trusted-host pypi.python.org
-            - soos-sca
-              -m=$SOOS_SCAN_MODE
-              -of=$SOOS_ON_FAILURE
-              -cid=$SOOS_CLIENT_ID
-              -akey=$SOOS_API_KEY
-              -dte=$SOOS_DIRS_TO_EXCLUDE
-              -fte=$SOOS_FILES_TO_EXCLUDE
-              -wd=$WORKING_DIR
-              -armw=$SOOS_ANALYSIS_RESULT_MAX_WAIT
-              -arpi=$SOOS_ANALYSIS_RESULT_POLLING_INTERVAL
-              -scp=$BITBUCKET_CLONE_DIR
-              -pn=$BITBUCKET_REPO_SLUG
-              -ch=$BITBUCKET_COMMIT
-              -bn=$BITBUCKET_BRANCH
-              -bruri="http://bitbucket.org/$BITBUCKET_REPO_FULL_NAME"
-              -bldver=$BITBUCKET_BUILD_NUMBER
-              -v=$SOOS_LOGGING_VERBOSITY
-              -intn="BitBucket"
+            - npm install --prefix ./soos @soos-io/soos-sca
+            - node ./soos/node_modules/@soos-io/soos-sca/bin/index.js 
+              --onFailure=$SOOS_ON_FAILURE
+              --clientId=$SOOS_CLIENT_ID
+              --apiKey=$SOOS_API_KEY
+              --directoriesToExclude=$SOOS_DIRS_TO_EXCLUDE
+              --filesToExclude=$SOOS_FILES_TO_EXCLUDE
+              --projectName=$BITBUCKET_REPO_SLUG
+              --commitHash=$BITBUCKET_COMMIT
+              --branchName=$BITBUCKET_BRANCH
+              --branchURI="http://bitbucket.org/$BITBUCKET_REPO_FULL_NAME"
+              --buildVersion=$BITBUCKET_BUILD_NUMBER
+              --logLevel=$SOOS_LOG_LEVEL
+              --integrationName="BitBucket"
 ```
 
 ## Run It
 To run the SOOS CLI against your repository’s code, just execute a build or commit a change.
-
-## Async Mode
-To run SOOS SCA in async mode, use the snippet below. Other build steps can then run in parallel.
-
-```
-image: python:3.8
-
-pipelines:
-  custom:
-    soos-sca:
-    - variables:
-      - name: SOOS_ON_FAILURE
-        default: "continue_on_failure"
-        allowed-values:
-        - "continue_on_failure"
-        - "fail_the_build"
-      - name: SOOS_DIRS_TO_EXCLUDE
-        default: "soos"
-      - name: SOOS_FILES_TO_EXCLUDE
-        default: ""
-      - name: SOOS_ANALYSIS_RESULT_MAX_WAIT
-        default: "300"
-      - name: SOOS_ANALYSIS_RESULT_POLLING_INTERVAL
-        default: "10"
-    - parallel:
-      - step:
-          name: 'SOOS SCA'
-          script:
-            - WORKING_DIR=$BITBUCKET_CLONE_DIR/soos/workspace/
-            - mkdir -v -p "$WORKING_DIR"
-            - python -m venv ./
-            - source bin/activate
-            - python -m pip install soos-sca --trusted-host pypi.python.org
-            - soos-sca
-              -m="async_init"
-              -of=$SOOS_ON_FAILURE
-              -cid=$SOOS_CLIENT_ID
-              -akey=$SOOS_API_KEY
-              -pn=$BITBUCKET_REPO_SLUG
-              -dte=$SOOS_DIRS_TO_EXCLUDE
-              -fte=$SOOS_FILES_TO_EXCLUDE
-              -wd=$BITBUCKET_CLONE_DIR
-              -scp=$BITBUCKET_CLONE_DIR
-              -armw=$SOOS_ANALYSIS_RESULT_MAX_WAIT
-              -arpi=$SOOS_ANALYSIS_RESULT_POLLING_INTERVAL
-              -ch=$BITBUCKET_COMMIT
-              -bn=$BITBUCKET_BRANCH
-              -bldver=$BITBUCKET_BUILD_NUMBER
-              -bruri="https://bitbucket.org/$BITBUCKET_REPO_FULL_NAME"
-              -v=$SOOS_LOGGING_VERBOSITY
-              -intn="BitBucket"
-          after-script:
-            - WORKING_DIR=$BITBUCKET_CLONE_DIR/soos/workspace/
-            - mkdir -v -p "$WORKING_DIR"
-            - python -m venv ./
-            - source bin/activate
-            - python -m pip install soos-sca --trusted-host pypi.python.org
-            - soos-sca
-              -m="async_result"
-              -of=$SOOS_ON_FAILURE
-              -cid=$SOOS_CLIENT_ID
-              -akey=$SOOS_API_KEY
-              -pn=$BITBUCKET_REPO_SLUG
-              -wd=$BITBUCKET_CLONE_DIR
-              -scp=$BITBUCKET_CLONE_DIR
-              -armw=$SOOS_ANALYSIS_RESULT_MAX_WAIT
-              -arpi=$SOOS_ANALYSIS_RESULT_POLLING_INTERVAL
-              -v=$SOOS_LOGGING_VERBOSITY
-```

@@ -6,17 +6,10 @@
 In this article we will make the necessary modifications to a simple TeamCity project to scan a GitHub repository with SOOS.
 
 ## Prerequisites
-
 - You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a TeamCity project.
-- Have downloaded the latest release of the `requirements.txt`,`soos.py` and `VERSION.txt` from [here](https://github.com/soos-io/soos-ci-analysis-python/releases/)
 
 ## Steps
-
-### **Repo Setup**
-* Create a new folder in your repository: `<repo_root>/soos/workspace/`
-* Place the `requirements.txt`,`soos.py` and `VERSION.txt` files in the `<repo_root>/soos/workspace` folder.
-* Commit these 2 new files and the new folder path.
 
 ### **Configure TeamCity Environment variables**
 * Within the TeamCity project, navigate to **Build Configurations**.
@@ -43,4 +36,4 @@ Within your **Build Configuration**, select **Parameters** from the left-hand me
 To run the SOOS CLI against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
 
 ## Reference
-* To see the full list of available parameters go to [Python repository parameters description](https://github.com/soos-io/soos-ci-analysis-python#script-arguments)
+* To see the full list of available parameters go to [Script repository parameters description](https://github.com/soos-io/soos-sca?tab=readme-ov-file#parameters)
