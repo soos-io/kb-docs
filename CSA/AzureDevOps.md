@@ -8,32 +8,32 @@ This document will take you step-by-step through the tasks required to set up an
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a Azure Project configured.
+- You need to have an Azure Project configured.
 
 ## Steps
 
-### **Installing the task**
+### **Installing the Task**
 
-The SOOS task will be found under the shared extension listing in your organization settings. Click the option to install the task. The installation has been completed successfully when it is visible under the Installed listing.
+The SOOS Task can be found under the shared extension listing in your organization settings. Click the option to install the Task. The installation has been completed successfully when it is visible under the Installed listing.
 
 <img src="../assets/img/azure-install.png">
 
-### **Setup variables**
+### **Setup Variables**
 
-Once installed search for SOOS under tasks and proceed with the configuration.
+Once installed, search for SOOS under tasks and proceed with the configuration.
 
 <img src="../assets/img/azure-task.png">
 
-- Select Container Security Analysis (CSA) for the Scan Type parameter
-- Configure the SOOS variables, either directly in the yaml section or in the Task variables section. Use the API Key and Client ID values you found on the [SOOS App integration page.](https://app.soos.io/integrate/containers)
+- Select Container Security Analysis (CSA) for the Scan Type parameter.
+- Configure the SOOS variables, either directly in the YAML section or in the Task Variables section. Use the API Key and Client ID values you found on the [SOOS App integration page.](https://app.soos.io/integrate/containers)
 
-Be sure to set the Display Name, Project Name (which groups scans together) and Target image parameters.
+Be sure to set the Display Name, Project Name (which groups scans together), and Target Image parameters.
 
 <img src="../assets/img/csa-azure-variables.png">
 
-### **Setting up inside your pipeline.yml**
+### **Setting Up Inside Your pipeline.yml**
 
-Once these variables have been defined globally, you can set up the Task to be used inside your pipeline.yml following this example script.
+Here is an example YAML script for setting up the Task in your pipeline:
 
 ```yaml
 - task: SOOS-Security-Analysis@0
@@ -47,5 +47,4 @@ Once these variables have been defined globally, you can set up the Task to be u
 
 ### **Run It**
 
-To run the SOOS Azure DevOps task against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
-
+To run the SOOS Azure DevOps Task against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.

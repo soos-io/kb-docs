@@ -3,7 +3,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/github-action.png" alt="Github Action" width="128" height="128">
 </div>
-In this article we will add the SOOS Container Security Analysis (CSA) GitHub Action to a GitHub Workflow and scan a GitHub repository.
+In this article, we will add the SOOS Container Security Analysis (CSA) GitHub Action to a GitHub Workflow and scan a GitHub repository.
 
 ## Prerequisites
 - You need to have a [SOOS account.](https://app.soos.io/register)
@@ -33,9 +33,8 @@ jobs:
           client_id: ${{ secrets.SOOS_CLIENT_ID }}
           api_key: ${{ secrets.SOOS_API_KEY }}
           project_name: "<YOUR-PROJECT-NAME>"
-      	  target_image: "image:tag"
+          target_image: "image:tag"
 ```
-
 
 ### **Build Setup**
 
@@ -56,7 +55,7 @@ To run the SOOS CSA Analysis against your repository’s code, just execute a bu
 
 If you are using GitHub Enterprise or your repository is public, you can configure the SOOS Action to display any issues in GitHub Code Scanning Alerts. There are a few additional steps to get this configured.
 
-### **Example worfklow setup for SARIF Upload**
+### **Example Workflow Setup for SARIF Upload**
 
 ``` yaml
 on: [push]
@@ -72,24 +71,21 @@ jobs:
           client_id: ${{ secrets.SOOS_CLIENT_ID }}
           api_key: ${{ secrets.SOOS_API_KEY }}
           project_name: "<YOUR-PROJECT-NAME>"
-      	  target_image: "image:tag"
+          target_image: "image:tag"
           output_format: "sarif"
-      - name: Upload SOOS CSA Report # 3rd party action to upload Sarif results to your github repository
+      - name: Upload SOOS CSA Report # 3rd party action to upload SARIF results to your GitHub repository
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: results.sarif
 ```
 
-**NOTE:** If you don't have a checkout step you might encounter an error in the logs for the Upload-Sarif action. This can be ignored (it's a non-issue) but if you want to keep your log clean, just add a checkout step in your workflow before the scan step.
+**NOTE:** If you don't have a checkout step, you might encounter an error in the logs for the Upload-Sarif action. This can be ignored (it's a non-issue) but if you want to keep your log clean, just add a checkout step in your workflow before the scan step.
 
+## Scanning a private image
 
-## Authenticated scans
+If you need to run a scan against an image from a private repository, we suggest downloading the image on the agent, performing the authentication using your provider's official action, and then indicating the path to the image as the `target_image` value.
 
-### Using bearer token
-
-If you need to run a scan against an image from a private repository we suggest to download the image on the agent performing the authentication using your provider official action and then indicate the path to the image as the `target_image` value.
-
-example workflow with amazon ecr:
+Example workflow with Amazon ECR:
 
 ``` yaml
 on: [push]

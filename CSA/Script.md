@@ -1,24 +1,22 @@
 # How to Integrate SOOS Container Security Analysis (CSA) with your OS Shell
 
-
 <div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
-<img src="../assets/img/shell.png" alt="SOOS" width="128" height="128">
+<img src="../assets/img/shell.png" alt="OS Shell" width="128" height="128">
 </div>
 
-Currently you have the option to integrate the SOOS Container Security Analysis (CSA) product using the command line from your OS.
-
+Currently, you have the option to integrate the SOOS Container Security Analysis (CSA) product using the command line from your operating system.
 
 ## Prerequisites
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- Have [docker installed.](https://docs.docker.com/get-docker/) in the Host machine.
+- You need to have a [SOOS account](https://app.soos.io/register).
+- Have [Docker installed](https://docs.docker.com/get-docker/) on the host machine.
 
 ## Steps
-### **Getting the script**
+### **Getting the Script**
 * Navigate to the [Script CSA integration page on the SOOS App](https://app.soos.io/integrate/containers?id=script) and copy the script content according to the OS you're running.
 
 ### **Environment Setup**
-* In all of our example scripts we are using environment variables, we strongly recommend that you also set up your SOOS_CLIENT_ID and SOOS_API_KEY as environment variables too.
+* In all of our example scripts, we are using environment variables. We strongly recommend that you also set up your SOOS_CLIENT_ID and SOOS_API_KEY as environment variables.
 
 ### Script Parameters
 
@@ -44,7 +42,6 @@ Currently you have the option to integrate the SOOS Container Security Analysis 
 | `--verbose` | false | Enable verbose logging. |
 | `targetToScan` | N/A | The target to scan. Should be a docker image name or a path to a directory containing a Dockerfile. |
 
-
 ## Scanning Private Images with Authentication
 To scan an image from a private registry, follow these steps:
 
@@ -60,6 +57,7 @@ docker run -it \
   --projectName="<YOUR_PROJECT_NAME>" \
   <CONTAINER_NAME>:<TAG_NAME>
 ```
+
 ## Retrieving the Results File for Troubleshooting
 If you need to retrieve the results file for troubleshooting or any other reason, you can do so by mounting a volume. This binds the container's results directory to a directory on your host machine.
 In the following example, c:/results is the local folder on the host where the results will be stored:
@@ -76,4 +74,4 @@ docker run -it \
 Note: The path c:/results is specific to Windows. If you're using Linux or macOS, adjust the path format accordingly.
 
 ## Reference
-* To see the full list of available parameters go to [CSA repository parameters description](https://github.com/soos-io/soos-csa#parameters)
+* To see the full list of available parameters go to the [CSA repository parameters description](https://github.com/soos-io/soos-csa#parameters).
