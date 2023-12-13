@@ -50,7 +50,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run SOOS SBOM Analysis
-        uses: soos-io/soos-sbom-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-sbom
+        uses: soos-io/soos-sbom-github-action@v1 # GET Latest Version from https://github.com/marketplace/actions/soos-sbom
         with:
           client_id: ${{ secrets.SOOS_CLIENT_ID }}
           api_key: ${{ secrets.SOOS_API_KEY }}

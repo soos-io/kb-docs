@@ -25,9 +25,9 @@ Once installed search for SOOS under tasks and proceed with the configuration.
 <img src="../assets/img/azure-task.png">
 
 - Select Container Security Analysis (CSA) for the Scan Type parameter
-- Configure the SOOS variables, either directly in the yaml section or in the Task variables section.  Use the API Key and Client ID values you collected from the SOOS App.
+- Configure the SOOS variables, either directly in the yaml section or in the Task variables section. Use the API Key and Client ID values you found on the [SOOS App integration page.](https://app.soos.io/integrate/containers)
 
-Make sure to also set the Display Name, Project Name (which groups scans together), Target Uri and Scan mode parameters.
+Be sure to set the Display Name, Project Name (which groups scans together) and Target image parameters.
 
 <img src="../assets/img/csa-azure-variables.png">
 

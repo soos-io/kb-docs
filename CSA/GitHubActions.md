@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run SOOS CSA Analysis
-        uses: soos-io/soos-csa-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-csa
+        uses: soos-io/soos-csa-github-action@v1 # GET Latest Version from https://github.com/marketplace/actions/soos-csa
         with:
           client_id: ${{ secrets.SOOS_CLIENT_ID }}
           api_key: ${{ secrets.SOOS_API_KEY }}
@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run SOOS CSA Analysis
-        uses: soos-io/soos-csa-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-csa
+        uses: soos-io/soos-csa-github-action@v1 # GET Latest Version from https://github.com/marketplace/actions/soos-csa
         with:
           client_id: ${{ secrets.SOOS_CLIENT_ID }}
           api_key: ${{ secrets.SOOS_API_KEY }}
