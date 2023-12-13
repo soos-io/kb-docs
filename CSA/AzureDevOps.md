@@ -1,9 +1,9 @@
-# How to Integrate SOOS CSA with your Azure CI
+# How to Integrate SOOS CSA with your Azure DevOps CI Pipeline
 <div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="Azure" width="128" height="128">
 </div>
-This document will take you step-by-step through the tasks required to set up an Azure project, for scan it with the SOOS CSA Product.
+This document will take you step-by-step through the tasks required to set up an Azure project and scan it with SOOS Container Security Analysis (CSA).
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ The SOOS task will be found under the shared extension listing in your organizat
 
 ### **Setup variables**
 
-Once installed search for the SOOS under tasks and proceed with the configuration.
+Once installed search for SOOS under tasks and proceed with the configuration.
 
 <img src="../assets/img/azure-task.png">
 
@@ -33,7 +33,7 @@ Make sure to also set the Display Name, Project Name (which groups scans togethe
 
 ### **Setting up inside your pipeline.yml**
 
-Once we have defined these variables globally you can set up the task to be used inside your pipeline.yml following this example script.
+Once these variables have been defined globally, you can set up the Task to be used inside your pipeline.yml following this example script.
 
 ```yaml
 - task: SOOS-Security-Analysis@0

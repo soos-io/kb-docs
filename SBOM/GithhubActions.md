@@ -3,7 +3,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/github-action.png" alt="Github Action" width="128" height="128">
 </div>
-In this article we will make the necessary modifications to a GitHub Workflow using the SOOS CI Analysis GitHub Action to scan a GitHub repository with SOOS.
+In this article we will make the necessary modifications to a GitHub Workflow using the SOOS SBOM Analysis GitHub Action to scan a GitHub repository with SOOS.
 
 ## Prerequisites
 

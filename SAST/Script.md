@@ -3,7 +3,8 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/shell.png" alt="SOOS" width="128" height="128">
 </div>
-SOOS provides direct CI/CD integration to the 10 most common platforms.  So what do you do if you don't see yours listed?
+SOOS provides direct CI/CD integration to the 10 most common platforms. So what do you do if you don't see yours listed?
+
 SOOS provides a Script for you to customize as-needed.
 
 ## Prerequisites
@@ -13,8 +14,8 @@ SOOS provides a Script for you to customize as-needed.
 ## Steps
 
 ### **Repo Setup**
-* Download the corresponded Script for your environment from the [SAST Script integration page on SOOS](https://app.soos.io/integrate/sast?id=script).
-* Create a new file in your repo root directory called `run-sast-analysis.sh` or `run-sast-analysis.bat` and paste the content of the script in the new file.
+* Download the corresponding Script for your environment from the [SAST Script integration page on SOOS](https://app.soos.io/integrate/sast?id=script).
+* Create a new file in your repository root directory called `run-sast-analysis.sh` or `run-sast-analysis.bat` and paste the content of the script in the new file.
 * Open the terminal or command prompt and go to your project directory. Run the command that corresponds to the selected operating system:
     * run-sast-analysis.sh (Linux or MacOs)
     * run-sast-analysis.bat (Windows)
@@ -30,7 +31,7 @@ Our CLI is highly configurable, as it is designed to run in a number of scenario
 
 **Project Name**
 
-The project name is up to the user's discretion. Typically this aligns with a repository name, module name, or project/solution.
+The project name is up to the user's discretion, but typically aligns with a repository name, module name, or project/solution.
 
 It should always point to the same codebase between scans, otherwise the difference in manifests/packages will become apparent in the application.
 

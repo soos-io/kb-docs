@@ -4,7 +4,7 @@
 <img src="../assets/img/azure.png" alt="azure" width="128" height="128">
 </div>
 
-In this article we will make the necessary modifications to a simple Azure project to scan a GitHub or Bitbucket repository with the SOOS SBOM PRODUCT.
+In this article we will make the necessary modifications to a simple Azure project to scan a GitHub or Bitbucket repository with the SOOS SBOM Analysis product.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register).

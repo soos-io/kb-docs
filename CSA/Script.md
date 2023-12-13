@@ -1,4 +1,4 @@
-# How to Integrate SOOS CSA with your OS Shell
+# How to Integrate SOOS Container Security Analysis (CSA) with your OS Shell
 
 
 <div>
@@ -6,13 +6,13 @@
 <img src="../assets/img/shell.png" alt="SOOS" width="128" height="128">
 </div>
 
-Currently you have the option to integrate the SOOS CSA product using the command line from your OS.
+Currently you have the option to integrate the SOOS Container Security Analysis (CSA) product using the command line from your OS.
 
 
 ## Prerequisites
-
 - You need to have a [SOOS account.](https://app.soos.io/register)
 - Have [docker installed.](https://docs.docker.com/get-docker/) in the Host machine.
+
 ## Steps
 ### **Getting the script**
 * Navigate to the [Script CSA integration page on the SOOS App](https://app.soos.io/integrate/containers?id=script) and copy the script content according to the OS you're running.

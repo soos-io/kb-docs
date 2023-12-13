@@ -3,7 +3,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/github-action.png" alt="Github Action" width="128" height="128">
 </div>
-In this article we will make the necessary modifications to a GitHub Workflow using the SOOS CSA Analysis GitHub Action to scan a GitHub repository with SOOS.
+In this article we will add the SOOS Container Security Analysis (CSA) GitHub Action to a GitHub Workflow and scan a GitHub repository.
 
 ## Prerequisites
 - You need to have a [SOOS account.](https://app.soos.io/register)
@@ -24,7 +24,7 @@ on: [push]
  
 jobs:
   soos_csa_analysis_example:
-    name: SOOS CSA Analysis Example
+    name: SOOS Container Security Analysis (CSA) Example
     runs-on: ubuntu-latest
     steps:
       - name: Run SOOS CSA Analysis
@@ -41,7 +41,7 @@ jobs:
 
 Setup Environment Variables
 
-Under your Repository's Settings tab, select "Secrets" > "Actions" and add two new secrets which contain the SOOS Client Id and API Key which you can find in the SOOS App under [Integrate](https://app.soos.io/integrate)
+Under your Repository's Settings tab, select "Secrets" > "Actions" and add two new secrets which contain the SOOS Client Id and API Key which you can find in the SOOS App under [Integrate](https://app.soos.io/integrate/containers)
 
 The secret names should be "SOOS_CLIENT_ID" and "SOOS_API_KEY"
 
@@ -63,7 +63,7 @@ on: [push]
  
 jobs:
   soos_csa_analysis_example:
-    name: SOOS CSA Analysis Example
+    name: SOOS Container Security Analysis (CSA) Example
     runs-on: ubuntu-latest
     steps:
       - name: Run SOOS CSA Analysis
@@ -74,7 +74,7 @@ jobs:
           project_name: "<YOUR-PROJECT-NAME>"
       	  target_image: "image:tag"
           output_format: "sarif"
-      - name: Upload SOOS CSA Report # 3rd party action to upload sarif results to your github repo
+      - name: Upload SOOS CSA Report # 3rd party action to upload Sarif results to your github repository
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: results.sarif
