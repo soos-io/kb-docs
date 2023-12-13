@@ -1,9 +1,9 @@
-# How to Integrate SOOS DAST with your Azure CI
+# How to Integrate SOOS CSA with your Azure CI
 <div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="Azure" width="128" height="128">
 </div>
-This document will take you step-by-step through the tasks required to set up an Azure project, for scan it with the SOOS DAST Product.
+This document will take you step-by-step through the tasks required to set up an Azure project, for scan it with the SOOS CSA Product.
 
 ## Prerequisites
 
@@ -24,26 +24,25 @@ Once installed search for the SOOS under tasks and proceed with the configuratio
 
 <img src="../assets/img/azure-task.png">
 
-- Select Dynamic Application Security Testing (DAST) for the Scan Type parameter
+- Select Container Security Analysis (CSA) for the Scan Type parameter
 - Configure the SOOS variables, either directly in the yaml section or in the Task variables section.  Use the API Key and Client ID values you collected from the SOOS App.
 
 Make sure to also set the Display Name, Project Name (which groups scans together), Target Uri and Scan mode parameters.
 
-<img src="../assets/img/dast-azure-variables.png">
+<img src="../assets/img/csa-azure-variables.png">
 
 ### **Setting up inside your pipeline.yml**
 
 Once we have defined these variables globally you can set up the task to be used inside your pipeline.yml following this example script.
 
-```
+```yaml
 - task: SOOS-Security-Analysis@0
   inputs:
-    apiKey: {SOOS_API_KEY}
-    clientId: {SOOS_CLIENT_ID}
-    scanType: 'DAST'
-    project: {YOUR_PROJECT_NAME_HERE}
-    targetUri: 'https://example.com'
-    scanMode: 'baseline'
+    apiKey: <SOOS_API_KEY>
+    clientId: <SOOS_CLIENT_ID>
+    scanType: 'CSA'
+    targetToScan: <image:tag> # The target to scan. Should be a docker image name or a path to a directory containing a Dockerfile
+    projectName: <PROJECT_NAME> # The name of the project. Defaults to 'Build.Repository.Name'.
 ```
 
 ### **Run It**
