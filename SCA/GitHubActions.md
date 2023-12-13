@@ -57,7 +57,7 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Run SOOS - Scan for vulnerabilities
-      uses: soos-io/soos-sca-github-action@vX.Y.Z # Get Latest Version from https://github.com/marketplace/actions/soos-core-sca
+      uses: soos-io/soos-sca-github-action@v2 # Get Latest Version from https://github.com/marketplace/actions/soos-core-sca
       with:
         project_name: "My Project Name"
         outputFormat: "sarif"
