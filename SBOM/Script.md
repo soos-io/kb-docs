@@ -8,7 +8,7 @@ SOOS provides direct CI/CD integration to the 10 most common platforms. If your 
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register).
-- Node 18.12.0 or Higher - [Download Node.js](https://nodejs.org/en/download).
+- Node 18.18.2 or Higher - [Download Node.js](https://nodejs.org/en/download).
 
 ## Steps
 
