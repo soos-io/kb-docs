@@ -37,11 +37,11 @@ pipelines:
       - name: SOOS_LOG_LEVEL
         default: "INFO"
         allowed-values:
-        - "PASS"
-        - "IGNORE"
         - "INFO"
         - "WARN"
         - "FAIL"
+        - "DEBUG"
+        - "ERROR"
     - parallel:
       - step:
           name: 'SOOS SCA'
