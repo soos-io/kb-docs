@@ -33,7 +33,7 @@ Currently, you have the option to integrate the SOOS Container Security Analysis
 | `--commitHash` | null | The commit hash value from the SCM System. |
 | `--integrationName` | null | Integration Name - Intended for internal use only. |
 | `--integrationType` | null | Integration Type - Intended for internal use only. |
-| `--logLevel` | INFO | Minimum level to show logs: PASS, IGNORE, INFO, WARN, or FAIL. |
+| `--logLevel` | INFO | Minimum level to show logs: INFO, WARN, FAIL, DEBUG, ERROR. |
 | `--onFailure` | continue_on_failure | Action to perform when the scan fails. Options: fail_the_build, continue_on_failure. |
 | `--operatingEnvironment` | null | Set Operating environment for information purposes only. |
 | `--otherOptions` | None | Other Options to pass to syft. |

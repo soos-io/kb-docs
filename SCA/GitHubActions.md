@@ -41,17 +41,15 @@ To run the SOOS CLI against your repository’s code, just execute a build or co
 If you are using GitHub Enterprise or your repository is public, you can configure the SOOS Action to display any issues in GitHub Code Scanning Alerts. There are a few additional steps to get this configured.
 
 ### **Setup**
-
-   - Create a new GitHub Personal Access Token which has a "repo" > "security_events" scope
-   - Copy the PAT value and add it to a new Action Secret for your repository with a name of "SOOS_GPAT"
-   - Adjust your Action code to pass the "sarif" and "gpat" parameters
+- Set the `outputFormat` to `sarif` value.
+- Add the `upload-sarif` like the example.
 
 ```
 name: Example workflow using SOOS
 # Events required to engage workflow (add/edit this list as needed)
 on: push
 jobs:
-  synchronous-analysis-with-blocking-result:
+  soos-sca-analysis
     name: SOOS SCA Scan
     runs-on: ubuntu-latest
     steps:
@@ -59,11 +57,14 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Run SOOS - Scan for vulnerabilities
-      uses: soos-io/soos-sca-github-action@vX.Y.Z # Get Latest Version from https://github.com/marketplace/actions/soos-core-sca
+      uses: soos-io/soos-sca-github-action@v2 # Get Latest Version from https://github.com/marketplace/actions/soos-core-sca
       with:
         project_name: "My Project Name"
-        sarif: true
-        gpat: ${{ secrets.SOOS_GPAT }}
+        outputFormat: "sarif"
         client_id: ${{ secrets.SOOS_CLIENT_ID }}
         api_key: ${{ secrets.SOOS_API_KEY }}
+    - name: Upload SOOS DAST Report
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: results.sarif
 ```

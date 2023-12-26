@@ -8,20 +8,14 @@ This document will take you step-by-step through the tasks required to set up a 
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a Bamboo project.
-- Have downloaded the latest release of the `requirements.txt`,`soos.py` and `VERSION.txt`from [here](https://github.com/soos-io/soos-ci-analysis-python/releases/)
 
 ## Steps
 
-### **Repo Setup**
-* Create a new folder in your repository: `<repo_root>/soos/workspace/`
-* Place the `requirements.txt`,`soos.py` and `VERSION.txt` files in the `<repo_root>/soos/workspace` folder.
-* Commit these 2 new files and the new folder path.
-
 ### **Build Setup in bamboo**
-* Navigate to your project’s job-task header and press the **Add task** button. Make sure this task has a predecessor task to checkout your repo’s source code.
+* Navigate to your project’s job-task header and press the **Add task** button. **Make sure this task has a predecessor task to checkout your repo’s source code**.
 * Type Script into the search box and choose the Script task option.
 * Enter a task description, such as 'Run SOOS Scan'.
-* Now, add the SOOS script from the [Bamboo Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=bamboo) under the Python tab.
+* Now, add the SOOS script from the [Bamboo Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=bamboo) under the Script tab.
 * Make sure to set the Project Name (which groups scans together) and the Build and Branch parameters. Providing the branch/build parameters allows us to tie together  scans and issues, and provide more meaningful insights and actionability to you. 
 
 ### **Setup Environment Variables**
@@ -33,4 +27,4 @@ To run the SOOS CLI against your repository’s code, just execute a build or co
 
 
 ## Reference
-* To see the full list of available parameters go to [Python repository parameters description](https://github.com/soos-io/soos-ci-analysis-python#script-arguments)
+* To see the full list of available parameters go to [Script repository parameters description](https://github.com/soos-io/soos-sca?tab=readme-ov-file#parameters)
