@@ -19,7 +19,7 @@ In the .github/workflows directory, create a file named main.yml.
 
 Paste the following code:
 
-```
+```yaml
 on: [push]
  
 jobs:
@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run SOOS DAST Analysis
-        uses: soos-io/soos-dast-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-dast
+        uses: soos-io/soos-dast-github-action@v2 # GET Latest Version from https://github.com/marketplace/actions/soos-dast
         with:
           client_id: ${{ secrets.SOOS_CLIENT_ID }}
           api_key: ${{ secrets.SOOS_API_KEY }}
@@ -99,7 +99,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run SOOS DAST Analysis
-        uses: soos-io/soos-dast-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-dast
+        uses: soos-io/soos-dast-github-action@v2 # GET Latest Version from https://github.com/marketplace/actions/soos-dast
         with:
           client_id: ${{ secrets.SOOS_CLIENT_ID }}
           api_key: ${{ secrets.SOOS_API_KEY }}
@@ -134,14 +134,13 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Run SOOS DAST Baseline Analysis performing bearer token authentication
-      uses: soos-io/soos-dast-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-dast
+      uses: soos-io/soos-dast-github-action@v2 # GET Latest Version from https://github.com/marketplace/actions/soos-dast
       with:
         client_id: ${{ secrets.SOOS_CLIENT_ID }}
         api_key: ${{ secrets.SOOS_API_KEY }}
         project_name: "DAST-bearer-token"
         scan_mode: "baseline"
-        bearer_token: "token-value"
-        api_url: "https://api.soos.io/api/"
+        bearer_token: "token-value"        
         target_url: "https://www.example.com/"
 ```
 
@@ -162,13 +161,12 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Run SOOS DAST Baseline Analysis performing form authentication
-      uses: soos-io/soos-dast-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-dast
+      uses: soos-io/soos-dast-github-action@v2 # GET Latest Version from https://github.com/marketplace/actions/soos-dast
       with:
         client_id: ${{ secrets.SOOS_CLIENT_ID }}
         api_key: ${{ secrets.SOOS_API_KEY }}
         project_name: "DAST-login-form"
         scan_mode: "baseline"
-        api_url: "https://api.soos.io/api/"
         target_url: "https://example.com/"
         auth_login_url: "https://example.com/login"
         auth_username: "username-to-fill-field"
@@ -195,13 +193,12 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Run SOOS DAST Baseline Analysis performing OAuth
-      uses: soos-io/soos-dast-github-action@vX.Y.Z # GET Latest Version from https://github.com/marketplace/actions/soos-dast
+      uses: soos-io/soos-dast-github-action@v2 # GET Latest Version from https://github.com/marketplace/actions/soos-dast
       with:
         client_id: ${{ secrets.SOOS_CLIENT_ID }}
         api_key: ${{ secrets.SOOS_API_KEY }}
         project_name: "DAST-OAuth"
         scan_mode: "baseline"
-        api_url: "https://api.soos.io/api/"
         target_url: "https://example.com/"
         oauth_token_url: "https://example.com/token"
         oauth_parameters: "client_secret:value ,client_id:value , grant_type:value"
