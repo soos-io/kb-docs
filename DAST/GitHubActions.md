@@ -94,7 +94,9 @@ If you are using GitHub Enterprise or your repository is public, you can configu
 on: [push]
  
 jobs:
-  soos_dast_analysis_example:
+  soos:
+    permissions:
+      security-events: write # for uploading code scanning alert info
     name: SOOS DAST Analysis Example
     runs-on: ubuntu-latest
     steps:
