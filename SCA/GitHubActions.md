@@ -49,7 +49,9 @@ name: Example workflow using SOOS
 # Events required to engage workflow (add/edit this list as needed)
 on: push
 jobs:
-  soos-sca-analysis
+  soos:
+    permissions:
+      security-events: write # for uploading code scanning alert info
     name: SOOS SCA Scan
     runs-on: ubuntu-latest
     steps:
