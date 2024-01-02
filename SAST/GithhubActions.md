@@ -53,5 +53,4 @@ jobs:
           client_id: ${{ secrets.SOOS_CLIENT_ID }}
           api_key: ${{ secrets.SOOS_API_KEY }}
           project_name: "My Project Name"
-          sast_path: "SAST path relative to the repository or empty if it's on the root"
 ```
