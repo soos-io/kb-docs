@@ -11,6 +11,7 @@ In this article we will make the necessary modifications to a simple Azure proje
 - You need to have a Azure DevOps Project with a Pipeline.
 - You need to have a repository, connected to that pipeline, with a [supported](https://kb.soos.io/help/soos-languages-supported) manifest file.
 - You need to add the [**SOOS Security Analysis**](https://marketplace.visualstudio.com/items?itemName=SOOS.SOOS-Security-Analysis) task to your organization in Azure DevOps
+- If you are running a self-hosted agent make sure to have Node 18.12.0 or higher - https://nodejs.org/en/download on the agent. Also you can look to use [Use Node Task](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/use-node-v1?view=azure-pipelines)
 
 ## Steps
 - After the task is successfully installed, copy the contents of the [`azuredevops_sca.yml`](https://gist.github.com/soostech/983b3756ea3f6e3631d89c97604bd969) file, as see on the [Azure DevOps Integrations page in the SOOS app](https://app.soos.io/integrate/sca?id=azure-devops), to your `azure-pipelines.yml` file.
