@@ -48,3 +48,48 @@ Here is an example YAML script for setting up the Task in your pipeline:
 ### **Run It**
 
 To run the SOOS Azure DevOps Task against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
+
+## Scanning a private image from Azure CR
+
+The following steps outline how to perform a CSA scan targeting private images in ACR.
+
+1. Setup Docker Environment: Ensure Docker is installed on your build agent. The pipeline script uses the DockerInstaller task to install a specific version of Docker.
+
+2. Pull the Private Image: Use the Docker task to authenticate and pull your private image from Azure Container Registry. You will need to define a [service connection](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/acr-template?view=azure-devops) in Azure DevOps that has access to your ACR instance.
+
+3. Save the Image Locally: After pulling the image, use the Docker save command to save the image as a tarball file.
+
+4. Run the SOOS Security Analysis: Fill all the required fields as normal and on the `targetToScan` set the path to the saved image tarball.
+
+Example workflow: 
+
+``` yaml
+pool:
+  name: Azure Pipelines
+steps:
+- task: DockerInstaller@0
+  displayName: 'Install Docker 17.09.0-ce'
+
+- task: Docker@2
+  displayName: pull
+  inputs:
+    containerRegistry: <REGISTRY_SERVICE_CONNECTION>
+    command: pull
+    arguments: '<PRIVATE_IMAGE_FULL_URL>'
+
+- task: Docker@2
+  displayName: save
+  inputs:
+    command: save
+    arguments: '-o <FILE_NAME>.tar <PRIVATE_IMAGE_FULL_URL>'
+
+- task: SOOS.SOOS-Security-Analysis.scan-task.SOOS-Security-Analysis@0
+  displayName: 'SOOS Security Analysis'
+  inputs:
+    apiKey: <YOUR_API_KEY>
+    clientId: <YOUR_CLIENT_ID>
+    scanType: CSA
+    project: <YOUR_PROJECT_NAME>
+    targetToScan: 'docker-archive:results/<FILE_NAME>.tar'
+    verbose: false
+```
