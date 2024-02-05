@@ -57,7 +57,7 @@ The following steps outline how to perform a CSA scan targeting private images i
 
 2. Pull the Private Image: Use the Docker task to authenticate and pull your private image from Azure Container Registry. You will need to define a [service connection](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/acr-template?view=azure-devops) in Azure DevOps that has access to your ACR instance.
 
-3. Save the Image Locally: After pulling the image, use the Docker save command to save the image as a tarball file.
+3. Save the Image Locally: After pulling the image, use the Docker 'save' command to save the image as a tarball file.
 
 4. Run the SOOS Security Analysis: Fill all the required fields as normal and on the `targetToScan` set the path to the saved image tarball.
 
