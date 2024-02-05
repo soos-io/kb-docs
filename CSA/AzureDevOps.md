@@ -49,7 +49,7 @@ Here is an example YAML script for setting up the Task in your pipeline:
 
 To run the SOOS Azure DevOps Task against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
 
-## Scanning a private image from Azure CR
+## Scanning a private image from Azure Container Registry (ACR)
 
 The following steps outline how to perform a CSA scan targeting private images in ACR.
 
@@ -73,7 +73,7 @@ steps:
 - task: Docker@2
   displayName: pull
   inputs:
-    containerRegistry: <REGISTRY_SERVICE_CONNECTION>
+    containerRegistry: <REGISTRY_SERVICE_CONNECTION_NAME>
     command: pull
     arguments: '<PRIVATE_IMAGE_FULL_URL>'
 
