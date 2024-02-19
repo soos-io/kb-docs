@@ -79,6 +79,7 @@ soos-dast-analysis:
 ### **API Scan**
 * This scan mode performs an analysis of an API, the TARGET_URL should be the spec file URL where its publicly available.
 * In addition to `clientId`, `apiKey`, and `projectName`, the `apiscanFormat` parameter is also required.
+* **NOTE:** Make sure that in case of specifying a file you are pointing to the full path on the repository.
 
 ```
 soos-dast-analysis:
@@ -87,7 +88,7 @@ soos-dast-analysis:
     name: "soosio/dast"
     entrypoint: [""]
   variables:
-    TARGET_URL: "https://example.com"
+    TARGET_URL: "<URL OR FULL PATH TO THE SPEC THE FILE IN THE REPOSITORY>"
     SCAN_MODE: "apiscan"
     API_FORMAT: "openapi" # "soap" or "graphql"
   script:
