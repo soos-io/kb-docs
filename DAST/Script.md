@@ -55,6 +55,7 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 | `--commitHash` | None | The commit hash value from the SCM System |
 | `--contextFile` | None | Context file which will be loaded prior to scanning the target |
 | `--debug` | False | Enable debug logging for ZAP. |
+| `--excludeUrlsFile` | | Path to a file containing regex URLs to exclude, one per line. eg `--excludeUrlsFile=exclude_urls.txt`
 | `--disableRules` | None | Comma separated list of ZAP rules IDs to disable. List for reference https://www.zaproxy.org/docs/alerts/ |
 | `--fullScanMinutes` | None | Number of minutes for the spider to run |
 | `--help`, `-h` | ==SUPPRESS== | show this help message and exit |
@@ -143,6 +144,52 @@ Snippet example:
 ``` bash
 docker run -it soosio/dast:latest "https://example.com" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --oauthTokenUrl="https://example.com/token" --oauthParameters="client_id:value, client_secret:value, grant_type:value" --apiURL="https://api.soos.io/api/"
 ```
+
+--- 
+
+### How to Use the `excludeUrlsFile` Parameter
+
+The `excludeUrlsFile` parameter allows you to specify a list of URLs that you want to exclude from the DAST scan. This is particularly useful for focusing the scan on specific parts of your application and avoiding unnecessary analysis of irrelevant areas. To use this feature effectively, you need to create a text file containing regular expressions that match the URLs you wish to exclude.
+
+#### Example Usage:
+
+When you run the SOOS DAST tool, you can include the `--excludeUrlsFile` parameter followed by the path to your file containing the exclusion patterns. For example:
+
+```bash
+docker run -it soosio/dast ... --scanMode="fullscan" --excludeUrlsFile="exclude_urls.txt"
+```
+
+In this example, `exclude_urls.txt` is a file containing regular expression patterns. Each pattern in this file specifies a URL or a set of URLs to be excluded from the scan.
+
+#### Content Format of `exclude_urls.txt`:
+
+Here’s an example of what the contents of `exclude_urls.txt` might look like:
+
+```txt
+^https://app\.soos\.io/research/vulnerabilities/(?!CVE-2015-8048/|CVE-2015-8047/).+$
+^https://app\.soos\.io/research/repositories/(?!github/soos-io/soos-ci-analysis-python/).+$
+^https://app\.soos\.io/research/licenses/(?!0BSD/|AAL/).+$
+^https://app\.soos\.io/research/packages/[^/]+/(?!@soos-io/soos-sbom/|@soos-io/soos-sca/).+$
+^https://app\.soos\.io/research/license-exceptions/(?!vsftpd-openssl-exception).+$
+```
+
+Each line in this file is a regular expression that matches URLs to be excluded, except for certain exceptions specified within the pattern.
+
+#### Understanding the Regex Patterns:
+
+- `^https://app\.soos\.io/research/vulnerabilities/(?!CVE-2015-8048/|CVE-2015-8047/).+$`: This pattern matches all URLs under the "vulnerabilities" directory except for `CVE-2015-8048` and `CVE-2015-8047`. Only these two exceptions will be scanned.
+  
+- `^https://app\.soos\.io/research/repositories/(?!github/soos-io/soos-ci-analysis-python/).+$`: This pattern matches all URLs under the "repositories" directory except for the `soos-ci-analysis-python` repository on GitHub.
+
+- `^https://app\.soos\.io/research/licenses/(?!0BSD/|AAL/).+$`: This pattern excludes all URLs under the "licenses" directory except for `0BSD` and `AAL` licenses.
+
+- `^https://app\.soos\.io/research/packages/[^/]+/(?!@soos-io/soos-sbom/|@soos-io/soos-sca/).+$`: This pattern matches all URLs under the "packages" directory except for `soos-sbom` and `soos-sca` packages.
+
+- `^https://app\.soos\.io/research/license-exceptions/(?!vsftpd-openssl-exception).+$`: This pattern excludes all URLs under the "license-exceptions" directory except for `vsftpd-openssl-exception`.
+
+By leveraging the `excludeUrlsFile` parameter, you can tailor your DAST scans to focus on specific areas of your application, enhancing efficiency and relevance of the scan results.
+
+
 
 ## Reference
 * To see the full list of available parameters go to [DAST repository parameters description](https://github.com/soos-io/soos-dast#parameters)
