@@ -189,7 +189,67 @@ Each line in this file is a regular expression that matches URLs to be excluded,
 
 By leveraging the `excludeUrlsFile` parameter, you can tailor your DAST scans to focus on specific areas of your application, enhancing efficiency and relevance of the scan results.
 
+### How to Configure Rules by Passing a Rules File
 
+We support ZAP rules configuration by passing a file to indicate to INFO, IGNORE or FAIL rules.
+
+This is especially useful as it lets you tailor your scan and focus only on the rules that matter for your application, reducing the time the scan takes to complete and with that the amount of request being done against the site.
+
+#### Getting the config file to edit
+
+To get a default config with all the rules being executed you should run this command first:
+
+```bash
+docker run -it <YOUR_LOCAL_MACHINE_PATH>:/zap/wrk:rw soosio/dast --apiKey=<YOUR_API_KEY> --clientId=<YOUR_CLIENT_ID> --projectName=<YOUR_PROJECT_NAME>   --otherOptions="-g rules_config.txt" <TARGET_URL>
+```
+
+Once you run the command above, you should be able to find in the path you've specified mounting the docker volume, a new file `rules_config.txt` that would look something like this (it might vary depending on the `scanType` chosen):
+
+```rules_config.txt
+# zap-baseline rule configuration file
+# Change WARN to IGNORE to ignore rule or FAIL to fail if rule matches
+# Only the rule identifiers are used - the names are just for info
+# You can add your own messages to each rule by appending them after a tab on each line.
+....Other rules
+10054	WARN	(Cookie without SameSite Attribute)
+10055	WARN	(CSP)
+10056	WARN	(X-Debug-Token Information Leak)
+10057	WARN	(Username Hash Found)
+10061	WARN	(X-AspNet-Version Response Header)
+10062	WARN	(PII Disclosure)
+10063	WARN	(Permissions Policy Header Not Set)
+....Other rules
+```
+
+Now the next step would be to modify this file to `IGNORE` or `FAIL` according to each rule. For example, if one doesn't use `ASP.Net` in the application, it doesn't make much sense to have the rule `10061	WARN	(X-AspNet-Version Response Header)` enabled, so we would just switch that from `WARN` to `IGNORE`.
+
+Resulting in this txt:
+
+```rules_config.txt
+# zap-baseline rule configuration file
+# Change WARN to IGNORE to ignore rule or FAIL to fail if rule matches
+# Only the rule identifiers are used - the names are just for info
+# You can add your own messages to each rule by appending them after a tab on each line.
+....Other rules
+10054	WARN	(Cookie without SameSite Attribute)
+10055	WARN	(CSP)
+10056	WARN	(X-Debug-Token Information Leak)
+10057	WARN	(Username Hash Found)
+10061	IGNORE	(X-AspNet-Version Response Header)
+10062	WARN	(PII Disclosure)
+10063	WARN	(Permissions Policy Header Not Set)
+....Other rules
+```
+
+#### Using the modified config rules
+
+Once we have modified and saved the `rules_config.txt` with the modified rules, it's time to run the scan with this configuration.
+
+It's similar to the command to generate the rules, but the only change is that we switch `-g` for `-c` to pass in the new `rules_config.txt` file:
+
+```bash
+docker run -it <YOUR_LOCAL_MACHINE_PATH>:/zap/wrk:rw soosio/dast --apiKey=<YOUR_API_KEY> --clientId=<YOUR_CLIENT_ID> --projectName=<YOUR_PROJECT_NAME> --otherOptions="-c rules_config.txt" <TARGET_URL>
+```
 
 ## Reference
 * To see the full list of available parameters go to [DAST repository parameters description](https://github.com/soos-io/soos-dast#parameters)
