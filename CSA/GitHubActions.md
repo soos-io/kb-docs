@@ -74,7 +74,7 @@ jobs:
           target_image: "image:tag"
           output_format: "sarif"
       - name: Upload SOOS CSA Report # 3rd party action to upload SARIF results to your GitHub repository
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: results.sarif
 ```
