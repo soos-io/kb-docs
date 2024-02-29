@@ -44,7 +44,7 @@ If you are using GitHub Enterprise or your repository is public, you can configu
 - Set the `outputFormat` to `sarif` value.
 - Add the `upload-sarif` like the example.
 
-```
+```yaml
 name: Example workflow using SOOS
 # Events required to engage workflow (add/edit this list as needed)
 on: push
@@ -66,7 +66,7 @@ jobs:
         client_id: ${{ secrets.SOOS_CLIENT_ID }}
         api_key: ${{ secrets.SOOS_API_KEY }}
     - name: Upload SOOS DAST Report
-      uses: github/codeql-action/upload-sarif@v2
+      uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: results.sarif
 ```
