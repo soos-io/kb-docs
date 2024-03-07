@@ -10,6 +10,7 @@ This document will take you step-by-step through the tasks required to set up a 
 - You need to have a Bamboo project.
 - Have installed the latest version of the [SOOS SCA Plugin](https://marketplace.atlassian.com/apps/1227220/soos-sca)
 - Have JDK 11 configured on your Bamboo agent.
+- Have Node 18.18.2 or Higher - [Download Node.js](https://nodejs.org/en/download) configured on your Bamboo agent.
 
 ## Steps
 
