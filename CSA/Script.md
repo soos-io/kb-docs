@@ -118,7 +118,7 @@ To scan a Docker image that has been saved as a `.tar` file, follow these steps:
 
 Replace `<YOUR_LOCAL_DIRECTORY_PATH>` with the directory containing your `.tar` file. This command mounts the `.tar` file inside the container and initiates the scan.
 
-## Scanning a Directory
+## Scanning a Docker Image Definition Directory
 
 To scan a directory containing Docker image definitions with its other relevant files, use the following method:
 
