@@ -70,8 +70,73 @@ docker run -it \
   --projectName="<YOUR_PROJECT_NAME>" \
   <CONTAINER_NAME>:<TAG_NAME>
 ```
-
 Note: The path c:/results is specific to Windows. If you're using Linux or macOS, adjust the path format accordingly.
+
+---
+
+## Scanning a Locally Built Docker Image
+
+To scan a Docker image that has been built locally and is not hosted on any registry, follow these steps:
+
+1. Give access to Docker Host Context to the `soosio/sca` image. This is done by mounting the Docker socket from your host machine into the container.
+
+2. Run the Scan: Use the following command to scan your locally built image. The crucial part is the `-v` flag used to pass the context of the Docker host machine to the container:
+   ```
+   docker run -it \
+   -v /var/run/docker.sock:/var/run/docker.sock \
+   soosio/csa \
+   --clientId=<YOUR_CLIENT_ID> \
+   --apiKey=<YOUR_API_KEY> \
+   --projectName="<YOUR_PROJECT_NAME>" \
+   <PREVIOUSLY_BUILT_IMAGE>
+   ```
+
+Replace `<PREVIOUSLY_BUILT_IMAGE>` with the name of your locally built Docker image. This command enables the scanning tool inside the container to access and scan the specified Docker image stored on your host machine.
+
+---
+
+## Scanning a Docker Image Saved as a .tar File
+
+To scan a Docker image that has been saved as a `.tar` file, follow these steps:
+
+1. Save the Docker Image: Use the `docker save` command to save your image as a `.tar` file. For example, to save the `soosio/csa` image, use:
+   ```
+   docker save -o soosio_csa.tar soosio/csa
+   ```
+
+2. Run the Scan: Execute the following command, ensuring that the volume is mounted to the path where the `.tar` file is located:
+   ```
+   docker run -it \
+   -v <YOUR_LOCAL_DIRECTORY_PATH>:/usr/src/app/results:rw \
+   soosio/csa \
+   --clientId=<YOUR_CLIENT_ID> \
+   --apiKey=<YOUR_API_KEY> \
+   --projectName="<YOUR_PROJECT_NAME>" \
+   "docker-archive:results/your_image.tar"
+   ```
+
+Replace `<YOUR_LOCAL_DIRECTORY_PATH>` with the directory containing your `.tar` file. This command mounts the `.tar` file inside the container and initiates the scan.
+
+## Scanning a Directory
+
+To scan a directory containing Docker images or other relevant files, use the following method:
+
+1. Specify the Directory: Ensure that the directory you want to scan is accessible on your host machine.
+
+2. Run the Scan: Use the command below, where the last argument specifies the folder containing the files to be scanned:
+   ```
+   docker run -it \
+   -v <YOUR_LOCAL_DIRECTORY_PATH>:/usr/src/app/results:rw \
+   soosio/csa \
+   --clientId=<YOUR_CLIENT_ID> \
+   --apiKey=<YOUR_API_KEY> \
+   --projectName="<YOUR_PROJECT_NAME>" \
+   /usr/src/app/results
+   ```
+
+In this command, replace `<YOUR_LOCAL_DIRECTORY_PATH>` with the path to your local directory. The directory is mounted into the container, and the scan is executed on its contents.
+
+---
 
 ## Reference
 * To see the full list of available parameters go to the [CSA repository parameters description](https://github.com/soos-io/soos-csa#parameters).
