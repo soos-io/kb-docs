@@ -70,6 +70,7 @@ docker run -it \
   --projectName="<YOUR_PROJECT_NAME>" \
   <CONTAINER_NAME>:<TAG_NAME>
 ```
+
 Note: The path c:/results is specific to Windows. If you're using Linux or macOS, adjust the path format accordingly.
 
 ---
