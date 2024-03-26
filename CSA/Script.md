@@ -79,7 +79,7 @@ Note: The path c:/results is specific to Windows. If you're using Linux or macOS
 
 To scan a Docker image that has been built locally and is not hosted on any registry, follow these steps:
 
-1. Give access to Docker Host Context to the `soosio/sca` image. This is done by mounting the Docker socket from your host machine into the container.
+1. Give access to Docker Host Context to the `soosio/sca` image. This is done by mounting the Docker socket that the host listens on from the host machine to the container.
 
 2. Run the Scan: Use the following command to scan your locally built image. The crucial part is the `-v` flag used to pass the context of the Docker host machine to the container:
    ```
@@ -120,7 +120,7 @@ Replace `<YOUR_LOCAL_DIRECTORY_PATH>` with the directory containing your `.tar` 
 
 ## Scanning a Directory
 
-To scan a directory containing Docker images or other relevant files, use the following method:
+To scan a directory containing Docker image definitions with its other relevant files, use the following method:
 
 1. Specify the Directory: Ensure that the directory you want to scan is accessible on your host machine.
 
