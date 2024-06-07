@@ -8,8 +8,8 @@ In this article we will make the necessary modifications to a Bitbucket reposito
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a https://bitbucket.org account and repository setup.
-- 
+- You need to have a https://bitbucket.org account and repository setup or a private instance of Bitbucket server
+
 ## Steps
 
 ### **Repo Setup**
