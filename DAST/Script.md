@@ -200,7 +200,7 @@ This is especially useful as it lets you tailor your scan and focus only on the 
 To get a default config with all the rules being executed you should run this command first:
 
 ```bash
-docker run -it <YOUR_LOCAL_MACHINE_PATH>:/zap/wrk:rw soosio/dast --apiKey=<YOUR_API_KEY> --clientId=<YOUR_CLIENT_ID> --projectName=<YOUR_PROJECT_NAME>   --otherOptions="-g rules_config.txt" <TARGET_URL>
+docker run -v <YOUR_LOCAL_MACHINE_PATH>:/zap/wrk:rw -it soosio/dast --apiKey=<YOUR_API_KEY> --clientId=<YOUR_CLIENT_ID> --projectName=<YOUR_PROJECT_NAME>   --otherOptions="-g rules_config.txt" <TARGET_URL>
 ```
 
 Once you run the command above, you should be able to find in the path you've specified mounting the docker volume, a new file `rules_config.txt` that would look something like this (it might vary depending on the `scanType` chosen):
