@@ -8,8 +8,9 @@ In this article, we will guide you through modifying a GitHub Workflow to use th
 
 ## Prerequisites
 
-- You need to have a [SOOS account](https://app.soos.io/register).
+- You need to have a [SOOS account](https://app.soos.io/register) with SAST scanning enabled.
 - You need to have a GitHub Repo.
+- You need to have previously generated Sarif 2.1 json in file(s) that end with the `.sarif.json` extension.
 
 ## Steps
 

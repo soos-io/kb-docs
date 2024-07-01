@@ -7,8 +7,9 @@
 SOOS provides direct CI/CD integration to the 10 most common platforms. So what do you do if you don't see yours listed? SOOS provides a Script for you to customize as needed.
 
 ## Prerequisites
-- You need to have a [SOOS account](https://app.soos.io/register).
+- You need to have a [SOOS account](https://app.soos.io/register) with SAST scanning enabled.
 - Node 18.18.2 or Higher - [Download Node.js](https://nodejs.org/en/download).
+- You need to have previously generated Sarif 2.1 json in file(s) that end with the `.sarif.json` extension.
 
 ## Steps
 
