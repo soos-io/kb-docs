@@ -7,10 +7,19 @@ This document will take you step-by-step through the tasks required to set up an
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have an Azure Project configured.
+- You need to have a [SOOS account](https://app.soos.io/register) with Container scanning enabled.
+- You need to have a Azure DevOps YML pipeline.
+- The pipeline job must run the task on a Linux build agent.
 
 ## Steps
+
+### **Use a Linux Build Agent**
+
+Your pipeline stage must use a Linux build agent:
+```
+  pool:
+    vmImage: 'ubuntu-latest'
+```
 
 ### **Installing the Task**
 

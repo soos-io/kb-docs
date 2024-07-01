@@ -6,8 +6,9 @@
 In this article, we will add the SOOS Container Security Analysis (CSA) GitHub Action to a GitHub Workflow and scan a GitHub repository.
 
 ## Prerequisites
-- You need to have a [SOOS account.](https://app.soos.io/register)
+- You need to have a [SOOS account](https://app.soos.io/register) with Container scanning enabled.
 - You need to have a GitHub repo.
+- The action must run the task on a Linux build agent.
 
 ## Steps
 

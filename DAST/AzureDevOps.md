@@ -3,14 +3,23 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="Azure" width="128" height="128">
 </div>
-This document will take you step-by-step through the tasks required to set up an Azure project and scan it with SOOS Dynamic Application Security Testing (DAST).
+This document will take you step-by-step through the tasks required to set up an Azure pipeline and scan it with SOOS Dynamic Application Security Testing (DAST).
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a Azure Project configured.
+- You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.
+- You need to have a Azure DevOps YML pipeline.
+- The pipeline job must run the task on a Linux build agent.
 
 ## Steps
+
+### **Use a Linux Build Agent**
+
+Your pipeline stage must use a Linux build agent:
+```
+  pool:
+    vmImage: 'ubuntu-latest'
+```
 
 ### **Installing the task**
 
