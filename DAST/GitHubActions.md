@@ -6,8 +6,9 @@
 In this article we will make the necessary modifications to a GitHub Workflow using the SOOS DAST Analysis GitHub Action to scan a GitHub repository with SOOS.
 
 ## Prerequisites
-- You need to have a [SOOS account.](https://app.soos.io/register)
+- You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.
 - You need to have a GitHub repo.
+- The action must run the task on a Linux build agent.
 
 ## Steps
 
