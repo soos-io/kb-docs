@@ -20,7 +20,7 @@ In the .github/workflows directory, create a file named main.yml.
 
 ### **Get the Example**
 
-* Navigate to the [GitHub Action DAST integration page on the SOOS App](https://app.soos.io/integrate/containers?id=github-actions), copy the example, and modify it.
+* Navigate to the [GitHub Action Containers integration page on the SOOS App](https://app.soos.io/integrate/containers?id=github-actions), copy the example, and modify it.
 
 ### **Run It**
 

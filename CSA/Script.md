@@ -12,7 +12,7 @@ Set up a command line task to run SOOS Container Security Analysis (CSA).
 
 ## Steps
 ### **Getting the Script**
-* Navigate to the [Script CSA integration page on the SOOS App](https://app.soos.io/integrate/containers?id=script), copy the example, and modify it.
+* Navigate to the [Script Containers integration page on the SOOS App](https://app.soos.io/integrate/containers?id=script), copy the example, and modify it.
 
 ### **Run It**
 * Execute the command locally or as a script task within your CI/CD pipeline.

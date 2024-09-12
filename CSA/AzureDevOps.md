@@ -14,9 +14,17 @@ Set up an Azure DevOps pipeline and scan it with SOOS Container Security Analysi
 
 ## Steps
 
+### **Use a Linux Build Agent**
+
+Your pipeline stage must use a Linux build agent:
+```
+  pool:
+    vmImage: 'ubuntu-latest'
+```
+
 ### **Get the Example**
 
-* Navigate to the [Azure DevOps DAST integration page on the SOOS App](https://app.soos.io/integrate/containers?id=azure-devops), copy the example, and modify it.
+* Navigate to the [Azure DevOps Containers integration page on the SOOS App](https://app.soos.io/integrate/containers?id=azure-devops), copy the example, and modify it.
 
 ### **Run It**
 

@@ -12,6 +12,10 @@ Set up a Bitbucket pipeline project and scan an endpoint with SOOS DAST.
 
 ## Steps
 
+### **Get the Example**
+
+* Navigate to the [BitBucket DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=bitbucket), copy the example, and modify it.
+
 ### **Repo/Pipeline Setup**
 * Edit (or create a new) `bitbucket-pipelines.yml` file in the root of the repository (`<repo_root>/bitbucket-pipelines.yml`).
 * Using an example below script below, add the SOOS DAST script to your repository's `bitbucket-pipelines.yml` file.

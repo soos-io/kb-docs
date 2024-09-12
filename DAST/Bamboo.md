@@ -13,8 +13,9 @@ Set up a Bamboo pipeline project and scan an endpoint with SOOS DAST.
 
 ## Steps
 
-### **Getting the script**
-* Navigate to the [Bamboo DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=bamboo) and pick the right file for your OS.
+### **Get the Example**
+
+* Navigate to the [Bamboo DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=bamboo), copy the example, and modify it.
 
 ### **Setting environment variables**
 Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables, under the Global Variables section (this can be encountered in the settings wheel in Bamboo). These will serve as environment variables to be used by the SOOS CLI. Use the API Key and Client ID values you collected from [Bamboo DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=bamboo).
