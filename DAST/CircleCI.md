@@ -7,8 +7,7 @@ Set up a CircleCI pipeline project and scan an endpoint with SOOS DAST via the S
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a CircleCI project.
+- You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.
 
 ## Steps
 

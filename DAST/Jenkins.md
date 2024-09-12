@@ -10,11 +10,14 @@ Set up a Jenkinsfile and scan an endpoint with SOOS DAST
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- Have [docker installed.](https://docs.docker.com/get-docker/) in Jenkins Host machine.
+- You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.
+- Have [docker installed](https://docs.docker.com/get-docker/) on the Jenkins Host machine.
+
 ## Steps
+
 ### **Getting the script**
 * Navigate to the [Jenkins DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=jenkins) and copy the `Jenkinsfile` script content according to the OS you're running Jenkins on.
+
 ### **Setup your Repo**
 Create a file called `Jenkinsfile` in the root of your repository and paste the content from the above step.
 

@@ -7,8 +7,7 @@
 Set up a Bamboo pipeline project and scan an endpoint with SOOS DAST.
 
 ## Prerequisites
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a Bamboo project created.
+- You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.
 - Docker needs to be installed on the agent machine.
 
 ## Steps

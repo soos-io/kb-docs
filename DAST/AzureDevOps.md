@@ -8,7 +8,6 @@ Set up an Azure DevOps pipeline project and scan an endpoint with SOOS DAST.
 ## Prerequisites
 
 - You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.
-- You need to have an Azure DevOps Project with a Pipeline.
 - Add the [**SOOS Security Analysis**](https://marketplace.visualstudio.com/items?itemName=SOOS.SOOS-Security-Analysis) task to your organization in Azure DevOps.
 - The pipeline job must run the task on a Linux build agent.
 

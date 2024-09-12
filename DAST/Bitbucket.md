@@ -7,8 +7,7 @@ Set up a Bitbucket pipeline project and scan an endpoint with SOOS DAST.
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a https://bitbucket.org account and repository setup.
+- You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.
 
 ## Steps
 

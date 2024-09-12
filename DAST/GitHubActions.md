@@ -7,7 +7,6 @@ Set up a GitHub Workflow and scan an endpoint with the SOOS DAST GitHub Action
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.
-- You need to have a GitHub repository.
 - The action must run the task on a Linux build agent.
 
 ## Steps

@@ -10,9 +10,11 @@ Set up a script and scan an endpoint with SOOS DAST
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- Have [docker installed.](https://docs.docker.com/get-docker/) in the Host machine.
+- You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.
+- Have [docker installed.](https://docs.docker.com/get-docker/) on the host machine.
+
 ## Steps
+
 ### **Getting the script**
 * Navigate to the [Script DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=script) and copy the script content according to the OS you're running.
 

@@ -7,7 +7,7 @@
 Set up a command line task to run SOOS Container Security Analysis (CSA).
 
 ## Prerequisites
-- You need to have a [SOOS account](https://app.soos.io/register).
+- You need to have a [SOOS account](https://app.soos.io/register) with Container scanning enabled.
 - Have [Docker installed](https://docs.docker.com/get-docker/) on the host machine.
 
 ## Steps
@@ -115,4 +115,4 @@ In this command, replace `<local_path_to_image>` with the path to your local dir
 ---
 
 ## Reference
-* To see the full list of available parameters go to the [CSA repository parameters description](https://github.com/soos-io/soos-csa#parameters).
+* To see the full list of available parameters go to the [SOOS Container Scan Parameters](https://github.com/soos-io/soos-csa#parameters).

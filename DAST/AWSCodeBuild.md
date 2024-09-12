@@ -6,8 +6,7 @@
 Set up an AWS CodeBuild project and scan an endpoint with SOOS DAST.
 
 ## Prerequisites
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a AWS Codebuild project created
+- You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.
 
 ## Steps
 

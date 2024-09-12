@@ -3,12 +3,12 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="Azure" width="128" height="128">
 </div>
+
 Set up an Azure DevOps pipeline and scan it with SOOS Container Security Analysis (CSA).
 
 ## Prerequisites
 
-- You need to have a [SOOS account](https://app.soos.io/register) with Container scanning enabled.
-- You need to have an Azure DevOps Project with a Pipeline.
+- You need to have a [**SOOS account**](https://app.soos.io/register) with Container scanning enabled.
 - The pipeline job must run the task on a Linux build agent.
 - Add the [**SOOS Security Analysis**](https://marketplace.visualstudio.com/items?itemName=SOOS.SOOS-Security-Analysis) task to your organization in Azure DevOps.
 
@@ -45,8 +45,6 @@ The following steps outline how to perform a CSA scan targeting private images i
 Example workflow: 
 
 ``` yaml
-pool:
-  name: Azure Pipelines
 steps:
 - task: DockerInstaller@0
   displayName: 'Install Docker'
@@ -78,4 +76,4 @@ steps:
 ---
 
 ## Reference
-* To see the full list of available parameters go to the [CSA repository parameters description](https://github.com/soos-io/soos-csa#parameters).
+* To see the full list of available parameters go to the [SOOS Container Scan Parameters](https://github.com/soos-io/soos-csa#parameters).

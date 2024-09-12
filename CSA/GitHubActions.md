@@ -3,11 +3,10 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/github-action.png" alt="Github Action" width="128" height="128">
 </div>
-Set up a GitHub Workflow and scan it with SOOS Container Security Analysis (CSA).
+Set up a GitHub Workflow and scan it with SOOS Container Security Analysis GitHub Action.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register) with Container scanning enabled.
-- You need to have a GitHub repository.
 - The action must run the task on a Linux build agent.
 
 ## Steps
@@ -97,4 +96,4 @@ jobs:
 ---
 
 ## Reference
-* To see the full list of available parameters go to the [CSA repository parameters description](https://github.com/soos-io/soos-csa#parameters).
+* To see the full list of available parameters go to the [SOOS Container Scan Parameters](https://github.com/soos-io/soos-csa-github-action).
