@@ -5,7 +5,7 @@
 <img src="../assets/img/azure.png" alt="Azure DevOps" width="128" height="128">
 </div>
 
-In this article, we will guide you through modifying a simple Azure project to scan a GitHub or Bitbucket repository with the SOOS SAST Analysis product.
+Set up an Azure DevOps pipeline to scan SARIF 2.1 files with SOOS SAST.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register) with SAST scanning enabled.

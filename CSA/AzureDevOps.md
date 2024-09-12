@@ -3,7 +3,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="Azure" width="128" height="128">
 </div>
-Set up an Azure project and scan it with SOOS Container Security Analysis (CSA).
+Set up an Azure DevOps pipeline and scan it with SOOS Container Security Analysis (CSA).
 
 ## Prerequisites
 

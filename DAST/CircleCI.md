@@ -3,7 +3,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/circleci.png" alt="CircleCI" width="128" height="128">
 </div>
-In this article we will make the necessary modifications to a simple CircleCI project to scan a GitHub or Bitbucket repository with the SOOS CircleCI Orb.
+Set up a CircleCI pipeline project and scan it with SOOS DAST via the SOOS CircleCI DAST Orb.
 
 ## Prerequisites
 

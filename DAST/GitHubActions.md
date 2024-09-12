@@ -3,7 +3,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/github-action.png" alt="Github Action" width="128" height="128">
 </div>
-In this article we will make the necessary modifications to a GitHub Workflow using the SOOS DAST Analysis GitHub Action to scan a GitHub repository with SOOS.
+Set up a GitHub Workflow and scan an endpoint with the SOOS DAST GitHub Action
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register) with DAST scanning enabled.

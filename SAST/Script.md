@@ -4,7 +4,8 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/shell.png" alt="Script" width="128" height="128">
 </div>
-SOOS provides direct CI/CD integration to the 10 most common platforms. So what do you do if you don't see yours listed? SOOS provides a Script for you to customize as needed.
+
+Set up a script to scan SARIF 2.1 files with SOOS SAST.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register) with SAST scanning enabled.

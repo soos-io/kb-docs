@@ -6,8 +6,7 @@
 <img src="../assets/img/shell.png" alt="SOOS" width="128" height="128">
 </div>
 
-Currently you have the option to integrate the SOOS DAST product using the command line from your OS.
-
+Set up a script and scan an endpoint with SOOS DAST
 
 ## Prerequisites
 

@@ -4,7 +4,9 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/github-action.png" alt="Github Action" width="128" height="128">
 </div>
-In this article, we will guide you through modifying a GitHub Workflow to use the SOOS SBOM Analysis GitHub Action for scanning a GitHub repository with SOOS.
+
+
+Set up a GitHub Action Workflow to scan CycloneDX or SPDX SBOMs with SOOS SBOM.
 
 ## Prerequisites
 

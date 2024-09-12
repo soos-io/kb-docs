@@ -4,8 +4,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/bamboo.png" alt="bamboo" width="128" height="128">
 </div>
-
-Currently, you can integrate the SOOS DAST Analysis with Bamboo using the SOOS DAST Analysis Docker Image in your bamboo.yml spec file.
+Set up a Bamboo pipeline project and scan an endpoint with SOOS DAST.
 
 ## Prerequisites
 - You need to have a [SOOS account.](https://app.soos.io/register)

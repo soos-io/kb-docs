@@ -4,7 +4,8 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/shell.png" alt="Script" width="128" height="128">
 </div>
-SOOS provides direct CI/CD integration to the 10 most common platforms. If your platform isn't listed, SOOS offers a customizable Script.
+
+Set up a script to scan CycloneDX or SPDX SBOMs with SOOS SBOM.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register).
