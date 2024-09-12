@@ -4,7 +4,7 @@
 <img src="../assets/img/gitlab.png" alt="GitLab" width="128" height="128">
 </div>
 
-This document will walk you through, step-by-step, how to set up a GitLab repository and scan it with the SOOS SCA Product.
+Set up GitLab to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register).

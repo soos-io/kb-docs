@@ -5,7 +5,7 @@
 <img src="../assets/img/azure.png" alt="Azure DevOps" width="128" height="128">
 </div>
 
-In this article, we will guide you through modifying a simple Azure project to scan a GitHub or Bitbucket repository with the SOOS SBOM Analysis product.
+Set up an Azure DevOps pipeline to scan CycloneDX or SPDX SBOMs with SOOS SBOM.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register).

@@ -3,7 +3,8 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/jenkins.png" alt="Jenkins" width="128" height="128">
 </div>
-This document will take you step-by-step through the tasks required to set up a Jenkins project, for scan it with the SOOS SCA Product.
+
+Set up Jenkins to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 

@@ -9,7 +9,7 @@ Set up TravisCI to scan an endpoint with SOOS DAST
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a Travis repo.
+- You need to have a Travis repository.
 
 ## Steps
 

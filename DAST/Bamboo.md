@@ -32,7 +32,7 @@ Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables, under the Glob
 
 * Create a new folder in your git repository: `<repo_root>/bamboo-specs`
 * Place the bamboo.yml under  `<repo_root>/bamboo-specs/` folder that you created in step # 1 above.
-* Commit the new file and the new folder path to your repo.
+* Commit the new file and the new folder path to your repository.
 
 **Configure Bamboo Build**
 

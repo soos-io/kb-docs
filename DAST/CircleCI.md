@@ -3,7 +3,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/circleci.png" alt="CircleCI" width="128" height="128">
 </div>
-Set up a CircleCI pipeline project and scan it with SOOS DAST via the SOOS CircleCI DAST Orb.
+Set up a CircleCI pipeline project and scan an endpoint with SOOS DAST via the SOOS CircleCI DAST Orb.
 
 ## Prerequisites
 

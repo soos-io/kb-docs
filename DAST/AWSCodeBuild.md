@@ -3,7 +3,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/codebuild.png" alt="GitLab" width="128" height="128">
 </div>
-Set up an AWS CodeBuild project and scan it with SOOS DAST.
+Set up an AWS CodeBuild project and scan an endpoint with SOOS DAST.
 
 ## Prerequisites
 - You need to have a [SOOS account.](https://app.soos.io/register)

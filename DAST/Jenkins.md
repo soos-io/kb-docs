@@ -6,7 +6,8 @@
 <img src="../assets/img/jenkins.png" alt="Jenkins" width="128" height="128">
 </div>
 
-Currently, you can integrate the SOOS DAST Analysis with Jenkins using the SOOS DAST Analysis Docker Image in your Jenkinsfile
+Set up a Jenkinsfile and scan an endpoint with SOOS DAST
+
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)

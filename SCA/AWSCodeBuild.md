@@ -4,7 +4,8 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/codebuild.png" alt="codebuild" width="128" height="128">
 </div>
-In this article we will make the necessary modifications to a simple AWS CodeBuild project to scan a GitHub repository with SOOS.
+
+Set up AWS CodeBuild to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 

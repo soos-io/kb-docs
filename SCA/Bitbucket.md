@@ -3,7 +3,8 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/bitbucket.png" alt="Bitbucket" width="128" height="128">
 </div>
-In this article we will make the necessary modifications to a Bitbucket repository to scan the repository with SOOS SCA.
+
+Set up BitBucket to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 

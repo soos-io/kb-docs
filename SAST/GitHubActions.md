@@ -4,12 +4,13 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/github-action.png" alt="Github Action" width="128" height="128">
 </div>
-In this article, we will guide you through modifying a GitHub Workflow to use the SOOS SAST Analysis GitHub Action for scanning a GitHub repository with SOOS.
+
+Set up an GitHub Action Workflow to scan SARIF 2.1 files with SOOS SAST.
 
 ## Prerequisites
 
 - You need to have a [SOOS account](https://app.soos.io/register) with SAST scanning enabled.
-- You need to have a GitHub Repo.
+- You need to have a GitHub repository.
 - You need to have previously generated Sarif 2.1 json in file(s) that end with the `.sarif.json` extension.
 
 ## Steps

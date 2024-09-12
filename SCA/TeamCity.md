@@ -3,7 +3,8 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/teamcity.png" alt="teamcity" width="128" height="128">
 </div>
-In this article we will make the necessary modifications to a simple TeamCity project to scan a GitHub repository with SOOS.
+
+Set up TeamCity to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 - You need to have a [SOOS account.](https://app.soos.io/register)

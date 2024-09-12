@@ -4,6 +4,8 @@
 <img src="../assets/img/circleci.png" alt="circleci" width="128" height="128">
 </div>
 
+Set up CircleCI to scan your manifests with SOOS SCA Core.
+
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)

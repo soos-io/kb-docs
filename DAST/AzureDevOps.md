@@ -3,7 +3,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/azure.png" alt="Azure" width="128" height="128">
 </div>
-This document will take you step-by-step through the tasks required to set up an Azure pipeline and scan it with SOOS Dynamic Application Security Testing (DAST).
+Set up an Azure DevOps pipeline project and scan an endpoint with SOOS DAST.
 
 ## Prerequisites
 

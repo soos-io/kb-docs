@@ -3,12 +3,13 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/travis-ci.png" alt="Travis" width="128" height="128">
 </div>
-In this article we will make the necessary modifications to a simple TravisCI project to scan a GitHub or Bitbucket repository with the SOOS SCA PRODUCT.
+
+Set up TravisCI to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a Travis repo.
+- You need to have a Travis repository.
 
 ## Steps
 

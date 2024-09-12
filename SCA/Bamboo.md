@@ -3,7 +3,9 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/bamboo.png" alt="bamboo" width="128" height="128">
 </div>
-This document will take you step-by-step through the tasks required to set up a Bamboo project, for scan it with the SOOS SCA Product.
+
+Set up Bamboo to scan your manifests with SOOS SCA Core.
+
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
