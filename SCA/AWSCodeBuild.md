@@ -10,7 +10,7 @@ Set up AWS CodeBuild to scan your manifests with SOOS SCA Core.
 ## Prerequisites
 
 - You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a AWS Codebuild Project.
+- Node 20 LTS or higher enabled on the pipeline.
 
 ## Steps
 
