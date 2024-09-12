@@ -3,24 +3,25 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/travis-ci.png" alt="Travis" width="128" height="128">
 </div>
-In this article we will make the necessary modifications to a simple TravisCI project to scan a GitHub or Bitbucket repository with the SOOS SCA PRODUCT.
+
+Set up TravisCI to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a Travis repo.
+- You need to have a [SOOS account](https://app.soos.io/register).
+- Node 20 LTS or higher enabled on the pipeline.
 
 ## Steps
 
-### **Configure Travis CI**
-**Setup Environment Variables**
+### **Get the Example**
 
-* Within TravisCI, navigate to Settings.
-* Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables in the Environment Variables section
-* Copy & paste the API key and Client ID values from the [Travis CI Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=travis-ci).  These will serve as environment variables to be used by the SOOS CLI.
-* Add the SOOS script from the [Travis CI Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=travis-ci) to your repository's /.travis.yml file.
+* Navigate to the [TravisCI SCA integration page on the SOOS App](https://app.soos.io/integrate/sca?id=travisci), copy the example, and modify it.
 
-## Run It
-To run the SOOS CLI against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
+### **Run It**
 
+* Execute the pipeline
 
+---
+
+## Reference
+* To see the full list of available parameters go to [SOOS SCA Core Scan Parameters](https://github.com/soos-io/soos-sca#parameters)
