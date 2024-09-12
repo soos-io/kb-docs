@@ -15,7 +15,7 @@ Set up a script to scan CycloneDX or SPDX SBOMs with SOOS SBOM Analysis.
 
 ### **Get the Example**
 
-* Navigate to the [Azure DevOps SBOM integration page on the SOOS App](https://app.soos.io/integrate/sbom?id=azure-devops), copy the example, and modify it.
+* Navigate to the [Script SBOM integration page on the SOOS App](https://app.soos.io/integrate/sbom?id=script), copy the example, and modify it.
 
 ### **Run It**
 
