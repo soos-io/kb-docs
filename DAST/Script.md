@@ -242,5 +242,7 @@ It's similar to the command to generate the rules, but the only change is that w
 docker run -it <YOUR_LOCAL_MACHINE_PATH>:/zap/wrk:rw soosio/dast --apiKey=<YOUR_API_KEY> --clientId=<YOUR_CLIENT_ID> --projectName=<YOUR_PROJECT_NAME> --otherOptions="-c rules_config.txt" <TARGET_URL>
 ```
 
+---
+
 ## Reference
-* To see the full list of available parameters go to [DAST repository parameters description](https://github.com/soos-io/soos-dast#parameters)
+* To see the full list of available parameters go to [SOOS DAST Scan Parameters](https://github.com/soos-io/soos-dast#parameters)

@@ -106,5 +106,7 @@ soos-dast-analysis:
       ${TARGET_URL}
 ```
 
+---
+
 ## Reference
-* To see the full list of available parameters go to [DAST repository parameters description](https://github.com/soos-io/soos-dast#parameters)
+* To see the full list of available parameters go to [SOOS DAST Scan Parameters](https://github.com/soos-io/soos-dast#parameters)

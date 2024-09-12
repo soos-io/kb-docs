@@ -67,5 +67,7 @@ Based on your preferences you can add the content for the file `codeship-steps.y
 ### Run It
 To run the SOOS DAST  against your repository’s code, just execute a build or commit a change.
 
+---
+
 ## Reference
-* To see the full list of available parameters go to [DAST repository parameters description](https://github.com/soos-io/soos-dast#parameters)
+* To see the full list of available parameters go to [SOOS DAST Scan Parameters](https://github.com/soos-io/soos-dast#parameters)

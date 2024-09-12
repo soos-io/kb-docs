@@ -63,3 +63,7 @@ Once we have defined these variables globally you can set up the task to be used
 
 To run the SOOS Azure DevOps task against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
 
+---
+
+## Reference
+* To see the full list of available parameters go to [SOOS DAST Scan Parameters](https://github.com/soos-io/soos-dast#parameters)

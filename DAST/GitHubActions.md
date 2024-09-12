@@ -206,3 +206,8 @@ jobs:
         oauth_token_url: "https://example.com/token"
         oauth_parameters: "client_secret:value ,client_id:value , grant_type:value"
 ```
+
+---
+
+## Reference
+* To see the full list of available parameters go to [SOOS DAST GitHub Action Scan Parameters](https://github.com/soos-io/soos-dast-github-action)

@@ -65,5 +65,7 @@ You can choose between three jobs:
     * Raise alerts for any HTTP Server Error response codes.
     * Raise alerts for any URLs that return content types that are not usually associated with APIs.
 
+---
+
 ## Reference
-* To see the full list of available parameters go to [DAST repository parameters description](https://github.com/soos-io/soos-dast#parameters)
+* To see the full list of available parameters go to [SOOS DAST Scan Parameters](https://github.com/soos-io/soos-dast#parameters)
