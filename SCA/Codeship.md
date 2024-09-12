@@ -8,24 +8,20 @@ Set up Codeship to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a Codeship Basic project.
+- You need to have a [SOOS account](https://app.soos.io/register).
+- Node 20 LTS or higher enabled on the pipeline.
 
 ## Steps
 
-### **Setup environment variables in Codeship**
+### **Get the Example**
 
-* Within CodeShip, navigate to **Project Settings**.
-* Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables in the **Environment variables** text field under **Global Properties**.
-* Copy & paste the API key and Client ID values from the [CodeShip Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=codeship). These will serve as environment variables to be used by the SOOS CLI.
+* Navigate to the [Codeship SCA Core integration page on the SOOS App](https://app.soos.io/integrate/sca?id=codeship), copy the example, and modify it.
 
-### **Add Build Configuration**
-* Select *Tests* in the menu, then select "I want to create my own custom commands" within the Select **your technology to pre-populate basic commands**.
-* Enter "nvm install v18.12.1 " in the **Setup Commands** text box.
-* Add a new pipeline in the **Configure Test Pipelines** section by selecting the **Add Pipeline** button.
-* Enter an appropriate name for the pipeline, and press Save.
-* In the **Pipeline** text box, add the script from the CodeShip Integration Page of the SOOS App.
-* Select Save **Changes**.
+### **Run It**
 
-## Run It
-To run the SOOS CLI against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
+* Execute the pipeline
+
+---
+
+## Reference
+* To see the full list of available parameters go to [SOOS SCA Core Scan Parameters](https://github.com/soos-io/soos-sca#parameters)

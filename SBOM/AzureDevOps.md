@@ -12,7 +12,6 @@ Set up an Azure DevOps pipeline to scan CycloneDX or SPDX SBOMs with SOOS SBOM A
 - Node 20 LTS or higher enabled on the pipeline.
 - Add the [**SOOS Security Analysis**](https://marketplace.visualstudio.com/items?itemName=SOOS.SOOS-Security-Analysis) task to your organization in Azure DevOps.
 
-
 ## Steps
 
 ### **Get the Example**

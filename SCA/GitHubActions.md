@@ -8,66 +8,23 @@ Set up a GitHub Action Workflow to scan your manifests with the SOOS SCA GitHub 
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a GitHub repository.
+- You need to have a [SOOS account](https://app.soos.io/register).
+- Node 20 LTS or higher enabled in the workflow.
 
 ## Steps
 
 ### **Repository Setup**
-* Create a `.github/workflows` directory in your repository on GitHub if this directory does not already exist.
-* In the `.github/workflows` directory, create a file named main.yml.
-For more information, see "Creating new files" in GitHub Docs.
-* Paste the script given in the [GitHub Action SCA Integration page on SOOS](https://app.soos.io/integrate/sca?id=github-actions).
+* Create a `.github/workflows` directory in your repository on GitHub if it does not already exist.
 
+### **Get the Example**
 
-### **Build Setup**
+* Navigate to the [GitHub Action SBOM integration page on the SOOS App](https://app.soos.io/integrate/sca?id=github-action), copy the example, and modify it.
 
-Setup Environment Variables
+### **Run It**
 
-Under your Repository's Settings tab, select "Secrets" > "Actions" and add two new secrets which contain the SOOS Client Id and API Key which you can find in the SOOS App under [Integrate](https://app.soos.io/integrate)
+* Execute the workflow
 
-The secret names should be "SOOS_CLIENT_ID" and "SOOS_API_KEY"
+---
 
-<img src="../assets/img/github-action-envs.png">
-
-### **Build Config**
-Modify the `.github/workflows/main.yml` file, replacing the provided project_name variable value with one that is relevant to your project.
-
-## Run It
-To run the SOOS CLI against your repository’s code, just execute a build or commit a change. The build will use the environment variables that you created for the API Key and Client ID.
-
- 
-## **Configure GitHub Code Scan Output**
-
-If you are using GitHub Enterprise or your repository is public, you can configure the SOOS Action to display any issues in GitHub Code Scanning Alerts. There are a few additional steps to get this configured.
-
-### **Setup**
-- Set the `outputFormat` to `sarif` value.
-- Add the `upload-sarif` like the example.
-
-```yaml
-name: Example workflow using SOOS
-# Events required to engage workflow (add/edit this list as needed)
-on: push
-jobs:
-  soos:
-    permissions:
-      security-events: write # for uploading code scanning alert info
-    name: SOOS SCA Scan
-    runs-on: ubuntu-latest
-    steps:
-
-    - uses: actions/checkout@master
-
-    - name: Run SOOS - Scan for vulnerabilities
-      uses: soos-io/soos-sca-github-action@v2 # Get Latest Version from https://github.com/marketplace/actions/soos-core-sca
-      with:
-        project_name: "My Project Name"
-        outputFormat: "sarif"
-        client_id: ${{ secrets.SOOS_CLIENT_ID }}
-        api_key: ${{ secrets.SOOS_API_KEY }}
-    - name: Upload SOOS DAST Report
-      uses: github/codeql-action/upload-sarif@v3
-      with:
-        sarif_file: results.sarif
-```
+## Reference
+* To see the full list of available parameters go to [SOOS SCA Core Scan GitHub Action Parameters](https://github.com/soos-io/soos-sca-github-action)

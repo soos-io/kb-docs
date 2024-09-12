@@ -24,7 +24,7 @@ Set up a GitHub Action Workflow to scan CycloneDX or SPDX SBOMs with SOOS SBOM A
 
 ### **Run It**
 
-* Execute the pipeline
+* Execute the workflow
 
 ---
 

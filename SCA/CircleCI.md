@@ -4,26 +4,28 @@
 <img src="../assets/img/circleci.png" alt="circleci" width="128" height="128">
 </div>
 
-Set up CircleCI to scan your manifests with SOOS SCA Core.
+Set up CircleCI to scan your manifests with SOOS SCA Core Orb.
 
 ## Prerequisites
 
-- You need to have a [SOOS account.](https://app.soos.io/register)
-- You need to have a CircleCI project.
+- You need to have a [SOOS account](https://app.soos.io/register).
+- Node 20 LTS or higher enabled on the pipeline.
 
 ## Steps
 
 ## Repo Setup
 * Create a directory called `.circleci` in the root directory of your local GitHub or Bitbucket code repository.
-* Create a `config.yml` file inside the `.circleci` directory directory using the contents of the gist from [CircleCI Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=circleci).
+* Create a `config.yml` file inside the `.circleci` directory directory.
 
-### **Setup Environment Variables**
-* Within the CircleCI application, navigate to **Project Settings > Environment Variables**.
-* Select Add Variable button and create the SOOS_CLIENT_ID and SOOS_API_KEY variables.
-* Copy & paste the API key and Client ID values from the [CircleCI Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=circleci). These will serve as environment variables to be used by the SOOS CLI.
+### **Get the Example**
 
-## Run It
-* Navigate to the Projects page in the CircleCI app, click the Add Projects button.
-* Select the Set Up Project button next to your project. 
-    * If you don’t see your project, make sure you have selected the associated Org. See the Org Switching section further down the page for tips.
-* Click the Start Building button to trigger your first build.
+* Navigate to the [CircleCI SCA Core integration page on the SOOS App](https://app.soos.io/integrate/sca?id=circleci), copy the example, and modify it.
+
+### **Run It**
+
+* Execute the pipeline
+
+---
+
+## Reference
+* To see the full list of available parameters go to [SOOS SCA Core Scan Parameters](https://github.com/soos-io/soos-sca#parameters)
