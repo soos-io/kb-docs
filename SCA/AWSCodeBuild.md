@@ -23,7 +23,7 @@ When setting up the project make sure to use the **aws/codebuild/standard:5.0** 
 * Navigate to the [AWS CodeBuild SCA Core integration page on the SOOS App](https://app.soos.io/integrate/sca?id=aws-codebuild), copy the example, and modify it.
 
 ### **Set Build Commands**
-Return to the **"Edit"** menu and select **Buildspec** to insert build commands.
+* Return to the **"Edit"** menu and select **Buildspec** to insert build commands.
 
 ### **Run It**
 

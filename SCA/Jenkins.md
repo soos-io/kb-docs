@@ -17,7 +17,7 @@ Set up Jenkins to scan your manifests with SOOS SCA Core.
 
 ### **Get the Example**
 
-* Navigate to the [Jenkins SBOM integration page on the SOOS App](https://app.soos.io/integrate/sca?id=gitlab), copy the example, and modify it.
+* Navigate to the [Jenkins SBOM integration page on the SOOS App](https://app.soos.io/integrate/sca?id=jenkins), copy the example, and modify it.
 
 ### **Run It**
 

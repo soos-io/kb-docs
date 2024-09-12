@@ -33,7 +33,6 @@ Example:
 docker run -it soosio/dast:latest "https://example.com/protectedendnpoint" --clientId="<client_id>" --apiKey="<api_key>" --projectName="<project_name>" --bearerToken="token-value"
 ```
 
-
 ### Authenticate with a Simple Form
 
 Example:
@@ -41,7 +40,6 @@ Example:
 ``` bash
 docker run -it soosio/dast:latest "https://example.com" --clientId="<client_id>" --apiKey="<api_key>" --projectName="<project_name>" --authLoginURL="https://example.com/login" --authUsername="username" --authPassword="password" --authUsernameField="userName" --authPasswordField="password" --authSubmitField="login"
 ```
-
 
 ### Authenticate with an OAuth Token URL.
 

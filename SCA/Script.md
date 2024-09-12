@@ -14,7 +14,7 @@ Set up a script to scan your manifests with SOOS SCA Core.
 
 ### **Get the Example**
 
-* Navigate to the [Script SCA integration page on the SOOS App](https://app.soos.io/integrate/sca?id=gitlab), copy the example, and modify it.
+* Navigate to the [Script SCA integration page on the SOOS App](https://app.soos.io/integrate/sca?id=script), copy the example, and modify it.
 
 ### **Run It**
 
