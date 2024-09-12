@@ -15,132 +15,43 @@ Set up a script and scan an endpoint with SOOS DAST
 
 ## Steps
 
-### **Getting the script**
-* Navigate to the [Script DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=script) and copy the script content according to the OS you're running.
+### **Get the Example**
 
-### Script Arguments
+* Navigate to the [Script DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=script), copy the example, and modify it.
 
-| Argument | Required | Description |
-| --- | --- | --- |
-| `targetURL` | Yes | Target URL - URL of the site or api to scan. It can be the path of an API specification file when doing apiscan. The URL should include the protocol. Ex: https://www.example.com |
+### **Run It**
 
-### Script Parameters
-
-| Argument | Default | Description |
-| --- | --- | --- |
-| `--ajaxSpider` | None | Ajax Spider - Use the ajax spider in addition to the traditional one. Additional information: https://www.zaproxy.org/docs/desktop/addons/ajax-spider/ |
-| `--apiKey` | None | SOOS API Key - get yours from https://app.soos.io/integrate/dast |
-| `--authDelayTime` | 5 | Delay time in seconds to wait for the page to load after performing actions in the form. (Used only on authFormType: wait_for_password and multi_page) |
-| `--authFormType` | simple | simple (all fields are displayed at once), wait_for_password (Password field is displayed only after username is filled), or multi_page (Password field is displayed only after username is filled and submit is clicked) |
-| `--authLoginURL` | None | Login url to use when authentication is required |
-| `--authPassword` | None | Password to use when authentication is required |
-| `--authPasswordField` | None | Password input id to use when authentication is required |
-| `--authSecondSubmitField` | None | Second submit button id to use when authentication is required (for multi-page forms) |
-| `--authSubmitAction` | None | Submit action to perform on form filled. Options: click or submit |
-| `--authSubmitField` | None | Submit button id to use when authentication is required |
-| `--authUsername` | None | Username to use when authentication is required |
-| `--authUsernameField` | None | Username input id to use when authentication is required |
-| `--authVerificationURL` | None | URL used to verify authentication success, should be an URL that is expected to throw 200/302 during any authFormType authentication. If authentication fails when this URL is provided, the scan will be terminated. |
-| `--bearerToken` | None | Bearer token to use in a request header for auth |
-| `--branchName` | None | The name of the branch from the SCM System |
-| `--branchURI` | None | The URI to the branch from the SCM System |
-| `--buildURI` | None | URI to CI build info |
-| `--buildVersion` | None | Version of application build artifacts |
-| `--checkoutDir` | None | Checkout directory to locate SARIF report |
-| `--clientId` | None | SOOS Client ID - get yours from https://app.soos.io/integrate/dast |
-| `--commitHash` | None | The commit hash value from the SCM System |
-| `--contextFile` | None | Context file which will be loaded prior to scanning the target |
-| `--debug` | False | Enable debug logging for ZAP. |
-| `--excludeUrlsFile` | | Path to a file containing regex URLs to exclude, one per line. eg `--excludeUrlsFile=exclude_urls.txt`
-| `--disableRules` | None | Comma separated list of ZAP rules IDs to disable. List for reference https://www.zaproxy.org/docs/alerts/ |
-| `--fullScanMinutes` | None | Number of minutes for the spider to run |
-| `--help`, `-h` | ==SUPPRESS== | show this help message and exit |
-| `--logLevel` | None | Minimum level to show logs: INFO, WARN, FAIL, DEBUG, ERROR. |
-| `--oauthParameters` | None | Parameters to be added to the oauth token request. (eg --oauthParameters="client_id:clientID, client_secret:clientSecret, grant_type:client_credentials") |
-| `--oauthTokenUrl` | None | The authentication URL that grants the access_token. |
-| `--onFailure` | continue_on_failure | Action to perform when the scan fails. Options: fail_the_build, continue_on_failure |
-| `--operatingEnvironment` | None | Set Operating environment for information purposes only |
-| `--otherOptions` | None | Additional command line arguments for items not supported by the set of parameters above |
-| `--outputFormat` | None | Output format for vulnerabilities: only the value SARIF is available at the moment |
-| `--projectName` | None | Project Name - this is what will be displayed in the SOOS app |
-| `--requestCookies` | None | Set Cookie value(s) for each request |
-| `--requestHeaders` | None | Set extra request headers set on each request |
-| `--scanMode` | baseline | Scan Mode - Available modes: baseline, fullscan, and apiscan (for more information about scan modes visit https://github.com/soos-io/soos-dast#scan-modes) |
-
-### **Scan Modes**
-
-**Baseline**
-
-It runs the [ZAP](https://www.zaproxy.org/) spider against the specified target for (by default) 1 minute and then waits for the passive scanning to complete before reporting the results.
-
-This means that the script doesn't perform any actual ‘attacks’ and will run for a relatively short period of time (a few minutes at most).
-
-This mode is intended to be ideal to run in a `CI/CD` environment, even against production sites.
-
-**Full Scan**
-
-It runs the [ZAP](https://www.zaproxy.org/) spider against the specified target (by default with no time limit) followed by an optional ajax spider scan and then a full `Active Scan` before reporting the results.
-
-This means that the script does perform actual ‘attacks’ and can potentially run for a long period of time. You should NOT use it on web applications that you do not own. `Active Scan` can only find certain types of vulnerabilities. Logical vulnerabilities, such as broken access control, will not be found by any active or automated vulnerability scanning. Manual penetration testing should always be performed in addition to active scanning to find all types of vulnerabilities.
-
-By default, it reports all alerts as WARNings but you can specify a config file which can change any rules to FAIL or IGNORE. The configuration works in a very similar way as the [Baseline Mode](#baseline)
-
-**API Scan**
-
-It is tuned for performing scans against APIs defined by `OpenAPI`, `SOAP`, or `GraphQL` via either a local file or a URL.
-
-It imports the definition that you specify and then runs an `Active Scan` against the URLs found. The `Active Scan` is tuned to APIs, so it doesn't bother looking for things like `XSSs`.
-
-It also includes 2 scripts that:
-- Raise alerts for any HTTP Server Error response codes
-- Raise alerts for any URLs that return content types that are not usually associated with APIs
-
-Example snippet of API scan feeding spec file locally:
-
-``` bash
-docker run -v <path_to_folder_containing_file>:/zap/wrk/:rw -it soosio/dast <name_of_file>  --scanMode="apiscan" --apiScanFormat="openapi"  --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME"
-```
-
-### Running the script
-
-To run the script just execute the file created with the sample script obtained from [getting the script](#getting-the-script), just make sure that you have replaced the project name and set up the environment variables properly.
+* Execute the script
 
 ## Authenticated scans
 
-### Using bearer token
+### Using a Bearer Token
 
-If you need to run a scan against url that needs authorization and the only thing needed is to set an authorization header in the form of `authorization: Bearer token-value` then this is the most straight forward workflow (note that for this method you should have the bearer token value beforehand).
-
-Example snippet:
+Example:
 
 ``` bash
-docker run -it soosio/dast:latest "https://example.com/protectedendnpoint" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --bearerToken="token-value"
+docker run -it soosio/dast:latest "https://example.com/protectedendnpoint" --clientId="<client_id>" --apiKey="<api_key>" --projectName="<project_name>" --bearerToken="token-value"
 ```
 
 
-### Authenticate throughout a login form and get the auth token.
+### Authenticate with a Simple Form
 
-Using this option there will be an automated login form authentication performed before running the DAST scan to get the bearer token that will be then added to every request as the authorization header.
-
-This is how a example snippet will look like:
+Example:
 
 ``` bash
-docker run -it soosio/dast:latest "https://example.com" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --authLoginURL="https://example.com/login" --authUsername="username" --authPassword="password" --authUsernameField="userName" --authPasswordField="password" --authSubmitField="login"
+docker run -it soosio/dast:latest "https://example.com" --clientId="<client_id>" --apiKey="<api_key>" --projectName="<project_name>" --authLoginURL="https://example.com/login" --authUsername="username" --authPassword="password" --authUsernameField="userName" --authPasswordField="password" --authSubmitField="login"
 ```
 
 
-### Authenticate against an OAuth token url.
+### Authenticate with an OAuth Token URL.
 
-In case you need to perform a DAST analysis against an OAuth application this is the snippet that you should follow. In this scenario the DAST tool will perform a request to get the `access_token` before doing any analysis.
+Example:
 
-Snippet example:
 ``` bash
-docker run -it soosio/dast:latest "https://example.com" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --oauthTokenUrl="https://example.com/token" --oauthParameters="client_id:value, client_secret:value, grant_type:value"
+docker run -it soosio/dast:latest "https://example.com" --clientId="<client_id>" --apiKey="<api_key>" --projectName="<project_name>" --oauthTokenUrl="https://example.com/token" --oauthParameters="client_id:value, client_secret:value, grant_type:value"
 ```
 
---- 
-
-### How to Use the `excludeUrlsFile` Parameter
+## How to Use the `excludeUrlsFile` Parameter
 
 The `excludeUrlsFile` parameter allows you to specify a list of URLs that you want to exclude from the DAST scan. This is particularly useful for focusing the scan on specific parts of your application and avoiding unnecessary analysis of irrelevant areas. To use this feature effectively, you need to create a text file containing regular expressions that match the URLs you wish to exclude.
 
@@ -193,7 +104,7 @@ This is especially useful as it lets you tailor your scan and focus only on the 
 To get a default config with all the rules being executed you should run this command first:
 
 ```bash
-docker run -v <YOUR_LOCAL_MACHINE_PATH>:/zap/wrk:rw -it soosio/dast --apiKey=<YOUR_API_KEY> --clientId=<YOUR_CLIENT_ID> --projectName=<YOUR_PROJECT_NAME>   --otherOptions="-g rules_config.txt" <TARGET_URL>
+docker run -v <YOUR_LOCAL_MACHINE_PATH>:/zap/wrk:rw -it soosio/dast --apiKey=<<api_key>> --clientId=<<client_id>> --projectName=<<project_name>>   --otherOptions="-g rules_config.txt" <TARGET_URL>
 ```
 
 Once you run the command above, you should be able to find in the path you've specified mounting the docker volume, a new file `rules_config.txt` that would look something like this (it might vary depending on the `scanType` chosen):
@@ -241,7 +152,7 @@ Once we have modified and saved the `rules_config.txt` with the modified rules, 
 It's similar to the command to generate the rules, but the only change is that we switch `-g` for `-c` to pass in the new `rules_config.txt` file:
 
 ```bash
-docker run -it <YOUR_LOCAL_MACHINE_PATH>:/zap/wrk:rw soosio/dast --apiKey=<YOUR_API_KEY> --clientId=<YOUR_CLIENT_ID> --projectName=<YOUR_PROJECT_NAME> --otherOptions="-c rules_config.txt" <TARGET_URL>
+docker run -it <YOUR_LOCAL_MACHINE_PATH>:/zap/wrk:rw soosio/dast --apiKey=<<api_key>> --clientId=<<client_id>> --projectName=<<project_name>> --otherOptions="-c rules_config.txt" <TARGET_URL>
 ```
 
 ---

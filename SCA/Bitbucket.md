@@ -13,7 +13,7 @@ Set up BitBucket to scan your manifests with SOOS SCA Core.
 
 ## Steps
 
-### **Repo Setup**
+### **Repository Setup**
 * Create a new `bitbucket-pipelines.yml` file in the root of the repository (`<repo_root>/bitbucket-pipelines.yml`).
 * Add the SOOS script from the [Bitbucket Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=bitbucket) to your repository's `bitbucket-pipelines.yml` file or from the Starter Script below.
 * Copy & paste the API key and Client ID values from the [Bitbucket Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=bitbucket). While editing the pipeline file, select "Add Variables" and add two Secured variables, "SOOS_CLIENT_ID" and "SOOS_API_KEY".

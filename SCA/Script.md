@@ -12,7 +12,7 @@ Set up a script to scan your manifests with SOOS SCA Core.
 
 ## Steps
 
-### **Repo Setup**
+### **Repository Setup**
 * Download the corresponded Script for your environment from the [SCA Script integration page on SOOS](https://app.soos.io/integrate/sca?id=script).
 * Create a new file in your repo root directory called `run-sca-analysis.sh` or `run-sca-analysis.bat` and paste the content of the script in the new file.
 * Open the terminal or command prompt and go to your project directory. Run the command that corresponds to the selected operating system:

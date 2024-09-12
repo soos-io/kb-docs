@@ -13,7 +13,7 @@ Set up a GitHub Action Workflow to scan your manifests with the SOOS SCA GitHub 
 
 ## Steps
 
-### **Repo Setup**
+### **Repository Setup**
 * Create a `.github/workflows` directory in your repository on GitHub if this directory does not already exist.
 * In the `.github/workflows` directory, create a file named main.yml.
 For more information, see "Creating new files" in GitHub Docs.

@@ -14,7 +14,7 @@ Set up a script to scan SARIF 2.1 files with SOOS SAST.
 
 ## Steps
 
-### **Repo Setup**
+### **Repository Setup**
 * Download the corresponding Script for your environment from the [SAST Script integration page on SOOS](https://app.soos.io/integrate/sast?id=script).
 * Create a new file in your repository root directory called `run-sast-analysis.sh` or `run-sast-analysis.bat` and paste the content of the script in the new file.
 * Open the terminal or command prompt and navigate to your project directory. Run the appropriate command:

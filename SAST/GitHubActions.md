@@ -15,7 +15,7 @@ Set up an GitHub Action Workflow to scan SARIF 2.1 files with SOOS SAST.
 
 ## Steps
 
-### **Repo Setup**
+### **Repository Setup**
 * Create a `.github/workflows` directory in your repository on GitHub if it does not already exist.
 * In the `.github/workflows` directory, create a file named `main.yml`. For more information on creating new files, see [Creating new files in GitHub Docs](https://docs.github.com/en/github/managing-files-in-a-repository/creating-new-files).
 * Paste the script from the [GitHub Action SAST Integration page on SOOS](https://app.soos.io/integrate/sast?id=github-actions).

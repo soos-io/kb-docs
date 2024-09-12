@@ -15,7 +15,7 @@ Set up a GitHub Action Workflow to scan CycloneDX or SPDX SBOMs with SOOS SBOM.
 
 ## Steps
 
-### **Repo Setup**
+### **Repository Setup**
 * Create a `.github/workflows` directory in your repository on GitHub if it does not already exist.
 * In the `.github/workflows` directory, create a file named `main.yml`. For more information on creating new files, see [Creating new files in GitHub Docs](https://docs.github.com/en/github/managing-files-in-a-repository/creating-new-files).
 * Paste the script from the [GitHub Action SBOM Integration page on SOOS](https://app.soos.io/integrate/sbom?id=github-actions).

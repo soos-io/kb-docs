@@ -13,7 +13,7 @@ Set up a script to scan CycloneDX or SPDX SBOMs with SOOS SBOM.
 
 ## Steps
 
-### **Repo Setup**
+### **Repository Setup**
 * Download the corresponding Script for your environment from the [SBOM Script integration page on SOOS](https://app.soos.io/integrate/sbom?id=script).
 * Create a new file in your repo root directory called `run-sbom-analysis.sh` or `run-sbom-analysis.bat` and paste the content of the script in the new file.
 * Open the terminal or command prompt and navigate to your project directory. Run the appropriate command:

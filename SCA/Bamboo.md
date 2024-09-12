@@ -13,7 +13,7 @@ Set up Bamboo to scan your manifests with SOOS SCA Core.
 
 ## Steps
 
-### **Repo Setup**
+### **Repository Setup**
 * Create a new folder in your repository: <repo_root>/bamboo-specs
 * Create a bamboo.yml file with the contents given on [Bamboo Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=bamboo) under the bamboo-specs option.
 * Place the bamboo.yml under  <repo_root>/bamboo-specs/ folder that you created.
