@@ -17,10 +17,6 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 ### **Getting the script**
 * Navigate to the [Script DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=script) and copy the script content according to the OS you're running.
 
-### **Environment Setup**
-* In all of our example scripts we are using environment variables, we strongly recommend that you also set up your SOOS_CLIENT_ID and SOOS_API_KEY as environment variables too.
-
-
 ### Script Arguments
 
 | Argument | Required | Description |
@@ -33,7 +29,6 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 | --- | --- | --- |
 | `--ajaxSpider` | None | Ajax Spider - Use the ajax spider in addition to the traditional one. Additional information: https://www.zaproxy.org/docs/desktop/addons/ajax-spider/ |
 | `--apiKey` | None | SOOS API Key - get yours from https://app.soos.io/integrate/dast |
-| `--appVersion` | None | App Version - Intended for internal use only. |
 | `--authDelayTime` | 5 | Delay time in seconds to wait for the page to load after performing actions in the form. (Used only on authFormType: wait_for_password and multi_page) |
 | `--authFormType` | simple | simple (all fields are displayed at once), wait_for_password (Password field is displayed only after username is filled), or multi_page (Password field is displayed only after username is filled and submit is clicked) |
 | `--authLoginURL` | None | Login url to use when authentication is required |
@@ -59,8 +54,6 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 | `--disableRules` | None | Comma separated list of ZAP rules IDs to disable. List for reference https://www.zaproxy.org/docs/alerts/ |
 | `--fullScanMinutes` | None | Number of minutes for the spider to run |
 | `--help`, `-h` | ==SUPPRESS== | show this help message and exit |
-| `--integrationName` | None | Integration Name - Intended for internal use only. |
-| `--integrationType` | None | Integration Type - Intended for internal use only. |
 | `--logLevel` | None | Minimum level to show logs: INFO, WARN, FAIL, DEBUG, ERROR. |
 | `--oauthParameters` | None | Parameters to be added to the oauth token request. (eg --oauthParameters="client_id:clientID, client_secret:clientSecret, grant_type:client_credentials") |
 | `--oauthTokenUrl` | None | The authentication URL that grants the access_token. |
@@ -72,7 +65,6 @@ Currently you have the option to integrate the SOOS DAST product using the comma
 | `--requestCookies` | None | Set Cookie value(s) for each request |
 | `--requestHeaders` | None | Set extra request headers set on each request |
 | `--scanMode` | baseline | Scan Mode - Available modes: baseline, fullscan, and apiscan (for more information about scan modes visit https://github.com/soos-io/soos-dast#scan-modes) |
-| `--scriptVersion` | None | Script Version - Intended for internal use only. |
 
 ### **Scan Modes**
 
@@ -105,7 +97,7 @@ It also includes 2 scripts that:
 Example snippet of API scan feeding spec file locally:
 
 ``` bash
-docker run -v <path_to_folder_containing_file>:/zap/wrk/:rw -it soosio/dast <name_of_file>  --scanMode="apiscan" --apiScanFormat="openapi"  --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --apiURL="https://api.soos.io/api/"
+docker run -v <path_to_folder_containing_file>:/zap/wrk/:rw -it soosio/dast <name_of_file>  --scanMode="apiscan" --apiScanFormat="openapi"  --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME"
 ```
 
 ### Running the script
@@ -121,7 +113,7 @@ If you need to run a scan against url that needs authorization and the only thin
 Example snippet:
 
 ``` bash
-docker run -it soosio/dast:latest "https://example.com/protectedendnpoint" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --bearerToken="token-value" --apiURL="https://api.soos.io/api/"
+docker run -it soosio/dast:latest "https://example.com/protectedendnpoint" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --bearerToken="token-value"
 ```
 
 
@@ -132,7 +124,7 @@ Using this option there will be an automated login form authentication performed
 This is how a example snippet will look like:
 
 ``` bash
-docker run -it soosio/dast:latest "https://example.com" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --authLoginURL="https://example.com/login" --authUsername="username" --authPassword="password" --authUsernameField="userName" --authPasswordField="password" --authSubmitField="login" --apiURL="https://api.soos.io/api/"
+docker run -it soosio/dast:latest "https://example.com" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --authLoginURL="https://example.com/login" --authUsername="username" --authPassword="password" --authUsernameField="userName" --authPasswordField="password" --authSubmitField="login"
 ```
 
 
@@ -142,7 +134,7 @@ In case you need to perform a DAST analysis against an OAuth application this is
 
 Snippet example:
 ``` bash
-docker run -it soosio/dast:latest "https://example.com" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --oauthTokenUrl="https://example.com/token" --oauthParameters="client_id:value, client_secret:value, grant_type:value" --apiURL="https://api.soos.io/api/"
+docker run -it soosio/dast:latest "https://example.com" --clientId="YOUR_CLIENT_ID" --apiKey="YOUR_API_KEY" --projectName="YOUR_PROJECT_NAME" --oauthTokenUrl="https://example.com/token" --oauthParameters="client_id:value, client_secret:value, grant_type:value"
 ```
 
 --- 

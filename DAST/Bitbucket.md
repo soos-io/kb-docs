@@ -28,28 +28,18 @@ Based on your preferences you can add the content for the file added on step 1 c
     * We recommend defining apiKey and clientId as Environment Variables (see Build Setup section) to protect your credentials.
 
 ```
-
 image: atlassian/default-image:3
 
 pipelines:
   custom:
     soos-dast:
-    - variables:
-      - name: SCAN_MODE
-        default: "baseline"
-        allowed-values:
-        - "baseline"
-        - "fullscan"
-        - "apiscan"
-      - name: TARGET_URL
-        default: ""
     - parallel:
       - step:
           name: 'SOOS DAST'
           services:
             - docker
           script:
-            - docker run --rm soosio/dast:latest --clientId=$SOOS_CLIENT_ID --apiKey=$SOOS_API_KEY --projectName=$BITBUCKET_REPO_SLUG --scanMode=$SCAN_MODE --commitHash=$BITBUCKET_COMMIT --branchName=$BITBUCKET_BRANCH --buildURI="http://bitbucket.org/$BITBUCKET_REPO_FULL_NAME" --buildVersion=$BITBUCKET_BUILD_NUMBER --integrationName="Bitbucket" $TARGET_URL
+            - docker run --rm soosio/dast --clientId=<client_id> --apiKey=<api_key> --projectName="<project_name>" --integrationName="BitBucket" <target_url>
 ```
 
 * Full Scan 
@@ -65,22 +55,13 @@ image: atlassian/default-image:3
 pipelines:
   custom:
     soos-dast:
-    - variables:
-      - name: SCAN_MODE
-        default: "fullscan"
-        allowed-values:
-        - "baseline"
-        - "fullscan"
-        - "apiscan"
-      - name: TARGET_URL
-        default: ""
     - parallel:
       - step:
           name: 'SOOS DAST'
           services:
             - docker
           script:
-            - docker run --rm soosio/dast:latest --clientId=$SOOS_CLIENT_ID --apiKey=$SOOS_API_KEY --projectName=$BITBUCKET_REPO_SLUG --scanMode=$SCAN_MODE --commitHash=$BITBUCKET_COMMIT --branchName=$BITBUCKET_BRANCH --buildURI="http://bitbucket.org/$BITBUCKET_REPO_FULL_NAME" --buildVersion=$BITBUCKET_BUILD_NUMBER --integrationName="Bitbucket" $TARGET_URL
+            - docker run --rm soosio/dast --clientId=<client_id> --apiKey=<api_key> --projectName="<project_name>" --scanMode=fullscan --integrationName="BitBucket" <target_url>
 ```
 
 * API Scan 
@@ -95,34 +76,14 @@ image: atlassian/default-image:3
 pipelines:
   custom:
     soos-dast:
-    - variables:
-      - name: SCAN_MODE
-        default: "apiscan"
-        allowed-values:
-        - "baseline"
-        - "fullscan"
-        - "apiscan"
-      - name: API_FORMAT
-        default: "openapi"
-        allowed-values:
-        - "openapi"
-        - "soap"
-        - "graphql"
-      - name: TARGET_URL
-        default: ""
     - parallel:
       - step:
           name: 'SOOS DAST'
           services:
             - docker
           script:
-            - docker run --rm soosio/dast:latest --clientId=$SOOS_CLIENT_ID --apiKey=$SOOS_API_KEY --projectName=$BITBUCKET_REPO_SLUG --scanMode=$SCAN_MODE --apiScanFormat=$API_FORMAT --commitHash=$BITBUCKET_COMMIT --branchName=$BITBUCKET_BRANCH --buildURI="http://bitbucket.org/$BITBUCKET_REPO_FULL_NAME" --buildVersion=$BITBUCKET_BUILD_NUMBER --integrationName="Bitbucket" $TARGET_URL
+            - docker run --rm soosio/dast --clientId=<client_id> --apiKey=<api_key> --projectName="<project_name>" --scanMode=apiscan --apiScanFormat=openapi --integrationName="BitBucket" <target_url>
 ```
-
-### **Build Setup**
-**Setup Environment Variables**
-
-Copy & paste the API key and Client ID values from the [Bitbucket Integration page of the SOOS App](https://app.soos.io/integrate/dast?id=bitbucket). While editing the pipeline file, select "Add Variables" and add two *Secured* variables, "SOOS_CLIENT_ID" and "SOOS_API_KEY".
 
 **Run It**
 

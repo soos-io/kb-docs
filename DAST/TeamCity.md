@@ -19,11 +19,10 @@ Currently, you can integrate the SOOS DAST Analysis with TeamCity using the Dock
 The script uses docker so it's fundamental for it to work that the agent running the script have [docker installed.](https://docs.docker.com/get-docker/).
 
 * Visit https://www.docker.com/ and download & install Docker.
-* The Docker build runner needs parameters, called “System Properties (system.)” in TeamCity, which have to be declared inside the project or the build settings, and they are required for the Docker container to run.
+* The Docker build runner needs parameters, called "System Properties (system.)" in TeamCity, which have to be declared inside the project or the build settings, and they are required for the Docker container to run.
 * You will need some required properties:
     * system.apiKey: SOOS API key
     * system.clientId: SOOS client id
-    * system.apiURL: SOOS API URL. By Default: https://api.soos.io/api/
     * system.projectName: SOOS project name
     * system.scanMode: SOOS DAST scan mode. Values: baseline (Default), fullscan, or apiscan
     * system.targetURL: target URL including the protocol, eg https://www.example.com
@@ -38,7 +37,7 @@ Create a Build Step with the following settings:
 * Command name: run
 * Working directory: (leave blank)
 * Additional required arguments for the command: 
-`--rm soosio/dast %system.targetURL% --clientId=%system.clientId% --apiKey=%system.apiKey% --projectName="""%system.projectName%""" --scanMode=%system.scanMode% --apiURL=%system.apiURL%`
+`--rm soosio/dast %system.targetURL% --clientId=%system.clientId% --apiKey=%system.apiKey% --projectName="""%system.projectName%""" --scanMode=%system.scanMode%
 
 Click Save when complete
 

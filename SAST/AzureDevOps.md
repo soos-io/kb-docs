@@ -12,7 +12,7 @@ In this article, we will guide you through modifying a simple Azure project to s
 - You need to have an Azure DevOps Project with a Pipeline.
 - You need to have a repository, connected to that pipeline, with a [supported](https://kb.soos.io/help/sast-connector) SAST file.
 - Add the [**SOOS Security Analysis**](https://marketplace.visualstudio.com/items?itemName=SOOS.SOOS-Security-Analysis) task to your organization in Azure DevOps.
-- If you are running a self-hosted agent make sure to have Node 18.18.2 or higher - https://nodejs.org/en/download on the agent. Also you can look to use [Use Node Task](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/use-node-v1?view=azure-pipelines) 
+- If you are running a self-hosted agent make sure to have Node 20 LTS or higher - https://nodejs.org/en/download on the agent. Also you can look to use [Use Node Task](https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/use-node-v1?view=azure-pipelines) 
 - You need to have previously generated Sarif 2.1 json in file(s) that end with the `.sarif.json` extension.
 
 ## Steps

@@ -98,7 +98,7 @@ script:
 ### **Configure Travis CI**
 **Setup Environment Variables**
 
-Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables in the provided “Environment variables” text field. These will serve as environment variables to be used by the Package Aware CLI. Use the API Key and Client ID values you collected from the SOOS App.
+Create the SOOS_API_KEY and SOOS_CLIENT_ID environment variables in the provided "Environment variables" text field. These will serve as environment variables to be used by the Package Aware CLI. Use the API Key and Client ID values you collected from the SOOS App.
 
 <img src="../assets/img/travis-ci-envs.png">
 

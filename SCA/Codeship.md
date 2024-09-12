@@ -19,7 +19,7 @@ This document will take you step-by-step through the tasks required to set up a 
 * Copy & paste the API key and Client ID values from the [CodeShip Integration page of the SOOS App](https://app.soos.io/integrate/sca?id=codeship). These will serve as environment variables to be used by the SOOS CLI.
 
 ### **Add Build Configuration**
-* Select *Tests* in the menu, then select “I want to create my own custom commands” within the Select **your technology to pre-populate basic commands**.
+* Select *Tests* in the menu, then select "I want to create my own custom commands" within the Select **your technology to pre-populate basic commands**.
 * Enter "nvm install v18.12.1 " in the **Setup Commands** text box.
 * Add a new pipeline in the **Configure Test Pipelines** section by selecting the **Add Pipeline** button.
 * Enter an appropriate name for the pipeline, and press Save.

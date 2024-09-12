@@ -46,14 +46,17 @@ Make sure to also set the Display Name, Project Name (which groups scans togethe
 Once we have defined these variables globally you can set up the task to be used inside your pipeline.yml following this example script.
 
 ```
+# NOTE: requires a Linux build agent
+
 - task: SOOS-Security-Analysis@0
+  displayName: SOOS DAST Scan
+  continueOnError: true
   inputs:
-    apiKey: {SOOS_API_KEY}
-    clientId: {SOOS_CLIENT_ID}
+    clientId: <client_id>
+    apiKey: <api_key>
     scanType: 'DAST'
-    project: {YOUR_PROJECT_NAME_HERE}
-    targetUri: 'https://example.com'
-    scanMode: 'baseline'
+    targetUri: <target_url>
+    projectName: "<project_name>"
 ```
 
 ### **Run It**

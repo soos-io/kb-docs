@@ -8,9 +8,9 @@ This document will take you step-by-step through the tasks required to set up a 
 ## Prerequisites
 - You need to have a [SOOS account.](https://app.soos.io/register)
 - You need to have a Jenkins project.
-- Have installed the latest version of the [SOOS SCA Plugin](https://plugins.jenkins.io/soos-sca/)
-- Have JDK 11 configured on your Jenkins agent.
-- Have Node 18.18.2 or Higher - [Download Node.js](https://nodejs.org/en/download) configured on your Jenkins agent.
+- Install the latest version of the [SOOS SCA Plugin](https://plugins.jenkins.io/soos-sca/)
+- JDK 11 configured on your Jenkins agent.
+- Node 20 LTS or higher - [Download Node.js](https://nodejs.org/en/download) configured on your Jenkins agent.
 
 ## Steps
 

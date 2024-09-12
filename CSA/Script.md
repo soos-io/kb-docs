@@ -4,8 +4,7 @@
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/shell.png" alt="OS Shell" width="128" height="128">
 </div>
-
-Currently, you have the option to integrate the SOOS Container Security Analysis (CSA) product using the command line from your operating system.
+Set up a command line task to run SOOS Container Security Analysis (CSA).
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register).
@@ -13,34 +12,10 @@ Currently, you have the option to integrate the SOOS Container Security Analysis
 
 ## Steps
 ### **Getting the Script**
-* Navigate to the [Script CSA integration page on the SOOS App](https://app.soos.io/integrate/containers?id=script) and copy the script content according to the OS you're running.
+* Navigate to the [Script CSA integration page on the SOOS App](https://app.soos.io/integrate/containers?id=script), copy the example, and modify it.
 
-### **Environment Setup**
-* In all of our example scripts, we are using environment variables. We strongly recommend that you also set up your SOOS_CLIENT_ID and SOOS_API_KEY as environment variables.
-
-### Script Parameters
-
-| Argument | Default | Description |
-| --- | --- | --- |
-| `--apiKey` | None | SOOS API Key - get yours from https://app.soos.io/integrate/containers |
-| `--apiURL` | https://api.soos.io/api/ | SOOS API URL - Intended for internal use only, do not modify. |
-| `--appVersion` | None | App Version - Intended for internal use only. |
-| `--branchName` | null | The name of the branch from the SCM System. |
-| `--branchURI` | null | The URI to the branch from the SCM System. |
-| `--buildURI` | null | URI to CI build info. |
-| `--buildVersion` | null | Version of application build artifacts. |
-| `--clientId` | None | SOOS Client ID - get yours from https://app.soos.io/integrate/containers |
-| `--commitHash` | null | The commit hash value from the SCM System. |
-| `--integrationName` | null | Integration Name - Intended for internal use only. |
-| `--integrationType` | null | Integration Type - Intended for internal use only. |
-| `--logLevel` | INFO | Minimum level to show logs: INFO, WARN, FAIL, DEBUG, ERROR. |
-| `--onFailure` | continue_on_failure | Action to perform when the scan fails. Options: fail_the_build, continue_on_failure. |
-| `--operatingEnvironment` | null | Set Operating environment for information purposes only. |
-| `--otherOptions` | None | Other Options to pass to syft. |
-| `--projectName` | None | Project Name - this is what will be displayed in the SOOS app. |
-| `--scriptVersion` | null | N/A |
-| `--verbose` | false | Enable verbose logging. |
-| `targetToScan` | N/A | The target to scan. Should be a docker image name or a path to a directory containing a Dockerfile. |
+### **Run It**
+* Execute the command locally or as a script task within your CI/CD pipeline.
 
 ## Scanning Private Images with Authentication
 To scan an image from a private registry, follow these steps:
@@ -52,10 +27,10 @@ To scan an image from a private registry, follow these steps:
 docker run -it \
   -v /var/run/docker.sock:/var/run/docker.sock \
   soosio/csa \
-  --clientId=<YOUR_CLIENT_ID> \
-  --apiKey=<YOUR_API_KEY> \
-  --projectName="<YOUR_PROJECT_NAME>" \
-  <CONTAINER_NAME>:<TAG_NAME>
+  --clientId=<client_id> \
+  --apiKey=<api_key> \
+  --projectName="<project_name>" \
+  <image>:<tag>
 ```
 
 ## Retrieving the Results File for Troubleshooting
@@ -65,13 +40,13 @@ In the following example, c:/results is the local folder on the host where the r
 docker run -it \
   -v c:/results:/usr/src/app/results \
   soosio/csa \
-  --clientId=<YOUR_CLIENT_ID> \
-  --apiKey=<YOUR_API_KEY> \
-  --projectName="<YOUR_PROJECT_NAME>" \
-  <CONTAINER_NAME>:<TAG_NAME>
+  --clientId=<client_id> \
+  --apiKey=<api_key> \
+  --projectName="<project_name>" \
+  <image>:<tag>
 ```
 
-Note: The path c:/results is specific to Windows. If you're using Linux or macOS, adjust the path format accordingly.
+NOTE: The path c:/results is specific to Windows. If you're using Linux or macOS, adjust the path format accordingly.
 
 ---
 
@@ -86,13 +61,13 @@ To scan a Docker image that has been built locally and is not hosted on any regi
    docker run -it \
    -v /var/run/docker.sock:/var/run/docker.sock \
    soosio/csa \
-   --clientId=<YOUR_CLIENT_ID> \
-   --apiKey=<YOUR_API_KEY> \
-   --projectName="<YOUR_PROJECT_NAME>" \
-   <PREVIOUSLY_BUILT_IMAGE>
+   --clientId=<client_id> \
+   --apiKey=<api_key> \
+   --projectName="<project_name>" \
+   <local_image_name>
    ```
 
-Replace `<PREVIOUSLY_BUILT_IMAGE>` with the name of your locally built Docker image. This command enables the scanning tool inside the container to access and scan the specified Docker image stored on your host machine.
+Replace `<local_image_name>` with the name of your locally built Docker image. This command enables the scanning tool inside the container to access and scan the specified Docker image stored on your host machine.
 
 ---
 
@@ -108,15 +83,15 @@ To scan a Docker image that has been saved as a `.tar` file, follow these steps:
 2. Run the Scan: Execute the following command, ensuring that the volume is mounted to the path where the `.tar` file is located:
    ```
    docker run -it \
-   -v <YOUR_LOCAL_DIRECTORY_PATH>:/usr/src/app/results:rw \
+   -v <local_path_to_image>:/usr/src/app/results:rw \
    soosio/csa \
-   --clientId=<YOUR_CLIENT_ID> \
-   --apiKey=<YOUR_API_KEY> \
-   --projectName="<YOUR_PROJECT_NAME>" \
+   --clientId=<client_id> \
+   --apiKey=<api_key> \
+   --projectName="<project_name>" \
    "docker-archive:results/your_image.tar"
    ```
 
-Replace `<YOUR_LOCAL_DIRECTORY_PATH>` with the directory containing your `.tar` file. This command mounts the `.tar` file inside the container and initiates the scan.
+Replace `<local_path_to_image>` with the directory containing your `.tar` file. This command mounts the `.tar` file inside the container and initiates the scan.
 
 ## Scanning a Docker Image Definition Directory
 
@@ -127,15 +102,15 @@ To scan a directory containing Docker image definitions with its other relevant 
 2. Run the Scan: Use the command below, where the last argument specifies the folder containing the files to be scanned:
    ```
    docker run -it \
-   -v <YOUR_LOCAL_DIRECTORY_PATH>:/usr/src/app/results:rw \
+   -v <local_path_to_image>:/usr/src/app/results:rw \
    soosio/csa \
-   --clientId=<YOUR_CLIENT_ID> \
-   --apiKey=<YOUR_API_KEY> \
-   --projectName="<YOUR_PROJECT_NAME>" \
+   --clientId=<client_id> \
+   --apiKey=<api_key> \
+   --projectName="<project_name>" \
    /usr/src/app/results
    ```
 
-In this command, replace `<YOUR_LOCAL_DIRECTORY_PATH>` with the path to your local directory. The directory is mounted into the container, and the scan is executed on its contents.
+In this command, replace `<local_path_to_image>` with the path to your local directory. The directory is mounted into the container, and the scan is executed on its contents.
 
 ---
 
