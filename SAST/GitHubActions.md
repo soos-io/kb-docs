@@ -17,42 +17,16 @@ Set up an GitHub Action Workflow to scan SARIF 2.1 files with SOOS SAST.
 
 ### **Repository Setup**
 * Create a `.github/workflows` directory in your repository on GitHub if it does not already exist.
-* In the `.github/workflows` directory, create a file named `main.yml`. For more information on creating new files, see [Creating new files in GitHub Docs](https://docs.github.com/en/github/managing-files-in-a-repository/creating-new-files).
-* Paste the script from the [GitHub Action SAST Integration page on SOOS](https://app.soos.io/integrate/sast?id=github-actions).
 
-### **Build Setup**
+### **Get the Example**
 
-**Set Up Environment Variables**
+* Navigate to the [GitHub Action SAST integration page on the SOOS App](https://app.soos.io/integrate/sast?id=github-action), copy the example, and modify it.
 
-Under your Repository's Settings tab, select "Secrets" > "Actions" and add two new secrets containing the SOOS Client Id and API Key, which you can find in the SOOS App under [Integrate](https://app.soos.io/integrate).
+### **Run It**
 
-The secret names should be `SOOS_CLIENT_ID` and `SOOS_API_KEY`.
+* Execute the workflow
 
-<img src="../assets/img/github-action-envs.png">
+---
 
-### **Build Config**
-Modify the `.github/workflows/main.yml` file, replacing the `project_name` variable value with one relevant to your project.
-
-## Run It
-To run the SOOS CLI against your repository’s code, execute a build or commit a change. The build will use the environment variables created for the API Key and Client ID.
-
-### **Setup**
-
-```yaml
-name: Example workflow using SOOS
-# Events required to engage workflow (edit this list as needed)
-on: [push]
-
-jobs:
-  soos_sast_analysis_example:
-    name: SOOS SAST Analysis Example
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: Run SOOS SAST Analysis
-        uses: soos-io/soos-sast-github-action@v1 # GET Latest Version from https://github.com/marketplace/actions/soos-sast
-        with:
-          client_id: ${{ secrets.SOOS_CLIENT_ID }}
-          api_key: ${{ secrets.SOOS_API_KEY }}
-          project_name: "My Project Name"
-```
+## Reference
+* To see the full list of available parameters go to [SOOS SAST GitHub Action Scan Parameters](https://github.com/soos-io/soos-sast-github-action)
