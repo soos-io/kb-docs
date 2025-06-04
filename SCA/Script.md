@@ -1,10 +1,10 @@
-# How to Integrate SOOS SCA with your repo using the Script
+# How to Integrate SOOS SCA with your repo using the CLI
 <div>
 <img src="../assets/img/SOOS-Icon.png" alt="SOOS" width="128" height="128">
 <img src="../assets/img/shell.png" alt="SOOS" width="128" height="128">
 </div>
 
-Set up a script to scan your manifests with SOOS SCA Core.
+Set up a CLI to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register).
@@ -14,7 +14,7 @@ Set up a script to scan your manifests with SOOS SCA Core.
 
 ### **Get the Example**
 
-* Navigate to the [Script SCA integration page on the SOOS App](https://app.soos.io/integrate/sca?id=script), copy the example, and modify it.
+* Navigate to the [CLI SCA integration page on the SOOS App](https://app.soos.io/integrate/sca?id=script), copy the example, and modify it.
 
 ### **Run It**
 
