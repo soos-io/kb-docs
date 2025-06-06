@@ -41,14 +41,6 @@ Example:
 docker run -it soosio/dast:latest "https://example.com" --clientId="<client_id>" --apiKey="<api_key>" --projectName="<project_name>" --authLoginURL="https://example.com/login" --authUsername="username" --authPassword="password" --authUsernameField="userName" --authPasswordField="password" --authSubmitField="login"
 ```
 
-### Authenticate with an OAuth Token URL.
-
-Example:
-
-``` bash
-docker run -it soosio/dast:latest "https://example.com" --clientId="<client_id>" --apiKey="<api_key>" --projectName="<project_name>" --oauthTokenUrl="https://example.com/token" --oauthParameters="client_id:value, client_secret:value, grant_type:value"
-```
-
 ## How to Use the `excludeUrlsFile` Parameter
 
 The `excludeUrlsFile` parameter allows you to specify a list of URLs that you want to exclude from the DAST scan. This is particularly useful for focusing the scan on specific parts of your application and avoiding unnecessary analysis of irrelevant areas. To use this feature effectively, you need to create a text file containing regular expressions that match the URLs you wish to exclude.
