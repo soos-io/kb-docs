@@ -76,4 +76,4 @@ steps:
 ---
 
 ## Reference
-* To see the full list of available parameters go to the [SOOS Container Scan Parameters](https://github.com/soos-io/soos-csa#parameters).
+* To see the full list of available parameters go to [SOOS Azure DevOps Scan Parameters](https://github.com/soos-io/soos-azure-devops-task#parameters).
