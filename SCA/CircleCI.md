@@ -9,7 +9,7 @@ Set up CircleCI to scan your manifests with SOOS SCA Core Orb.
 ## Prerequisites
 
 - You need to have a [SOOS account](https://app.soos.io/register).
-- Node 20 LTS or higher enabled on the pipeline.
+- Node 22 LTS or higher enabled on the pipeline.
 
 ## Steps
 

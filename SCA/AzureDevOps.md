@@ -8,7 +8,7 @@ Set up an Azure Devops pipeline to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register).
-- Node 20 LTS or higher enabled on the pipeline.
+- Node 22 LTS or higher enabled on the pipeline.
 - Add the [**SOOS Security Analysis**](https://marketplace.visualstudio.com/items?itemName=SOOS.SOOS-Security-Analysis) task to your organization in Azure DevOps.
 
 ## Steps

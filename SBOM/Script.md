@@ -9,7 +9,7 @@ Set up a script to scan CycloneDX or SPDX SBOMs with SOOS SBOM Analysis.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register) with SBOM scanning enabled.
-- Node 20 LTS or higher - [Download Node.js](https://nodejs.org/en/download).
+- Node 22 LTS or higher - [Download Node.js](https://nodejs.org/en/download).
 
 ## Steps
 

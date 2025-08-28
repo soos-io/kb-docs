@@ -10,7 +10,7 @@ Set up an GitHub Action Workflow to scan SARIF 2.1 files with SOOS SAST.
 ## Prerequisites
 
 - You need to have a [SOOS account](https://app.soos.io/register) with SAST scanning enabled.
-- Node 20 LTS or higher enabled in the workflow.
+- Node 22 LTS or higher enabled in the workflow.
 - You need to have previously generated Sarif 2.1 json in file(s) that end with the `.sarif.json` extension.
 
 ## Steps
