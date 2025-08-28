@@ -9,7 +9,7 @@ Set up an Azure DevOps pipeline to scan SARIF 2.1 files with SOOS SAST.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register) with SAST scanning enabled.
-- Node 20 LTS or higher enabled on the pipeline.
+- Node 22 LTS or higher enabled on the pipeline.
 - You need to have previously generated Sarif 2.1 json in file(s) that end with the `.sarif.json` extension.
 - Add the [**SOOS Security Analysis**](https://marketplace.visualstudio.com/items?itemName=SOOS.SOOS-Security-Analysis) task to your organization in Azure DevOps.
 

@@ -9,7 +9,7 @@ Set up a GitHub Action Workflow to scan your manifests with the SOOS SCA GitHub 
 ## Prerequisites
 
 - You need to have a [SOOS account](https://app.soos.io/register).
-- Node 20 LTS or higher enabled in the workflow.
+- Node 22 LTS or higher enabled in the workflow.
 
 ## Steps
 

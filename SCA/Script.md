@@ -8,7 +8,7 @@ Set up a CLI to scan your manifests with SOOS SCA Core.
 
 ## Prerequisites
 - You need to have a [SOOS account](https://app.soos.io/register).
-- Node 20 LTS or higher - https://nodejs.org/en/download
+- Node 22 LTS or higher - https://nodejs.org/en/download
 
 ## Steps
 

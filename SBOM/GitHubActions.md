@@ -11,7 +11,7 @@ Set up a GitHub Action Workflow to scan CycloneDX or SPDX SBOMs with SOOS SBOM A
 ## Prerequisites
 
 - You need to have a [SOOS account](https://app.soos.io/register) with SBOM scanning enabled.
-- Node 20 LTS or higher enabled in the workflow.
+- Node 22 LTS or higher enabled in the workflow.
 
 ## Steps
 
