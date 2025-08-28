@@ -25,4 +25,4 @@ Set up an Azure DevOps pipeline to scan CycloneDX or SPDX SBOMs with SOOS SBOM A
 ---
 
 ## Reference
-* To see the full list of available parameters go to [SOOS SBOM Scan Parameters](https://github.com/soos-io/soos-sbom#parameters)
+* To see the full list of available parameters go to [SOOS Azure DevOps Scan Parameters](https://github.com/soos-io/soos-azure-devops-task#parameters).
