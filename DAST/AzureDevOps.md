@@ -32,4 +32,4 @@ Your pipeline stage must use a Linux build agent:
 ---
 
 ## Reference
-* To see the full list of available parameters go to [SOOS DAST Scan Parameters](https://github.com/soos-io/soos-dast#parameters)
+* To see the full list of available parameters go to [SOOS Azure DevOps Scan Parameters](https://github.com/soos-io/soos-azure-devops-task#parameters).

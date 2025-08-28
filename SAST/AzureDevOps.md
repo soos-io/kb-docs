@@ -26,4 +26,4 @@ Set up an Azure DevOps pipeline to scan SARIF 2.1 files with SOOS SAST.
 ---
 
 ## Reference
-* To see the full list of available parameters go to [SOOS SAST Scan Parameters](https://github.com/soos-io/soos-sast#parameters)
+* To see the full list of available parameters go to [SOOS Azure DevOps Scan Parameters](https://github.com/soos-io/soos-azure-devops-task#parameters).

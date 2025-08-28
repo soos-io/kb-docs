@@ -24,4 +24,4 @@ Set up an Azure Devops pipeline to scan your manifests with SOOS SCA Core.
 ---
 
 ## Reference
-* To see the full list of available parameters go to [SOOS SCA Core Scan Parameters](https://github.com/soos-io/soos-sca#parameters)
+* To see the full list of available parameters go to [SOOS Azure DevOps Scan Parameters](https://github.com/soos-io/soos-azure-devops-task#parameters).
