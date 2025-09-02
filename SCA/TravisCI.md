@@ -15,7 +15,7 @@ Set up TravisCI to scan your manifests with SOOS SCA Core.
 
 ### **Get the Example**
 
-* Navigate to the [TravisCI SCA integration page on the SOOS App](https://app.soos.io/integrate/sca?id=travisci), copy the example, and modify it.
+* Navigate to the [TravisCI SCA integration page on the SOOS App](https://app.soos.io/integrate/sca?id=travis-ci), copy the example, and modify it.
 
 ### **Run It**
 

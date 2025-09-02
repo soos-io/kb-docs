@@ -20,7 +20,7 @@ Set up an GitHub Action Workflow to scan SARIF 2.1 files with SOOS SAST.
 
 ### **Get the Example**
 
-* Navigate to the [GitHub Action SAST integration page on the SOOS App](https://app.soos.io/integrate/sast?id=github-action), copy the example, and modify it.
+* Navigate to the [GitHub Action SAST integration page on the SOOS App](https://app.soos.io/integrate/sast?id=github-actions), copy the example, and modify it.
 
 ### **Run It**
 
