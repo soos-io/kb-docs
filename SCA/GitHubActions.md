@@ -18,7 +18,7 @@ Set up a GitHub Action Workflow to scan your manifests with the SOOS SCA GitHub 
 
 ### **Get the Example**
 
-* Navigate to the [GitHub Action SBOM integration page on the SOOS App](https://app.soos.io/integrate/sca?id=github-action), copy the example, and modify it.
+* Navigate to the [GitHub Action SBOM integration page on the SOOS App](https://app.soos.io/integrate/sca?id=github-actions), copy the example, and modify it.
 
 ### **Run It**
 

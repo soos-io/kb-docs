@@ -17,7 +17,7 @@ Set up TravisCI to scan an endpoint with SOOS DAST
 
 ### **Get the Example**
 
-* Navigate to the [TravisCI DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=travisci), copy the example, and modify it.
+* Navigate to the [TravisCI DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=travis-ci), copy the example, and modify it.
 
 ### **Run It**
 

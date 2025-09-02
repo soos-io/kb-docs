@@ -20,7 +20,7 @@ Set up a GitHub Action Workflow to scan CycloneDX or SPDX SBOMs with SOOS SBOM A
 
 ### **Get the Example**
 
-* Navigate to the [GitHub Action SBOM integration page on the SOOS App](https://app.soos.io/integrate/sbom?id=github-action), copy the example, and modify it.
+* Navigate to the [GitHub Action SBOM integration page on the SOOS App](https://app.soos.io/integrate/sbom?id=github-actions), copy the example, and modify it.
 
 ### **Run It**
 

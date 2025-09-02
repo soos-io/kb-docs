@@ -18,7 +18,7 @@ Set up a GitHub Workflow and scan an endpoint with the SOOS DAST GitHub Action
 
 ### **Get the Example**
 
-* Navigate to the [GitHub Action DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=github-action), copy the example, and modify it.
+* Navigate to the [GitHub Action DAST integration page on the SOOS App](https://app.soos.io/integrate/dast?id=github-actions), copy the example, and modify it.
 
 ### **Run It**
 
